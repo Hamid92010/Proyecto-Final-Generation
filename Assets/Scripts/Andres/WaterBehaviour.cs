@@ -5,10 +5,18 @@ public class WaterBehaviour : MonoBehaviour
 {
     private GameManager gameManager;
     private TimeManager timeManager;
-    [SerializeField] private float waterSpeed = 0.5f;
+    [SerializeField] private float waterBaseSpeed = 0.5f;
+    [SerializeField] private float speedIncreaseRate = 5f;
+    [SerializeField] private float speedIncreaseAmount = 0.05f;
     [SerializeField] private float initialYPos = -4f;
+    [SerializeField] private float currentWaterSpeed;
 
     public bool canMoveWater = false;
+
+    private void Awake()
+    {
+        transform.position = new Vector3(transform.position.x, initialYPos, transform.position.z);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnEnable()
     {
@@ -33,7 +41,7 @@ public class WaterBehaviour : MonoBehaviour
     void Start()
     {
 
-        transform.position = new Vector3(transform.position.x, initialYPos, transform.position.z);
+
     }
 
 
@@ -50,13 +58,13 @@ public class WaterBehaviour : MonoBehaviour
             return;
         }
 
-        float newY = initialYPos + waterSpeed * currentTime;
+        float intervalsPassed = currentTime / speedIncreaseRate;
 
-        transform.position = new Vector3(
-            transform.position.x,
-            newY,
-            transform.position.z
-        );
+        currentWaterSpeed = waterBaseSpeed + intervalsPassed * speedIncreaseAmount;
+
+        float newY = initialYPos + currentWaterSpeed * currentTime;
+
+        transform.position = new Vector3( transform.position.x, newY, transform.position.z);
     }
 
     private void OnDisable()

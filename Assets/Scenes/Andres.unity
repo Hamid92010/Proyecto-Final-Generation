@@ -658,6 +658,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 1121407001}
+  canPlayerMove: 1
 --- !u!54 &215622169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2120,7 +2121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d8aee8d09ba974bb142c4a8d7bae12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterBehaviour
-  waterSpeed: 0.5
+  waterBaseSpeed: 0.5
+  speedIncreaseRate: 5
+  initialYPos: -4
+  currentWaterSpeed: 0
+  canMoveWater: 0
 --- !u!65 &1329730237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2726,7 +2731,7 @@ MonoBehaviour:
   timerText: {fileID: 26232531}
   timerStarted: 0
   gameManager: {fileID: 0}
-  uiManager: {fileID: 0}
+  timerCanRun: 0
 --- !u!4 &1879090982
 Transform:
   m_ObjectHideFlags: 0
