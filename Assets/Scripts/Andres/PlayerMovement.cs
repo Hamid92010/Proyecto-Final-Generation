@@ -13,13 +13,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 6f;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float fallForce = 0f;
+    [SerializeField] private int numberOfJumpsRemaining = 2;
 
     private Rigidbody rb;
     private Vector2 moveInput;
     [SerializeField] private bool isGrounded = true;
+    [SerializeField] private bool wasGrounded = false;
+    [SerializeField] private bool isTouchingObstacle = false;
+    [SerializeField] private Vector3 groundCheckSize = new Vector3(0.8f, 0.1f, 0.8f);
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
+    
 
 
     private void Awake()
@@ -42,10 +47,17 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         moveInput = m_moveAction.ReadValue<Vector2>();
-        isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, groundCheckDistance, groundLayer);
-        if (m_jumpAction.WasPressedThisFrame() && isGrounded)
+        isGrounded = Physics.CheckBox( groundCheck.position + Vector3.down * groundCheckDistance, groundCheckSize / 2f, Quaternion.identity, groundLayer);
+        if(isGrounded && !wasGrounded)
         {
-            Jump();
+            numberOfJumpsRemaining = 2;
+        }
+
+        wasGrounded = isGrounded;
+
+        if (m_jumpAction.WasPressedThisFrame() && (isGrounded || numberOfJumpsRemaining > 0))
+        {           
+            Jump();           
         }
 
 
@@ -53,14 +65,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3( moveInput.x, 0f, moveInput.y);
+        Vector3 movement = new Vector3( moveInput.x, 0f, 0f);
 
-        //rb.MovePosition( rb.position + movement * moveSpeed * Time.fixedDeltaTime );
-
-        if(isGrounded)
+        if (!isTouchingObstacle || isGrounded)
         {
-            rb.linearVelocity = new Vector3(movement.x * moveSpeed, rb.linearVelocity.y, movement.z * moveSpeed);
-        }else
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+
+        if (!isGrounded)
         {
             rb.AddForce(Vector3.down * fallForce, ForceMode.Acceleration);
         }
@@ -77,6 +89,32 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        numberOfJumpsRemaining--;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Wall") && !isGrounded)
+        {
+            isTouchingObstacle = true;
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingObstacle = false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (groundCheck == null)
+            return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(groundCheck.position + Vector3.down * groundCheckDistance, groundCheckSize);
     }
 }
