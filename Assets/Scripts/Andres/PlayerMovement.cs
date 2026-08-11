@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float fallForce = 0f;
     [SerializeField] private int numberOfJumpsRemaining = 2;
+    [SerializeField] private bool timerStarted = false;
 
     private Rigidbody rb;
     private Vector2 moveInput;
@@ -24,12 +26,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
-    
 
+    private GameManager gameManager;  
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        gameManager = FindAnyObjectByType<GameManager>();
         m_moveAction = InputActions.FindAction("Move");
         m_jumpAction = InputActions.FindAction("Jump");
     }
@@ -46,7 +49,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(gameManager.gameOver || gameManager.gameFinished || gameManager.isGamePaused)
+        {
+            return;
+        }
+
         moveInput = m_moveAction.ReadValue<Vector2>();
+        if (moveInput.x != 0 && !timerStarted )
+        {
+            timerStarted = true;
+            gameManager.isGameStarted = true;
+        }
         isGrounded = Physics.CheckBox( groundCheck.position + Vector3.down * groundCheckDistance, groundCheckSize / 2f, Quaternion.identity, groundLayer);
         if(isGrounded && !wasGrounded)
         {
