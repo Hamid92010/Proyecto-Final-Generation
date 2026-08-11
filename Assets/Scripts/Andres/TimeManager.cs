@@ -5,7 +5,7 @@ public class TimeManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float currentTimeOfGame;
-    public float timeToFinishGame; // 1:30 minutos
+    [SerializeField] private float timeToFinishGame; // 1:30 minutos
     public TextMeshProUGUI timerText;
     public bool timerStarted = false;
     [SerializeField] private GameManager gameManager;
@@ -13,12 +13,15 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
-        uiManager = FindAnyObjectByType<UIManager>();
+        
     }
 
     void Start()
     {
+
+        gameManager = FindAnyObjectByType<GameManager>();
+        uiManager = FindAnyObjectByType<UIManager>();
+
         currentTimeOfGame = 0f;
         timeToFinishGame = gameManager.timeToFinishGame;
         UpdateTimerText();

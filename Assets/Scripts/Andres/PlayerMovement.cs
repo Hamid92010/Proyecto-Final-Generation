@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        gameManager = FindAnyObjectByType<GameManager>();
+
         m_moveAction = InputActions.FindAction("Move");
         m_jumpAction = InputActions.FindAction("Jump");
     }
@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
         InputActions.FindActionMap("Player").Enable();
     }
 
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
     private void OnDisable()
     {
         InputActions.FindActionMap("Player").Disable();
@@ -120,6 +124,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingObstacle = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Water"))
+        {
+            gameManager.gameOver = true;
         }
     }
 
