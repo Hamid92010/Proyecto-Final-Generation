@@ -4,7 +4,18 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
+    private TimeManager timeManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void OnEnable()
+    {
+        timeManager = FindAnyObjectByType<TimeManager>();
+        if (timeManager != null)
+        {
+            timeManager.OnTimeChanged += UpdateTimerText;
+        }
+    }
+
     void Start()
     {
         
@@ -16,6 +27,13 @@ public class UIManager : MonoBehaviour
         
     }
 
+    private void OnDisable()
+    {
+        if (timeManager != null)
+        {
+            timeManager.OnTimeChanged -= UpdateTimerText;
+        }
+    }
     public void UpdateTimerText(float timeToFinishGame)
     {
         int minutes = Mathf.FloorToInt(timeToFinishGame / 60);

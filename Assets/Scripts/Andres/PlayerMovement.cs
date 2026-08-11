@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
 
-    private GameManager gameManager;  
+    private GameManager gameManager;
+    [SerializeField] private bool canPlayerMove = true;
 
     private void Awake()
     {
@@ -40,20 +41,36 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         InputActions.FindActionMap("Player").Enable();
+        gameManager = FindAnyObjectByType<GameManager>();
+
+        if (gameManager != null)
+        {
+            gameManager.OnGameOver += StopMovement;
+            gameManager.OnGameFinished += StopMovement;
+            gameManager.OnGamePaused += StopMovement;
+            gameManager.OnGameResumed += ResumeMovement;
+        }
     }
 
     private void Start()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
+
     }
     private void OnDisable()
     {
         InputActions.FindActionMap("Player").Disable();
+        if (gameManager != null)
+        {
+            gameManager.OnGameOver -= StopMovement;
+            gameManager.OnGameFinished -= StopMovement;
+            gameManager.OnGamePaused -= StopMovement;
+            gameManager.OnGameResumed -= ResumeMovement;
+        }
     }
 
     private void Update()
     {
-        if(gameManager.gameOver || gameManager.gameFinished || gameManager.isGamePaused)
+        if(!canPlayerMove)
         {
             return;
         }
@@ -62,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput.x != 0 && !timerStarted )
         {
             timerStarted = true;
-            gameManager.isGameStarted = true;
+            gameManager.StartGame();
+
         }
         isGrounded = Physics.CheckBox( groundCheck.position + Vector3.down * groundCheckDistance, groundCheckSize / 2f, Quaternion.identity, groundLayer);
         if(isGrounded && !wasGrounded)
@@ -131,8 +149,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Water"))
         {
-            gameManager.gameOver = true;
+            gameManager.TriggerGameOver();
         }
+    }
+
+    private void StopMovement()
+    {
+        canPlayerMove = false;
+    }
+
+    private void ResumeMovement()
+    {
+        canPlayerMove = true;
     }
 
     private void OnDrawGizmos()

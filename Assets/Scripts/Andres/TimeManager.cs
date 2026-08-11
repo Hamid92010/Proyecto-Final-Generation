@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 using TMPro;
 public class TimeManager : MonoBehaviour
 {
@@ -9,33 +10,39 @@ public class TimeManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public bool timerStarted = false;
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private UIManager uiManager;
+    [SerializeField] private bool timerCanRun = false;
 
+    public event Action<float> OnTimeChanged;// Tiempo restante para terminar el juego
+    public event Action<float> OnGameTimeChanged; //Tiempo transcurrido desde el inicio del juego
     private void Awake()
     {
         
     }
 
+    private void OnEnable()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+        if (gameManager != null)
+        {
+            gameManager.OnGameStarted += StartTimer;
+            gameManager.OnGameOver += StopTimer;
+            gameManager.OnGameFinished += StopTimer;
+            gameManager.OnGamePaused += StopTimer;
+            gameManager.OnGameResumed += StartTimer;
+        }
+    }
+
     void Start()
     {
-
-        gameManager = FindAnyObjectByType<GameManager>();
-        uiManager = FindAnyObjectByType<UIManager>();
-
         currentTimeOfGame = 0f;
         timeToFinishGame = gameManager.timeToFinishGame;
-        UpdateTimerText();
+        NotifyTimeChanged();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.isGameStarted)
-        {
-            return;
-        }
-
-        if (gameManager.gameOver || gameManager.gameFinished || gameManager.isGamePaused)
+        if (!timerCanRun)
         {
             return;
         }
@@ -47,13 +54,40 @@ public class TimeManager : MonoBehaviour
             timeToFinishGame = 0;
         }
         currentTimeOfGame += Time.deltaTime;
-        UpdateTimerText();
+        NotifyTimeChanged();
+        NotifyGameTimeChanged();
         //gameManager.IncreasePainPerSecond(Time.deltaTime);
     }
 
-    private void UpdateTimerText()
+    private void NotifyTimeChanged()
     {
-        uiManager.UpdateTimerText(timeToFinishGame);
+        OnTimeChanged?.Invoke(timeToFinishGame);
+    }
+    private void NotifyGameTimeChanged()
+    {
+        OnGameTimeChanged?.Invoke(currentTimeOfGame);
+    }
+
+    private void OnDisable()
+    {
+        if (gameManager != null)
+        {
+            gameManager.OnGameStarted -= StartTimer;
+            gameManager.OnGameOver -= StopTimer;
+            gameManager.OnGameFinished -= StopTimer;
+            gameManager.OnGamePaused -= StopTimer;
+            gameManager.OnGameResumed -= StartTimer;
+        }
+    }
+
+    private void StartTimer()
+    {
+        timerCanRun = true;
+    }
+
+    private void StopTimer()
+    {
+        timerCanRun = false;
     }
 
 }
