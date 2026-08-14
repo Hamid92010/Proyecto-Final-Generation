@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
 
     private GameManager gameManager;
+    [SerializeField] private PlayerCollisions playerCollisions;
     [SerializeField] private bool canPlayerMove = true;
 
     private void Awake()
@@ -49,6 +50,12 @@ public class PlayerMovement : MonoBehaviour
             gameManager.OnGamePaused += StopMovement;
             gameManager.OnGameResumed += ResumeMovement;
         }
+
+        if(playerCollisions != null)
+        {
+            playerCollisions.TouchObstacle += TouchObstacle;
+            playerCollisions.UnTouchObstacle += UnTouchObstacle;
+        }
     }
 
     private void Start()
@@ -64,6 +71,12 @@ public class PlayerMovement : MonoBehaviour
             gameManager.OnGameFinished -= StopMovement;
             gameManager.OnGamePaused -= StopMovement;
             gameManager.OnGameResumed -= ResumeMovement;
+        }
+
+        if (playerCollisions != null)
+        {
+            playerCollisions.TouchObstacle -= TouchObstacle;
+            playerCollisions.UnTouchObstacle -= UnTouchObstacle;
         }
     }
 
@@ -126,29 +139,19 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    private void OnCollisionStay(Collision collision)
+
+    public void TouchObstacle()
     {
-        if(collision.gameObject.CompareTag("Wall") && !isGrounded)
+        if (!isGrounded)
         {
             isTouchingObstacle = true;
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    public void UnTouchObstacle()
     {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            isTouchingObstacle = false;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Water"))
-        {
-            gameManager.TriggerGameOver();
-        }
+        isTouchingObstacle = false;
     }
 
     private void StopMovement()

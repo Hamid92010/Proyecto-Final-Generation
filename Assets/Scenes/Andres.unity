@@ -603,6 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215622166}
   - component: {fileID: 215622167}
+  - component: {fileID: 215622171}
   - component: {fileID: 215622169}
   - component: {fileID: 215622170}
   m_Layer: 0
@@ -648,7 +649,6 @@ MonoBehaviour:
   rotationSpeed: 10
   fallForce: 0
   numberOfJumpsRemaining: 2
-  timerStarted: 0
   isGrounded: 1
   wasGrounded: 0
   isTouchingObstacle: 0
@@ -658,6 +658,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 1121407001}
+  playerCollisions: {fileID: 215622171}
   canPlayerMove: 1
 --- !u!54 &215622169
 Rigidbody:
@@ -709,6 +710,18 @@ CapsuleCollider:
   m_Height: 2.0671647
   m_Direction: 1
   m_Center: {x: 0, y: 0.99312365, z: 0}
+--- !u!114 &215622171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215622165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b59eea09419554ca9412488df09ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisions
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,6 +2136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaterBehaviour
   waterBaseSpeed: 0.5
   speedIncreaseRate: 5
+  speedIncreaseAmount: 0.05
   initialYPos: -4
   currentWaterSpeed: 0
   canMoveWater: 0
