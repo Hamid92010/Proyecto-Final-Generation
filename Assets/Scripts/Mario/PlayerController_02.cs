@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Si el objeto no tiene Rigid lo generamos
 [RequireComponent(typeof(Rigidbody))]
 
 public class PlayerController_02 : MonoBehaviour

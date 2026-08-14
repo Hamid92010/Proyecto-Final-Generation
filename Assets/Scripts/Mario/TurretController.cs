@@ -1,66 +1,56 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerDetector))]
 public class TurretController : MonoBehaviour
 {
-    [Header("Referencias")]
-    public Transform target;        // Arrastra aquí al Player
-    public Transform firePoint;     // El punto desde donde dispara
+    [SerializeField] private GameObject projectilePrefab; // Prefab del proyectil que se disparará
+    [SerializeField] private Transform muzzle; // Punto de disparo del proyectil
+    [SerializeField, Min(1f)] private float projectileMass = 30f; // Masa del proyectil, usada para calcular la velocidad de lanzamiento
+    [SerializeField, Min(0.1f)] private float shootForce = 30f; // Fuerza de disparo, usada para calcular la velocidad de lanzamiento
+    [SerializeField, Min(0.1f)] private float fireRate = 1f; // Frecuencia de disparo en segundos
+    [SerializeField] private float shootAngle = 45f; // Ángulo de disparo
+    [SerializeField] private float rotationSpeed = 5f; // Velocidad de rotación
 
-    [Header("Apuntado")]
-    public float rotationSpeed = 3f;
+    [SerializeField] private TrajectoryLine trajectoryLine;
+    [SerializeField] private PlayerDetector detector;
 
-    [Header("Detección")]
-    public float detectionRange = 20f;
-    public LayerMask obstacleLayer; // Layers que bloquean la línea de visión (paredes, etc.)
-
-    [Header("Disparo")]
-    public float fireRate = 1.5f;   // Segundos entre disparos
-    public GameObject projectilePrefab;
-
-    private bool hasLineOfSight;
     private float fireTimer;
 
+    private void Awake()
+    {
+        if (detector == null)
+            detector = GetComponent<PlayerDetector>();
+    }
+
     void Update()
+{
+    if (!detector.HasTarget) return;
+
+    if (detector.HasLineOfSight)
     {
-        if (target == null) return;
+        AimAtTarget(detector.Target);
 
-        CheckLineOfSight();
+        Vector3 velocity = GetLaunchVelocity();
 
-        if (hasLineOfSight)
+        if (trajectoryLine != null)
         {
-            AimAtTarget();
-            HandleFiring();
+            float distance = Vector3.Distance(muzzle.position, detector.Target.position);
+            Vector3 horizontalVelocity = new Vector3(velocity.x, 0f, velocity.z);
+            float estimatedTime = horizontalVelocity.magnitude > 0.01f
+                ? distance / horizontalVelocity.magnitude
+                : 1f;
+
+            trajectoryLine.ShowTrajectoryLine(muzzle.position, velocity, estimatedTime * 1.3f);
         }
+
+        HandleFiring();
     }
+}
 
-    void CheckLineOfSight()
-    {
-        Vector3 directionToTarget = target.position - transform.position;
-        float distanceToTarget = directionToTarget.magnitude;
-
-        if (distanceToTarget > detectionRange)
-        {
-            hasLineOfSight = false;
-            return;
-        }
-
-        // Raycast desde la torreta hacia el jugador
-        if (Physics.Raycast(transform.position, directionToTarget.normalized, out RaycastHit hit, detectionRange, obstacleLayer))
-        {
-            // Si el raycast pega contra algo que NO es el jugador, hay un obstáculo bloqueando
-            hasLineOfSight = false;
-        }
-        else
-        {
-            hasLineOfSight = true;
-        }
-    }
-
-    void AimAtTarget()
+    void AimAtTarget(Transform target)
     {
         Vector3 direction = target.position - transform.position;
-        direction.y = 0f; // Si quieres que solo rote en el eje horizontal, no que se incline
-
+        direction.y = 0f;
         if (direction.sqrMagnitude < 0.01f) return;
 
         Quaternion lookRotation = Quaternion.LookRotation(direction);
@@ -80,15 +70,21 @@ public class TurretController : MonoBehaviour
 
     void Fire()
     {
-        if (projectilePrefab == null || firePoint == null) return;
+        if (projectilePrefab == null || muzzle == null) return;
+        Debug.Log("Fire() llamado, velocidad: " + GetLaunchVelocity());
 
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject projectileObj = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
+        Projectile projectile = projectileObj.GetComponent<Projectile>();
+        projectile.Launch(GetLaunchVelocity());
     }
 
-    // Visualiza el rango de detección en el editor
-    void OnDrawGizmosSelected()
+    // Combina la dirección del cañón con el ángulo de disparo y calcula
+    // la velocidad inicial a partir de shootForce/projectileMass.
+    // Esto es lo mismo que ve la línea de trayectoria, así que ambas coinciden.
+    Vector3 GetLaunchVelocity()
     {
-        Gizmos.color = hasLineOfSight ? Color.red : Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Vector3 flatForward = Vector3.ProjectOnPlane(muzzle.forward, Vector3.up).normalized;
+        Vector3 pitchedDirection = Quaternion.AngleAxis(shootAngle, transform.right) * flatForward;
+        return pitchedDirection.normalized * (shootForce / projectileMass);
     }
 }

@@ -1,17 +1,20 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-    public float speed = 15f;
     public float lifeTime = 5f;
 
     private Rigidbody rb;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.linearVelocity = transform.forward * speed;
+    }
 
+    public void Launch(Vector3 velocity)
+    {
+        rb.linearVelocity = velocity;
         Destroy(gameObject, lifeTime);
     }
 
@@ -20,7 +23,6 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Jugador golpeado");
-            // Aquí después conectamos daño/game over
         }
 
         Destroy(gameObject);
