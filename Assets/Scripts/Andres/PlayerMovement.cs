@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gameManager;
     [SerializeField] private PlayerCollisions playerCollisions;
     [SerializeField] private bool canPlayerMove = true;
+    [SerializeField] private bool isInWinTrigger = false;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerCollisions.TouchObstacle += TouchObstacle;
             playerCollisions.UnTouchObstacle += UnTouchObstacle;
+            playerCollisions.StateTriggerWin += StateTriggerWin;
         }
     }
 
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerCollisions.TouchObstacle -= TouchObstacle;
             playerCollisions.UnTouchObstacle -= UnTouchObstacle;
+            playerCollisions.StateTriggerWin -= StateTriggerWin;
         }
     }
 
@@ -162,6 +165,11 @@ public class PlayerMovement : MonoBehaviour
     private void ResumeMovement()
     {
         canPlayerMove = true;
+    }
+
+    private void StateTriggerWin(bool value)
+    {
+        isInWinTrigger = value;
     }
 
     private void OnDrawGizmos()

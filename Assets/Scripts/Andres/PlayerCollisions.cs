@@ -6,6 +6,7 @@ public class PlayerCollisions : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public event Action TouchObstacle;
     public event Action UnTouchObstacle;
+    public event Action<bool> StateTriggerWin;
     private GameManager gameManager;
 
     private void OnEnable()
@@ -23,14 +24,6 @@ public class PlayerCollisions : MonoBehaviour
         
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            TouchObstacle?.Invoke();
-        }
-    }
-
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
@@ -39,16 +32,37 @@ public class PlayerCollisions : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("WinTrigger"))
+        {
+            StateTriggerWin?.Invoke(true);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            TouchObstacle?.Invoke();
+        }
+
         if (collision.gameObject.CompareTag("Water"))
         {
             if (gameManager != null)
             {
                 gameManager.TriggerGameOver();
             }
-
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("WinTrigger"))
+        {
+            StateTriggerWin?.Invoke(false);
+        }
+    }
 }
+
+
