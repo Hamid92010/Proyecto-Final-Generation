@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float fallForce = 0f;
     [SerializeField] private int numberOfJumpsRemaining = 2;
-    [SerializeField] private bool timerStarted = false;
 
     private Rigidbody rb;
     private Vector2 moveInput;
@@ -76,9 +75,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveInput = m_moveAction.ReadValue<Vector2>();
-        if (moveInput.x != 0 && !timerStarted )
+        if (moveInput.x != 0 && !gameManager.isGameStarted)
         {
-            timerStarted = true;
             gameManager.StartGame();
 
         }
