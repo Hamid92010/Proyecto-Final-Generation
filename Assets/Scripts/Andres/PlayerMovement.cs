@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionAsset InputActions;
     private InputAction m_moveAction;
     private InputAction m_jumpAction;
+    private InputAction i_interactAction;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 6f;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         m_moveAction = InputActions.FindAction("Move");
         m_jumpAction = InputActions.FindAction("Jump");
+        i_interactAction = InputActions.FindAction("Interact");
     }
 
     private void OnEnable()
@@ -91,24 +93,37 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveInput = m_moveAction.ReadValue<Vector2>();
+
+        // Iniciar el juego al detectar movimiento
         if (moveInput.x != 0 && !gameManager.isGameStarted)
         {
             gameManager.StartGame();
 
         }
+
+        // Comprobar si el jugador está en el suelo
         isGrounded = Physics.CheckBox( groundCheck.position + Vector3.down * groundCheckDistance, groundCheckSize / 2f, Quaternion.identity, groundLayer);
-        if(isGrounded && !wasGrounded)
+        
+
+        if (isGrounded) 
         {
-            numberOfJumpsRemaining = 2;
+            //Si el jugador esta en el trigger de victoria, y se encuentra en el suelo y presiona la tecla de interactuar, se termina el juego
+            if (isInWinTrigger)
+            {
+                if (i_interactAction.WasPressedThisFrame())
+                {
+                    gameManager.FinishGame();
+                }
+            }
         }
 
-        wasGrounded = isGrounded;
+        //Mecanica de saltos
 
+        RestoreJumps();
         if (m_jumpAction.WasPressedThisFrame() && (isGrounded || numberOfJumpsRemaining > 0))
         {           
             Jump();           
         }
-
 
     }
 
@@ -116,11 +131,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movement = new Vector3( moveInput.x, 0f, 0f);
 
+        // Mover al jugador solo si no está tocando un obstáculo o si está en el suelo
         if (!isTouchingObstacle || isGrounded)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
 
+        // Aplicar fuerza adicional de caída si el jugador no está en el suelo
         if (!isGrounded)
         {
             rb.AddForce(Vector3.down * fallForce, ForceMode.Acceleration);
@@ -145,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TouchObstacle()
     {
+        // Si el jugador no está en el suelo y está tocando un obstáculo y se detiene su movimiento horizontal
         if (!isGrounded)
         {
             isTouchingObstacle = true;
@@ -170,6 +188,17 @@ public class PlayerMovement : MonoBehaviour
     private void StateTriggerWin(bool value)
     {
         isInWinTrigger = value;
+    }
+
+    private void RestoreJumps()
+    {
+        // Restaurar los saltos cuando el jugador aterriza en el suelo
+        if (isGrounded && !wasGrounded)
+        {
+            numberOfJumpsRemaining = 2;
+        }
+
+        wasGrounded = isGrounded;
     }
 
     private void OnDrawGizmos()
