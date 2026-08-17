@@ -527,8 +527,9 @@ GameObject:
   - component: {fileID: 190553105}
   - component: {fileID: 190553104}
   - component: {fileID: 190553103}
+  - component: {fileID: 190553107}
   m_Layer: 3
-  m_Name: Obstacle (8)
+  m_Name: Rotate
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,6 +628,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 763344153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190553107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190553102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef87f2601a75abc4aa67503752b44ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingObstacle
+  canObstacleMove: 1
+  gameManager: {fileID: 0}
+  obstacleSpeedRotation: 30
 --- !u!1 &215622165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,8 +1659,9 @@ GameObject:
   - component: {fileID: 813412713}
   - component: {fileID: 813412712}
   - component: {fileID: 813412711}
+  - component: {fileID: 813412715}
   m_Layer: 3
-  m_Name: Obstacle (7)
+  m_Name: Hiding
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1743,6 +1760,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 763344153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813412715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813412710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96726178ebfe29c4199d4b00297fbdc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HidingObstacle
+  visibleTime: 2
+  hiddenTime: 1
+  obstacleSpeedMovement: 2
+  hiddenZPosition: 6
+  timeManager: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,8 +3174,10 @@ GameObject:
   - component: {fileID: 1922988836}
   - component: {fileID: 1922988835}
   - component: {fileID: 1922988834}
+  - component: {fileID: 1922988838}
+  - component: {fileID: 1922988839}
   m_Layer: 3
-  m_Name: Obstacle (4)
+  m_Name: UpDown
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3240,6 +3276,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 763344153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922988838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922988833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201e5a42f0892b743860832e11e34f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpDownObstacle
+  stayTime: 1
+  obstacleSpeedMovement: 3
+  yLimit: 3
+  timeManager: {fileID: 0}
+--- !u!114 &1922988839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922988833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef87f2601a75abc4aa67503752b44ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingObstacle
+  canObstacleMove: 1
+  gameManager: {fileID: 0}
+  obstacleSpeedRotation: 30
 --- !u!1 &2131528504
 GameObject:
   m_ObjectHideFlags: 0
