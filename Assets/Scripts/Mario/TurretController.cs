@@ -5,10 +5,8 @@ public class TurretController : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab; // Prefab del proyectil que se disparará
     [SerializeField] private Transform muzzle; // Punto de disparo del proyectil
-    [SerializeField, Min(1f)] private float projectileMass = 30f; // Masa del proyectil, usada para calcular la velocidad de lanzamiento
-    [SerializeField, Min(0.1f)] private float shootForce = 30f; // Fuerza de disparo, usada para calcular la velocidad de lanzamiento
+    [SerializeField, Min(0.1f)] private float shootSpeed = 40f; // Velocidad del disparo directo
     [SerializeField, Min(0.1f)] private float fireRate = 1f; // Frecuencia de disparo en segundos
-    [SerializeField] private float shootAngle = 45f; // Ángulo de disparo
     [SerializeField] private float rotationSpeed = 5f; // Velocidad de rotación
 
     [SerializeField] private TrajectoryLine trajectoryLine;
@@ -23,34 +21,25 @@ public class TurretController : MonoBehaviour
     }
 
     void Update()
-{
-    if (!detector.HasTarget) return;
-
-    if (detector.HasLineOfSight)
     {
-        AimAtTarget(detector.Target);
+        if (!detector.HasTarget) return;
 
-        Vector3 velocity = GetLaunchVelocity();
-
-        if (trajectoryLine != null)
+        if (detector.HasLineOfSight)
         {
-            float distance = Vector3.Distance(muzzle.position, detector.Target.position);
-            Vector3 horizontalVelocity = new Vector3(velocity.x, 0f, velocity.z);
-            float estimatedTime = horizontalVelocity.magnitude > 0.01f
-                ? distance / horizontalVelocity.magnitude
-                : 1f;
+            AimAtTarget(detector.Target);
 
-            trajectoryLine.ShowTrajectoryLine(muzzle.position, velocity, estimatedTime * 1.3f);
+            if (trajectoryLine != null)
+                trajectoryLine.ShowLineToTarget(muzzle.position, detector.Target.position);
+
+            HandleFiring();
         }
-
-        HandleFiring();
     }
-}
 
+    // Apunta el cañón directamente al jugador (yaw + pitch), sin importar
+    // la diferencia de altura, para que siga apuntando aunque suba escalones o plataformas.
     void AimAtTarget(Transform target)
     {
         Vector3 direction = target.position - transform.position;
-        direction.y = 0f;
         if (direction.sqrMagnitude < 0.01f) return;
 
         Quaternion lookRotation = Quaternion.LookRotation(direction);
@@ -70,21 +59,11 @@ public class TurretController : MonoBehaviour
 
     void Fire()
     {
-        if (projectilePrefab == null || muzzle == null) return;
-        Debug.Log("Fire() llamado, velocidad: " + GetLaunchVelocity());
+        if (projectilePrefab == null || muzzle == null || !detector.HasTarget) return;
 
-        GameObject projectileObj = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
+        Vector3 direction = (detector.Target.position - muzzle.position).normalized;
+        GameObject projectileObj = Instantiate(projectilePrefab, muzzle.position, Quaternion.LookRotation(direction));
         Projectile projectile = projectileObj.GetComponent<Projectile>();
-        projectile.Launch(GetLaunchVelocity());
-    }
-
-    // Combina la dirección del cañón con el ángulo de disparo y calcula
-    // la velocidad inicial a partir de shootForce/projectileMass.
-    // Esto es lo mismo que ve la línea de trayectoria, así que ambas coinciden.
-    Vector3 GetLaunchVelocity()
-    {
-        Vector3 flatForward = Vector3.ProjectOnPlane(muzzle.forward, Vector3.up).normalized;
-        Vector3 pitchedDirection = Quaternion.AngleAxis(shootAngle, transform.right) * flatForward;
-        return pitchedDirection.normalized * (shootForce / projectileMass);
+        projectile.Launch(direction * shootSpeed);
     }
 }

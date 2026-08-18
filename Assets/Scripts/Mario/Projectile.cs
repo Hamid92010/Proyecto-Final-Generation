@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
 
     public void Launch(Vector3 velocity)
     {
+        rb.useGravity = false;
         rb.linearVelocity = velocity;
         Destroy(gameObject, lifeTime);
     }
