@@ -2,10 +2,19 @@ using UnityEngine;
 
 public class RotatingObstacle : MonoBehaviour
 {
+    public enum RotationAxis
+    {
+        X,
+        Y,
+        Z
+    }
+    
     public bool canObstacleMove = true;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private float obstacleSpeedRotation = 30f;
+    [SerializeField] private RotationAxis rotationAxis = RotationAxis.Z;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     private void OnEnable()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -28,8 +37,30 @@ public class RotatingObstacle : MonoBehaviour
     {
         if (canObstacleMove && gameManager.isGameStarted)
         {
-            transform.Rotate(0f, 0f, -obstacleSpeedRotation * Time.deltaTime);
+            RotateObstacle();
         }
+    }
+
+    private void RotateObstacle()
+    {
+        Vector3 rotation = Vector3.zero;
+
+        switch (rotationAxis)
+        {
+            case RotationAxis.X:
+                rotation.x = obstacleSpeedRotation;
+                break;
+
+            case RotationAxis.Y:
+                rotation.y = obstacleSpeedRotation;
+                break;
+
+            case RotationAxis.Z:
+                rotation.z = obstacleSpeedRotation;
+                break;
+        }
+
+        transform.Rotate(rotation * Time.deltaTime);
     }
 
     private void OnDisable()

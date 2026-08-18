@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
-
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -201,6 +201,14 @@ public class PlayerMovement : MonoBehaviour
         wasGrounded = isGrounded;
     }
 
+    public IEnumerator KnockbackCooldown(float duration)
+    {
+        StopMovement();
+
+        yield return new WaitForSeconds(duration);
+
+        ResumeMovement();
+    }
     private void OnDrawGizmos()
     {
         if (groundCheck == null)
