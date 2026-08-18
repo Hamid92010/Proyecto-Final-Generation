@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObstacleCollision : MonoBehaviour
+public class ObstacleKnockback : MonoBehaviour
 {
     [SerializeField] private float knockbackForce = 5f;
     [SerializeField] private float knockbackDuration = 0.2f;
@@ -11,16 +11,37 @@ public class ObstacleCollision : MonoBehaviour
         {
             Rigidbody playerRb = player.GetComponent<Rigidbody>();
 
-            Vector3 knockbackDirection = collision.transform.position - transform.position;
-            knockbackDirection.y = 0f;
+            // Obtener la superficie que golpeó el jugador
+            Vector3 collisionNormal = collision.contacts[0].normal;
+
+            Debug.Log($"Normal: {collisionNormal}");
+            // Solo queremos el componente horizontal
+            Vector3 knockbackDirection = new Vector3(-collisionNormal.x, 0f, 0f);
+
+            Debug.Log($"Knockback Direction: {knockbackDirection}");
+            // Normalizar por seguridad
             knockbackDirection.Normalize();
 
-            playerRb.AddForce(
-                knockbackDirection * knockbackForce,
-                ForceMode.Impulse
+            // Mantener la velocidad vertical actual
+            float verticalVelocity = playerRb.linearVelocity.y;
+
+            // Si el jugador está subiendo, cancelar la subida
+            if (verticalVelocity > 0f)
+            {
+                verticalVelocity = 0f;
+            }
+
+            // Aplicar el knockback horizontal
+            playerRb.linearVelocity = new Vector3(
+                knockbackDirection.x * knockbackForce,
+                verticalVelocity,
+                playerRb.linearVelocity.z
             );
 
-            player.StartCoroutine(player.KnockbackCooldown(knockbackDuration));
+            // Bloquear temporalmente el movimiento del jugador
+            player.StartCoroutine(
+                player.KnockbackCooldown(knockbackDuration)
+            );
         }
     }
 }
