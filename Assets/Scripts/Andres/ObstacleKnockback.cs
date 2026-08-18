@@ -14,11 +14,9 @@ public class ObstacleKnockback : MonoBehaviour
             // Obtener la superficie que golpeó el jugador
             Vector3 collisionNormal = collision.contacts[0].normal;
 
-            Debug.Log($"Normal: {collisionNormal}");
             // Solo queremos el componente horizontal
             Vector3 knockbackDirection = new Vector3(-collisionNormal.x, 0f, 0f);
 
-            Debug.Log($"Knockback Direction: {knockbackDirection}");
             // Normalizar por seguridad
             knockbackDirection.Normalize();
 
