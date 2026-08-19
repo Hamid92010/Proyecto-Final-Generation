@@ -156,6 +156,6 @@ MonoBehaviour:
   playerTag: Player
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   blinkCount: 2
   blinkInterval: 0.15

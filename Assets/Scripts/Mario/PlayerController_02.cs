@@ -23,6 +23,7 @@ public class PlayerController_02 : MonoBehaviour
     private bool isGrounded;
     private Vector3 moveInput;
     private bool jumpPressed;
+    private bool isStunned;
 
 
 
@@ -75,8 +76,11 @@ public class PlayerController_02 : MonoBehaviour
     }
 
     void FixedUpdate(){
-        Vector3 movement = moveInput * moveSpeed;
-        rb.linearVelocity = new Vector3(movement.x, rb.linearVelocity.y, movement.z);
+        if (!isStunned)
+        {
+            Vector3 movement = moveInput * moveSpeed;
+            rb.linearVelocity = new Vector3(movement.x, rb.linearVelocity.y, movement.z);
+        }
 
         if (isGrounded && rb.linearVelocity.y < 0)
         {
@@ -88,7 +92,22 @@ public class PlayerController_02 : MonoBehaviour
         }
     }
 
-    
+    // Deja al jugador sin control de movimiento por un momento (ej. al ser golpeado
+    // por una roca), para que el golpe/pérdida de momento se note en vez de
+    // corregirse en el siguiente FixedUpdate.
+    public void Stun(float duration)
+    {
+        StopCoroutine(nameof(StunRoutine));
+        StartCoroutine(StunRoutine(duration));
+    }
+
+    private IEnumerator StunRoutine(float duration)
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+    }
+
     void interact(){
 
         Debug.Log("Interactuando...");

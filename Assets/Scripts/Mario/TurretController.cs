@@ -63,6 +63,13 @@ public class TurretController : MonoBehaviour
 
         Vector3 direction = (detector.Target.position - muzzle.position).normalized;
         GameObject projectileObj = Instantiate(projectilePrefab, muzzle.position, Quaternion.LookRotation(direction));
+
+        // Evita que el proyectil choque contra el propio collider de la torreta al aparecer.
+        Collider projectileCollider = projectileObj.GetComponent<Collider>();
+        Collider turretCollider = GetComponent<Collider>();
+        if (projectileCollider != null && turretCollider != null)
+            Physics.IgnoreCollision(projectileCollider, turretCollider);
+
         Projectile projectile = projectileObj.GetComponent<Projectile>();
         projectile.Launch(direction * shootSpeed);
     }

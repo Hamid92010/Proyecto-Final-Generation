@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7845958664206932606}
   - component: {fileID: 6952102621939301972}
+  - component: {fileID: 6617789212954832718}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2820153397347107345}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: 5.9156, y: 1.1326, z: 0}
+  m_LocalScale: {x: 31.831999, y: 23.923286, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,3 +92,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6617789212954832718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820153397347107345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a501d450ef2f841836fa329d86f82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RockWarningIndicator
+  offset: {x: 0, y: -50, z: -50}
+  blinkInterval: 0.2
