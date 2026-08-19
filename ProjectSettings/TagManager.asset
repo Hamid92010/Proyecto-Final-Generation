@@ -8,6 +8,7 @@ TagManager:
   - Water
   - WinTrigger
   - Ground
+  - Ball
   layers:
   - Default
   - TransparentFX
