@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
-
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -87,10 +87,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(!canPlayerMove)
-        {
-            return;
-        }
 
         moveInput = m_moveAction.ReadValue<Vector2>();
 
@@ -132,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3( moveInput.x, 0f, 0f);
 
         // Mover al jugador solo si no está tocando un obstáculo o si está en el suelo
-        if (!isTouchingObstacle || isGrounded)
+        if (canPlayerMove && !isTouchingObstacle || isGrounded)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
@@ -201,6 +197,30 @@ public class PlayerMovement : MonoBehaviour
         wasGrounded = isGrounded;
     }
 
+    public IEnumerator KnockbackCooldown(float duration)
+    {
+        StopMovement();
+
+        float elapsedTime = 0f;
+        float initialHorizontalVelocity = rb.linearVelocity.x;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float t = elapsedTime / duration;
+
+            float currentHorizontalVelocity = Mathf.Lerp(initialHorizontalVelocity, 0f, t);
+
+            rb.linearVelocity = new Vector3( currentHorizontalVelocity, rb.linearVelocity.y, rb.linearVelocity.z);
+
+            yield return null;
+        }
+
+        //Quitar fuerza horizontal del knockback, pero mantener la velocidad vertical
+        rb.linearVelocity = new Vector3( 0f, rb.linearVelocity.y, rb.linearVelocity.z);
+        ResumeMovement();
+    }
     private void OnDrawGizmos()
     {
         if (groundCheck == null)
