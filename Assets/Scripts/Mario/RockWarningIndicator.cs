@@ -41,12 +41,17 @@ public class RockWarningIndicator : MonoBehaviour
 
     private Vector3 GetGroundPosition(Vector3 fromPosition)
     {
-        Vector3 probePosition = fromPosition + new Vector3(offset.x, 0f, offset.z);
+
+
+        return fromPosition + offset;
+
+        /* Vector3 probePosition = fromPosition + new Vector3(offset.x, 0f, offset.z);
 
         if (Physics.Raycast(probePosition + Vector3.up * 5f, Vector3.down, out RaycastHit hit, Mathf.Infinity, groundLayer))
             return hit.point + Vector3.up * offset.y;
 
-        return probePosition;
+        return probePosition;*/
+
     }
 
     private void SetRenderersVisible(bool visible)
