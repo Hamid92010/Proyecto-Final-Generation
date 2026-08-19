@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private Vector2 moveInput;
+    private Vector3 velocityBeforePause;
     [SerializeField] private bool isGrounded = true;
     [SerializeField] private bool wasGrounded = false;
     [SerializeField] private bool isTouchingObstacle = false;
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerCollisions playerCollisions;
     [SerializeField] private bool canPlayerMove = true;
     [SerializeField] private bool isInWinTrigger = false;
-
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -50,8 +51,8 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.OnGameOver += StopMovement;
             gameManager.OnGameFinished += StopMovement;
-            gameManager.OnGamePaused += StopMovement;
-            gameManager.OnGameResumed += ResumeMovement;
+            gameManager.OnGamePaused += PausePlayer;
+            gameManager.OnGameResumed += ResumePlayer;
         }
 
         if(playerCollisions != null)
@@ -73,8 +74,8 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.OnGameOver -= StopMovement;
             gameManager.OnGameFinished -= StopMovement;
-            gameManager.OnGamePaused -= StopMovement;
-            gameManager.OnGameResumed -= ResumeMovement;
+            gameManager.OnGamePaused -= PausePlayer;
+            gameManager.OnGameResumed -= ResumePlayer;
         }
 
         if (playerCollisions != null)
@@ -128,18 +129,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3( moveInput.x, 0f, 0f);
 
         // Mover al jugador solo si no está tocando un obstáculo o si está en el suelo
-        if (canPlayerMove && !isTouchingObstacle || isGrounded)
+        if (canPlayerMove && (!isTouchingObstacle || isGrounded))
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
 
         // Aplicar fuerza adicional de caída si el jugador no está en el suelo
-        if (!isGrounded)
+        if (!isGrounded && canPlayerMove)
         {
             rb.AddForce(Vector3.down * fallForce, ForceMode.Acceleration);
         }
         // Rotación
-        if (movement != Vector3.zero)
+        if (movement != Vector3.zero && canPlayerMove)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
 
@@ -179,6 +180,24 @@ public class PlayerMovement : MonoBehaviour
     private void ResumeMovement()
     {
         canPlayerMove = true;
+    }
+
+    private void PausePlayer()
+    {
+        StopMovement();
+
+        velocityBeforePause = rb.linearVelocity;
+
+        rb.linearVelocity = Vector3.zero;
+        rb.useGravity = false;
+    }
+
+    private void ResumePlayer()
+    {
+        ResumeMovement();
+
+        rb.useGravity = true;
+        rb.linearVelocity = velocityBeforePause;
     }
 
     private void StateTriggerWin(bool value)

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,8 +27,26 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isGameStarted)
+        {
+            return;
+        }
+
+
+        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
+        { 
+            if(isGamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+
     }
+
 
     public void StartGame()
     {

@@ -11,7 +11,7 @@ public class ObstacleKnockback : MonoBehaviour
         {
             Rigidbody playerRb = player.GetComponent<Rigidbody>();
 
-            // Obtener la superficie que golpeó el jugador
+            // Obtener la superficie que golpeï¿½ el jugador
             Vector3 collisionNormal = collision.contacts[0].normal;
 
             // Solo queremos el componente horizontal
@@ -23,7 +23,7 @@ public class ObstacleKnockback : MonoBehaviour
             // Mantener la velocidad vertical actual
             float verticalVelocity = playerRb.linearVelocity.y;
 
-            // Si el jugador está subiendo, cancelar la subida
+            // Si el jugador estï¿½ subiendo, cancelar la subida
             if (verticalVelocity > 0f)
             {
                 verticalVelocity = 0f;
@@ -36,10 +36,21 @@ public class ObstacleKnockback : MonoBehaviour
                 playerRb.linearVelocity.z
             );
 
+            // Destruir el objeto si es una bola (por ejemplo, una roca)
+             if(this.tag == "Ball")
+            {
+                Destroy(gameObject);
+            }
+
             // Bloquear temporalmente el movimiento del jugador
             player.StartCoroutine(
                 player.KnockbackCooldown(knockbackDuration)
             );
+
+           
+
         }
     }
+
+
 }

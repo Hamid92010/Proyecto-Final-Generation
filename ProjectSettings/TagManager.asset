@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Water
   - WinTrigger
+  - Ground
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
+  - Techo
   - 
   - 
   - 
