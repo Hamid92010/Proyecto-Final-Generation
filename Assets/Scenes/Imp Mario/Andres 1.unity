@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 215622171}
   - component: {fileID: 215622169}
   - component: {fileID: 215622170}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 763344153}
   m_Layer: 6
   m_Name: Obstacles
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2099,7 +2099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1121407001}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2904,7 +2904,7 @@ GameObject:
   - component: {fileID: 1839416726}
   - component: {fileID: 1839416729}
   - component: {fileID: 1839416728}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3098,7 +3098,7 @@ GameObject:
   - component: {fileID: 1890586049}
   - component: {fileID: 1890586051}
   - component: {fileID: 1890586050}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3494,7 +3494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079360181906597391, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3683262049951620193, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: m_Name
@@ -3502,7 +3502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3683262049951620193, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5762599634872540780, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: knockbackForce
