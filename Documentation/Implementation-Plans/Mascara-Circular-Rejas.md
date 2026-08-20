@@ -31,6 +31,7 @@ vista desde la cámara. Confundir ambas cosas es el fallo del que cuelgan casi t
 | `BG_Wood` | 4.25 | `M_Wood` (tiling 0.23) | Madera de fondo, detrás del jugador |
 | `Player` | 3.44 (Z congelada) | — | Bravard |
 | `FG_MetalGrid` | −0.55 | `M_MetalGrid` (tiling 0.32, transparencia 0.66) | Rejas, delante del jugador |
+| `FG_Spotlight` | −1 | `M_Spotlight` | Velo oscuro con foco difuminado, delante de todo |
 | `Main Camera` | −6 | — | Perspectiva, FOV 60 |
 
 Los dos planos son `SpriteRenderer` que comparten **el mismo Shader Graph**, `SG_BG_Texture`
@@ -133,24 +134,31 @@ el quad es lo que hace scrollear la textura.
 
 ---
 
-## 6. Pasos que quedan en el editor
+## 6. Montaje en la escena
 
-1. **`FG_MetalGrid`** → añadir el componente `MathematicalMask`:
-   - *Masked Renderer*: se autorrellena con su propio `SpriteRenderer`.
-   - *Player Transform*: `Player`.
-   - *View Camera*: vacío usa `Camera.main` (la `Main Camera` ya tiene el tag correcto).
-   - *Compensate Parallax*: activado.
-   - *Mask Radius*: −1 para respetar el material; o un valor para tantear en Play.
-2. **`FG_MetalGrid` → SpriteRenderer → Mask Interaction: `None`.** Ahora mismo está en
-   *Visible Outside Mask*, esperando un SpriteMask que ya no se usa.
-3. **`FG_PlayerMask`**: desactivarlo o borrarlo, junto con `Mask_FollowPlayer`. Es el sistema
-   antiguo; ver sección 7.
-4. **Verificar la textura de los dos materiales.** En el Inspector, la ranura *Image Texture*
-   debe mostrar `Wood_Texture` y `MetalGrid_Texture`. Si aparece vacía, arrastrarlas otra vez:
-   el arreglo del punto 6 del diagnóstico se hizo sobre el archivo y Unity puede haber
-   reimportado con la versión que tenía en memoria. **Un plano en blanco es este síntoma.**
-5. **`M_MetalGrid` → Mask Radius**: 2 por defecto. Ajustar en Play hasta que el círculo
-   enmarque a Bravard con holgura.
+Todo esto ya está aplicado en `PruebasAnimacion_Manuel.unity`:
+
+| Paso | Estado |
+|---|---|
+| `FG_MetalGrid` lleva el componente `MathematicalMask` | Aplicado |
+| — *Masked Renderer* → su propio `SpriteRenderer` | Aplicado |
+| — *Player Transform* → la instancia de `Player` | Aplicado |
+| — *View Camera* → `Main Camera` | Aplicado |
+| — *Compensate Parallax* activado, *Mask Radius* en −1 (manda el material) | Aplicado |
+| `FG_MetalGrid` → SpriteRenderer → *Mask Interaction*: `None` | Aplicado |
+| `FG_PlayerMask` eliminado de la escena | Aplicado |
+| Textura enganchada como `_Image_Texture` en los dos materiales | Aplicado |
+
+**Nota sobre la referencia al jugador.** `Player` es una instancia del prefab
+`Assets/Prefabs/Manuel/Player.prefab`, así que en el archivo de escena su transform aparece
+como referencia *stripped* (`&215622166 stripped`). Es lo normal y las referencias siguen
+resolviendo: apuntan ahí `CameraFollow`, los dos `BG_FollowPlayer` y el `MathematicalMask`.
+Si algún día se cambia el prefab por otro, hay que reasignar los cuatro.
+
+Lo único que queda es **ajustar a ojo el radio**: `M_MetalGrid` → *Mask Radius*, que arranca
+en 2. Se toca en Play hasta que el círculo enmarque a Bravard con holgura. Recuerda que se
+mide sobre el plano de las rejas (sección 4), así que se ve más grande de lo que dice el
+número.
 
 ---
 
@@ -183,3 +191,65 @@ número, no una escala de transform.
 El sentido es el mismo que el de `Step` — 0 dentro, 1 fuera — así que el resto del grafo no se
 toca. Un degradado de 0.3–0.5 unidades basta para quitar el aliasing sin que el agujero pierda
 forma.
+
+---
+
+## 9. El velo de foco (`FG_Spotlight`)
+
+Segunda máscara, con el mismo motor pero **borde difuminado**: un sprite oscuro y
+semitransparente que cubre la pantalla y se abre en un círculo suave alrededor de Bravard.
+Es la idea de la sección 8, pero en un asset propio para no tocar el shader de las rejas,
+que ya funciona.
+
+### Shader `Scene/SpotlightMask`
+
+Escrito a mano (`Assets/Art/Shaders/SpotlightMask.shader`) en vez de en Shader Graph. La
+lógica es la misma que la de las rejas salvo el corte:
+
+```
+rejas:  alpha = texturaA · _Transparency · step(_Mask_Radius, distancia)
+velo:   alpha = _Overlay_Color.a · smoothstep(_Mask_Radius, _Mask_Radius + _Mask_Softness, distancia)
+```
+
+`smoothstep(a, b, x)` vale 0 por debajo de `a`, 1 por encima de `b` y hace una rampa suave
+entre medias. Traducido: `_Mask_Radius` es el radio del círculo **limpio del todo**, y
+`_Mask_Softness` la anchura de la corona en la que el velo va apareciendo.
+
+| Propiedad | Por defecto | Qué hace |
+|---|---|---|
+| `_Overlay_Color` | (0, 0, 0, 0.8) | Color del velo. **El alfa manda la oscuridad.** |
+| `_Image_Texture` | blanco | Opcional. Se multiplica por el color, para un velo con textura en vez de plano. |
+| `_Mask_Radius` | 1 | Radio del círculo completamente limpio. |
+| `_Mask_Softness` | 1.5 | Anchura del degradado. A 0 el borde vuelve a ser duro. |
+| `_Player_Position` | — | Lo escribe `MathematicalMask`. No se toca a mano. |
+
+El shader reutiliza **los mismos nombres de propiedad** que el grafo de las rejas
+(`_Player_Position`, `_Mask_Radius`), así que el componente `MathematicalMask` funciona sobre
+él sin cambiar ni una línea de código.
+
+Notas de implementación: `Blend SrcAlpha OneMinusSrcAlpha` con `ZWrite Off` — es un velo, no
+geometría. Y `FallBack Off` a propósito: sin eso heredaría los pases de sombra y profundidad
+de `Lit` y el velo acabaría proyectando sombra sobre la escena.
+
+### Montaje
+
+`FG_Spotlight`, objeto raíz de la escena, con:
+
+- **SpriteRenderer** con `M_Spotlight`, capa de sorting `FG` y **order 10** (las rejas van en
+  3, así que el velo queda por delante de todo).
+- **`BG_FollowPlayer`** con `offsetY: 2`, que es justo el offset de `CameraFollow`: así el velo
+  queda siempre centrado en la cámara.
+- **`MathematicalMask`** apuntando a su propio renderer, al jugador y a la `Main Camera`.
+- Transform en Z −1, delante de las rejas (−0.55).
+
+### Cómo se traducen los números a pantalla
+
+El velo está a 5 unidades de la cámara, que con FOV 60 ve ahí una **media altura de 2.89
+unidades**. Con los valores por defecto:
+
+- `_Mask_Radius` 1 → círculo limpio de un **35 %** de la media altura de pantalla.
+- Difuminado completo a 2.5 → **87 %**, o sea que las esquinas quedan oscuras del todo.
+
+Ese es el motivo de que el radio del velo (1) sea numéricamente menor que el de las rejas (2)
+y aun así el foco no sea diminuto: el velo está más cerca de la cámara, así que cada unidad
+cunde más. Si mueves el plano en Z, tendrás que reajustar el radio.
