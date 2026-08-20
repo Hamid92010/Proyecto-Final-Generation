@@ -2242,6 +2242,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1654250687749895845, guid: a92ab3f9ea7ae454b89403f548cb348d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6930559512242727902, guid: a92ab3f9ea7ae454b89403f548cb348d, type: 3}
       propertyPath: m_Name
       value: Curtain
