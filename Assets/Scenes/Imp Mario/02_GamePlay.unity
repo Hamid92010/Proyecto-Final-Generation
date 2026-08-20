@@ -3135,6 +3135,8 @@ MonoBehaviour:
   spawnInterval: 7
   warningDuration: 2
   heightAboveCamera: 45
+  canSpawnRocks: 1
+  spawnTimer: 0
 --- !u!4 &1333772731
 Transform:
   m_ObjectHideFlags: 0
@@ -4071,6 +4073,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   pauseMenuPanel: {fileID: 956674186}
   timerText: {fileID: 1785782910}
+  gameOverSceneName: 03_GameOver
+  victorySceneName: 04_Victory
 --- !u!1 &1945636222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,9 +4313,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2079360181906597391, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3683262049951620193, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: m_Name
       value: Tronco
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683262049951620193, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5762599634872540780, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: knockbackForce

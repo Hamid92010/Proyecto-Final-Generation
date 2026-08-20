@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 
     [field: SerializeField]
     public float timeToFinishGame { get; private set; } = 90f;
+    [field: SerializeField]
+    public float yPosToFinishGame { get; private set; }
+
+    [SerializeField] private Transform platformToWin;
     public bool isGameStarted = false;
     public bool gameOver = false;
     public bool gameFinished = false;
@@ -19,6 +23,15 @@ public class GameManager : MonoBehaviour
     public event Action OnGamePaused;
     public event Action OnGameResumed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        if (platformToWin != null)
+        {
+            yPosToFinishGame = platformToWin.position.y;
+        }
+    }
+
     void Start()
     {
         
