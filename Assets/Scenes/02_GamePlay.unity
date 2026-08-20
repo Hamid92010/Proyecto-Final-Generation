@@ -3910,6 +3910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   pauseMenuPanel: {fileID: 956674186}
   timerText: {fileID: 1785782910}
+  gameOverSceneName: 03_GameOver
+  victorySceneName: 04_Victory
 --- !u!1 &1945636222
 GameObject:
   m_ObjectHideFlags: 0

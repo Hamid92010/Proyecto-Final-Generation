@@ -12,8 +12,11 @@ public class RockSpawner : MonoBehaviour
     [SerializeField, Min(0.1f)] private float warningDuration = 2f; // Tiempo que el aviso sigue al jugador antes de que caiga la roca
     [SerializeField] private float heightAboveCamera = 15f; // Cuánto más arriba de la cámara aparece la roca, para que se vea caer
 
+    [SerializeField] private bool canSpawnRocks = true; // Controla si el spawner puede generar rocas o no
     private Transform player;
-    private float spawnTimer;
+    [SerializeField] private float spawnTimer;
+
+    private GameManager gameManager;
 
     private void Awake()
     {
@@ -23,19 +26,47 @@ public class RockSpawner : MonoBehaviour
 
         if (spawnCamera == null)
             spawnCamera = Camera.main;
+
+        if(gameManager == null)
+            gameManager = FindAnyObjectByType<GameManager>();
     }
 
+    private void OnEnable()
+    {
+        if(gameManager != null)
+        {
+            gameManager.OnGamePaused += SpawnRocksDisabled;
+            gameManager.OnGameFinished += SpawnRocksDisabled;
+            gameManager.OnGameOver += SpawnRocksDisabled;
+            gameManager.OnGameResumed += SpawnRocksEnabled;
+        }
+    }
     private void Update()
     {
         if (player == null || rockPrefab == null) return;
+
+        if(!canSpawnRocks || !gameManager.isGameStarted)
+            return;
 
         spawnTimer += Time.deltaTime;
         if (spawnTimer >= spawnInterval)
         {
             spawnTimer = 0f;
-            StartCoroutine(SpawnRockWithWarning());
+            SpawnWarning();
         }
     }
+
+    private void OnDisable()
+    {
+        if(gameManager != null)
+        {
+            gameManager.OnGamePaused -= SpawnRocksDisabled;
+            gameManager.OnGameFinished -= SpawnRocksDisabled;
+            gameManager.OnGameOver -= SpawnRocksDisabled;
+            gameManager.OnGameResumed -= SpawnRocksEnabled;
+        }
+    }
+
 
     // Busca el punto de suelo justo debajo de una posición, para que el aviso
     // y la roca queden alineados con el suelo real, aunque el jugador esté
@@ -48,7 +79,18 @@ public class RockSpawner : MonoBehaviour
         return fromPosition;
     }
 
-    private IEnumerator SpawnRockWithWarning()
+
+    public void SpawnRocksEnabled()
+    {
+        canSpawnRocks = true;
+    }
+
+    public void SpawnRocksDisabled()
+    {
+        canSpawnRocks = false;
+    }   
+
+    public void SpawnWarning()
     {
         // 1) El aviso aparece sobre el jugador y lo sigue mientras se mueve.
         GameObject warningObj = null;
@@ -59,18 +101,15 @@ public class RockSpawner : MonoBehaviour
             if (warning != null)
                 warning.Follow(player, groundLayer);
         }
+    }
 
-        yield return new WaitForSeconds(warningDuration);
-
-        // 2) La roca cae sobre la posición actual del jugador (en vivo, no la de hace 2 segundos),
-        //    apareciendo arriba de la cámara para que se vea venir antes de llegar.
+    public void SpawnRock()
+    {
+        //apareciendo arriba de la cámara para que se vea venir antes de llegar.
         Vector3 targetPosition = GetGroundPosition(player.position);
         Vector3 spawnPosition = targetPosition;
         spawnPosition.y = (spawnCamera != null ? spawnCamera.transform.position.y : targetPosition.y) + heightAboveCamera;
 
         Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
-
-        if (warningObj != null)
-            Destroy(warningObj);
     }
 }

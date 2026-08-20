@@ -179,6 +179,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResumeMovement()
     {
+        if (gameManager.isGamePaused || gameManager.gameOver || gameManager.gameFinished)
+            return;
         canPlayerMove = true;
     }
 
@@ -218,6 +220,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator KnockbackCooldown(float duration)
     {
+
         StopMovement();
 
         float elapsedTime = 0f;

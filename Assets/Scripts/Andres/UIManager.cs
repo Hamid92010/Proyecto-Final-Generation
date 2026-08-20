@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
 
     [Header("Referencia del Texto/Panel del timer")]
     public TextMeshProUGUI timerText;
+
+    [Header("Referencia de las escenas con su nombre")]
+    [SerializeField] private string gameOverSceneName = "01_MainMenu";
+    [SerializeField] private string victorySceneName = "01_MainMenu";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void OnEnable()
@@ -26,6 +30,8 @@ public class UIManager : MonoBehaviour
         {
             gameManager.OnGamePaused += ShowPauseMenuPanel;
             gameManager.OnGameResumed += HidePauseMenuPanel;
+            gameManager.OnGameOver += LoadGameOverScene;
+            gameManager.OnGameFinished += LoadVictoryScene;
         }
     }
 
@@ -50,6 +56,8 @@ public class UIManager : MonoBehaviour
         {
             gameManager.OnGamePaused -= ShowPauseMenuPanel;
             gameManager.OnGameResumed -= HidePauseMenuPanel;
+            gameManager.OnGameOver -= LoadGameOverScene;
+            gameManager.OnGameFinished -= LoadVictoryScene;
         }
     }
     public void UpdateTimerText(float timeToFinishGame)
@@ -72,6 +80,22 @@ public class UIManager : MonoBehaviour
         if (pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(false);
+        }
+    }
+
+    public void LoadGameOverScene()
+    {
+        if (!string.IsNullOrEmpty(gameOverSceneName))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(gameOverSceneName);
+        }
+    }
+
+    public void LoadVictoryScene()
+    {
+        if (!string.IsNullOrEmpty(victorySceneName))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(victorySceneName);
         }
     }
 }
