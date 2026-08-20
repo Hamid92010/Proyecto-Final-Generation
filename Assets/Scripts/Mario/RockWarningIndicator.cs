@@ -13,20 +13,54 @@ public class RockWarningIndicator : MonoBehaviour
     private Renderer[] renderers;
     private float blinkTimer;
     private bool isVisible = true;
-
+    public float warningDuration = 2f; // Tiempo que el aviso sigue al jugador antes de que caiga la roca
+    private GameManager gameManager;
+    private bool canBlink = true;
+    private RockSpawner rockSpawner;
     private void Awake()
     {
         renderers = GetComponentsInChildren<Renderer>();
+        gameManager = FindAnyObjectByType<GameManager>();
+        rockSpawner = FindAnyObjectByType<RockSpawner>();
     }
 
+    public void OnEnable()
+    {
+        if (gameManager != null)
+        {
+            gameManager.OnGamePaused += DisableBlink;
+            gameManager.OnGameFinished += DisableBlink;
+            gameManager.OnGameOver += DisableBlink;
+            gameManager.OnGameResumed += EnableBlink;
+        }
+    }
     public void Follow(Transform newTarget, LayerMask newGroundLayer)
     {
         target = newTarget;
         groundLayer = newGroundLayer;
     }
 
+    //Andres
+    private void Update()
+    {
+        if (gameManager != null && canBlink)
+        {
+           warningDuration -= Time.deltaTime;
+        }
+
+        if(warningDuration <= 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void LateUpdate()
     {
+        if (!canBlink)
+        {
+            return;
+        }
+
         if (target != null)
             transform.position = GetGroundPosition(target.position);
 
@@ -39,19 +73,54 @@ public class RockWarningIndicator : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        if (gameManager != null)
+        {
+            gameManager.OnGamePaused -= DisableBlink;
+            gameManager.OnGameFinished -= DisableBlink;
+            gameManager.OnGameOver -= DisableBlink;
+            gameManager.OnGameResumed -= EnableBlink;
+        }
+    }
+
+
     private Vector3 GetGroundPosition(Vector3 fromPosition)
     {
-        Vector3 probePosition = fromPosition + new Vector3(offset.x, 0f, offset.z);
+
+
+        return fromPosition + offset;
+
+        /* Vector3 probePosition = fromPosition + new Vector3(offset.x, 0f, offset.z);
 
         if (Physics.Raycast(probePosition + Vector3.up * 5f, Vector3.down, out RaycastHit hit, Mathf.Infinity, groundLayer))
             return hit.point + Vector3.up * offset.y;
 
-        return probePosition;
+        return probePosition;*/
+
     }
 
     private void SetRenderersVisible(bool visible)
     {
         foreach (Renderer r in renderers)
             r.enabled = visible;
+    }
+
+    public void EnableBlink()
+    {
+        canBlink = true;
+    }
+
+    public void DisableBlink()
+    {
+        canBlink = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (rockSpawner != null)
+        {
+            rockSpawner.SpawnRock();
+        }
     }
 }

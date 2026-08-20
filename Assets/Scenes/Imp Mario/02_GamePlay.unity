@@ -492,7 +492,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &192682645
 GameObject:
@@ -1552,7 +1552,6 @@ GameObject:
   m_Component:
   - component: {fileID: 746087912}
   - component: {fileID: 746087913}
-  - component: {fileID: 746087914}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1633,23 +1632,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &746087914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746087911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4af02d6a4f77c84fafe3a01cece10d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaterProximityUI
-  dangerSlider: {fileID: 746087913}
-  playerTransform: {fileID: 1229075809}
-  waterTransform: {fileID: 1450147621}
-  levelMinY: -4
-  levelMaxY: 15
 --- !u!1 &758389619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,8 +1907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.013999939, y: 161.37}
+  m_SizeDelta: {x: 28.084, y: 337.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777844886
 MonoBehaviour:
@@ -2126,8 +2108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0}
   m_AnchorMax: {x: 0.75, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &866925137
 GameObject:
@@ -2992,6 +2974,8 @@ MonoBehaviour:
   spawnInterval: 7
   warningDuration: 2
   heightAboveCamera: 45
+  canSpawnRocks: 1
+  spawnTimer: 0
 --- !u!4 &1333772731
 Transform:
   m_ObjectHideFlags: 0
@@ -3041,8 +3025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 28}
-  m_SizeDelta: {x: 0, y: 57.06201}
+  m_AnchoredPosition: {x: -48.708, y: 4.231}
+  m_SizeDelta: {x: -7.485, y: 57.062}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390092089
 MonoBehaviour:
@@ -4168,9 +4152,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2079360181906597391, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3683262049951620193, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: m_Name
       value: Tronco
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683262049951620193, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5762599634872540780, guid: a672ff9bcd7d85d4fa27d49021e39583, type: 3}
       propertyPath: knockbackForce

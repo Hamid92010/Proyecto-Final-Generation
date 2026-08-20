@@ -21,6 +21,10 @@ public class FallingRock : MonoBehaviour
     private Collider rockCollider;
     private bool isDisappearing;
 
+    [SerializeField] private bool canFall = true;
+    private GameManager gameManager;
+    private Vector3 velocityBeforePause;
+
     private void Awake()
     {
         renderers = GetComponentsInChildren<Renderer>();
@@ -37,20 +41,66 @@ public class FallingRock : MonoBehaviour
         // Evita que la roca atraviese colliders delgados (como un suelo plano)
         // al caer rápido, comprobando colisiones de forma continua.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        if (gameManager == null)
+        {
+            gameManager = FindAnyObjectByType<GameManager>();
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (gameManager != null)
+        {
+            gameManager.OnGamePaused += DisableFall;
+            gameManager.OnGameFinished += DisableFall;
+            gameManager.OnGameResumed += EnableFall;
+        }
+
+        canFall = gameManager.isGamePaused || gameManager.gameFinished || gameManager.gameOver ? false : true;
     }
 
     private void Start()
     {
-        Destroy(gameObject, maxLifeTime);
+    }
+
+    private void Update()
+    {
+        if (isDisappearing) return;
+        if (canFall)
+        {
+            maxLifeTime -= Time.deltaTime;
+            if(maxLifeTime <= 0f)
+            {
+                Destroy(gameObject);
+            }    
+        }
     }
 
     private void FixedUpdate()
     {
         if (isDisappearing) return;
 
-        rb.linearVelocity += Vector3.down * fallAcceleration * Time.fixedDeltaTime;
+        if (canFall)
+        {
+            rb.linearVelocity += Vector3.down * fallAcceleration * Time.fixedDeltaTime;
+        }
+        else
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
+
+        
     }
 
+    private void OnDisable()
+    {
+        if (gameManager != null)
+        {
+            gameManager.OnGamePaused -= DisableFall;
+            gameManager.OnGameFinished -= DisableFall;
+            gameManager.OnGameResumed -= EnableFall;
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (isDisappearing) return;
@@ -90,4 +140,19 @@ public class FallingRock : MonoBehaviour
         foreach (Renderer rockRenderer in renderers)
             rockRenderer.enabled = isVisible;
     }
+
+    public void EnableFall()
+    {
+        canFall = true;
+        rb.linearVelocity = velocityBeforePause;
+    }
+
+    public void DisableFall() 
+    {
+        canFall = false;
+        velocityBeforePause = rb.linearVelocity;
+
+        rb.linearVelocity = Vector3.zero;
+    }
 }
+

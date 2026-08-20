@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 3368626885739039026}
   - component: {fileID: 2391738942681802634}
   - component: {fileID: 3083067095696906882}
-  - component: {fileID: 8747098030844608449}
+  - component: {fileID: -1223346616665787723}
+  - component: {fileID: 1748662007482128167}
   m_Layer: 0
-  m_Name: ROCK
-  m_TagString: Untagged
+  m_Name: ROCK_02
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 191.59375, y: 20.7, z: -386.7}
-  m_LocalScale: {x: 14.119571, y: 14.285517, z: 13.706073}
+  m_LocalScale: {x: 1.3350153, y: 1.3507055, z: 1.2959188}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,7 +109,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -133,15 +134,15 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 72
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8747098030844608449
+--- !u!114 &-1223346616665787723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,8 +151,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 6169885378237827097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 435f66b3c36105146aaa7125d86dd5ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d7427c84ceee4468012d1eb24bf22b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  speed: 500
-  lifeTime: 20
+  m_EditorClassIdentifier: Assembly-CSharp::FallingRock
+  fallSpeed: 20
+  fallAcceleration: 10
+  mass: 5
+  playerTag: Player
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  blinkCount: 2
+  blinkInterval: 0.15
+  maxLifeTime: 8
+  canFall: 1
+--- !u!114 &1748662007482128167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169885378237827097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1aa9c6085316f14099d0b65434d6b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleKnockback
+  knockbackForce: 5
+  knockbackDuration: 0.2
