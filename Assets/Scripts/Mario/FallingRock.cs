@@ -56,12 +56,8 @@ public class FallingRock : MonoBehaviour
             gameManager.OnGameResumed += EnableFall;
         }
 
-        canFall = gameManager.isGamePaused;
+        canFall = !(gameManager.isGamePaused || gameManager.gameFinished || gameManager.gameOver);
 
-        if(gameManager.gameFinished || gameManager.gameOver)
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void Start()

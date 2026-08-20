@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterProximityUI
   dangerSlider: {fileID: 746087913}
-  playerTransform: {fileID: 1229075809}
+  playerTransform: {fileID: 2079182350}
   waterTransform: {fileID: 1450147621}
   levelMinYPlayer: 0
   levelMinYWater: -3.4
@@ -2095,6 +2095,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791938794}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &810542126
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2886808187275455089, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123499049345968323, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123499049345968323, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123499049345968323, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
 --- !u!1 &861150359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,7 +2426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266a2cd223243784d9f09042ab1ddf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  player: {fileID: 1229075809}
+  player: {fileID: 2079182350}
   offsetY: 2
 --- !u!114 &1021706398
 MonoBehaviour:
@@ -2835,7 +2904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1229075805
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2916,6 +2985,12 @@ MonoBehaviour:
   rotationSpeed: 10
   fallForce: 0
   numberOfJumpsRemaining: 2
+  timeToTopSpeed: 0.15
+  timeToStop: 0.12
+  groundJumpAnticipation: 0.12
+  airJumpAnticipation: 0.12
+  landingAnticipation: 0.08
+  isAboutToLand: 0
   isGrounded: 1
   wasGrounded: 0
   isTouchingObstacle: 0
@@ -4343,6 +4418,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945934131}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2079182350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6711022089097325578, guid: b28b5f49810ae61428a1e6b358a49a88, type: 3}
+  m_PrefabInstance: {fileID: 810542126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2109581950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,3 +4543,4 @@ SceneRoots:
   - {fileID: 1229075809}
   - {fileID: 2109581951}
   - {fileID: 1333772731}
+  - {fileID: 810542126}
