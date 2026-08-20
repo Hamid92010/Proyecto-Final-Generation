@@ -272,7 +272,7 @@ Shader "Toon/SceneToon"
             #pragma shader_feature_local_fragment _ALPHATEST_ON
             #pragma multi_compile_instancing
 
-            #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthNormalsOnlyPass.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthNormalsPass.hlsl"
             ENDHLSL
         }
     }
