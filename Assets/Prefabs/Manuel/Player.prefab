@@ -1,0 +1,3066 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &482704180477230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4364966585140315569, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5250234035583789553}
+  m_Layer: 0
+  m_Name: Bravard_Toe2_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5250234035583789553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6974440383353428865, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482704180477230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.009239835, y: -0.04988942, z: -0.36680332, w: 0.9289139}
+  m_LocalPosition: {x: -3.4924596e-12, y: 0.00020069453, z: -2.2831954e-10}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1144885467263545320}
+  m_Father: {fileID: 8934035347353433382}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &19602911250707397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 654943364390586371, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6611429507738278805}
+  m_Layer: 0
+  m_Name: Bravard_Feather1_3.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6611429507738278805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9121457656645199938, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19602911250707397}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17997134, y: 0.018867418, z: -0.23566231, w: 0.95483905}
+  m_LocalPosition: {x: 5.2154064e-10, y: 0.00052238785, z: 1.6239937e-10}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528525143044322157}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &87068191148074133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8615602303766538191, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4904644706293736665}
+  m_Layer: 0
+  m_Name: Bravard_Toe3_3.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4904644706293736665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6791262312411176154, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87068191148074133}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.03498393, y: -0.07406938, z: -0.14136545, w: 0.98656255}
+  m_LocalPosition: {x: -2.3283063e-11, y: 0.00042006618, z: 4.656613e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 497606368278311695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &153880204499566040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7738926594781258389, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5901745048035263538}
+  m_Layer: 0
+  m_Name: Bravard_Toe1_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5901745048035263538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4731269529692059660, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153880204499566040}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.27575168, y: -0.019039042, z: 0.028419117, w: 0.96062005}
+  m_LocalPosition: {x: 4.6566126e-11, y: 0.0002350023, z: 9.3132255e-12}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1012287682695068207}
+  m_Father: {fileID: 422046981926574718}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &530841515198141494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3487502130030521152, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1121362025766201109}
+  m_Layer: 0
+  m_Name: Bravard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1121362025766201109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5080604461637242224, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530841515198141494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6447023194960542149}
+  m_Father: {fileID: 1955160784285630694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &544387715329508942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4233173651161608864, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8175917833832566283}
+  m_Layer: 0
+  m_Name: Bravard_Eye.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8175917833832566283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5951522399780535231, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544387715329508942}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.009517668, y: 0.030008215, z: 0.10078078, w: 0.99441046}
+  m_LocalPosition: {x: 0.001792321, y: 0.0005984744, z: -0.002422464}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5098275637836901820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &578377459130204729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5799749862753467919, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528525143044322157}
+  m_Layer: 0
+  m_Name: Bravard_Feather1_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528525143044322157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1378961685649681603, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578377459130204729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6201293, y: -0.00000017548581, z: -0.03998265, w: 0.7834801}
+  m_LocalPosition: {x: -0.0000000011036172, y: 0.0009812409, z: -1.0244548e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6611429507738278805}
+  m_Father: {fileID: 2668094295522922879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &610856427795663805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3706441965405966524, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7775301877779736642}
+  m_Layer: 0
+  m_Name: Bravard_Beak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7775301877779736642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8071967326376193082, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610856427795663805}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.16503093, y: -2.9451013e-18, z: -3.4879063e-18, w: 0.9862884}
+  m_LocalPosition: {x: 5.108698e-19, y: -0.00038748002, z: 0.0027333724}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3893590662466032047}
+  - {fileID: 2452638111308818737}
+  - {fileID: 6554240403995820197}
+  - {fileID: 5952944597517960012}
+  m_Father: {fileID: 2001394770424363267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &669326253455159288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 141281854597380084, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8850674986369105392}
+  m_Layer: 0
+  m_Name: Bravard_WingIK.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8850674986369105392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6207218268730280191, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669326253455159288}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.24130799, y: 0.006508319, z: -0.001618372, w: 0.9704254}
+  m_LocalPosition: {x: 0.0061859894, y: 0.0023728663, z: -0.0006742761}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6784930136154264714}
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &778011511850621716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6234394526131246397, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 245056289874830069}
+  m_Layer: 0
+  m_Name: Bravard_Feather3_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &245056289874830069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5603483289795982664, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778011511850621716}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.586699, y: 0.057905648, z: -0.041494336, w: 0.80666566}
+  m_LocalPosition: {x: -6.1467287e-10, y: 0.0009604851, z: -7.4505804e-11}
+  m_LocalScale: {x: 0.99999994, y: 0.9999998, z: 0.9999998}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6333343193932836695}
+  m_Father: {fileID: 4668551827709056819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &818046833087448343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5377850613867730824, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8934035347353433382}
+  m_Layer: 0
+  m_Name: Bravard_Toe2_1.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8934035347353433382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 393962322226498448, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818046833087448343}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.002227749, y: -0.000000094360956, z: -0.15789899, w: 0.9874528}
+  m_LocalPosition: {x: 9.3132255e-12, y: 0.00036289252, z: 3.7147402e-10}
+  m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5250234035583789553}
+  m_Father: {fileID: 3982659841581549972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &970619759567993038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8625318400341481670, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5343729741012888581}
+  m_Layer: 0
+  m_Name: Bravard_Tail_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5343729741012888581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4868391419312239631, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970619759567993038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.07628854, y: 0.00000011886189, z: 0.000000009094302, w: 0.9970858}
+  m_LocalPosition: {x: -4.9630836e-26, y: 0.0027076597, z: -3.352761e-10}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 432951922544301510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1013032008992416301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2683106107821403081, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 422046981926574718}
+  m_Layer: 0
+  m_Name: Bravard_Toe1_1.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &422046981926574718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3243029737158817294, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013032008992416301}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5453699, y: -0.08794297, z: 0.14328876, w: 0.8211614}
+  m_LocalPosition: {x: -2.840534e-10, y: 0.00036289266, z: 1.3038516e-10}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5901745048035263538}
+  m_Father: {fileID: 8145004530111073264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1174320655730281446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2627527953808270944, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4205895865008436734}
+  m_Layer: 0
+  m_Name: Bravard_Shoulder.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4205895865008436734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1297776523281882705, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174320655730281446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.09411883, y: -0.08377947, z: 0.7582581, w: 0.63966185}
+  m_LocalPosition: {x: -4.2393006e-26, y: 0.0015617901, z: 3.7252902e-11}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6135625564185490158}
+  m_Father: {fileID: 1672061866039295502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1356834318572668774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7312136951528352729, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196205095188495036}
+  m_Layer: 0
+  m_Name: Bravard_Leg.001.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &196205095188495036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7774818851252066595, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356834318572668774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.03138302, y: 0.0030685894, z: -0.37982133, w: 0.9245223}
+  m_LocalPosition: {x: -6.519258e-11, y: 0.0013630498, z: 1.648732e-10}
+  m_LocalScale: {x: 1.0118785, y: 0.9621924, z: 1.0033695}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8145004530111073264}
+  m_Father: {fileID: 4418269703087764374}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1436377092248153868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1806983502206038997, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5211938374796850377}
+  m_Layer: 0
+  m_Name: Bravard_Spine_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5211938374796850377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3705773732296209262, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436377092248153868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.30026424, y: -3.5882896e-18, z: -1.302178e-17, w: 0.95385605}
+  m_LocalPosition: {x: -0, y: 0.0025278234, z: -0.0005254809}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4355083709261901492}
+  - {fileID: 1934685743814508366}
+  - {fileID: 8885765139880639867}
+  - {fileID: 2776328092967621141}
+  - {fileID: 8930330044573099140}
+  - {fileID: 4104162495065031125}
+  - {fileID: 3656484341352661044}
+  - {fileID: 8850674986369105392}
+  m_Father: {fileID: 6447023194960542149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1446658516813136670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3201842701339158451, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6135625564185490158}
+  m_Layer: 0
+  m_Name: Bravard_Wing.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6135625564185490158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7967317248462191557, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446658516813136670}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.04519584, y: 0.0820877, z: 0.2682412, w: 0.95878345}
+  m_LocalPosition: {x: 0.0000000019557773, y: 0.0038112025, z: -5.5879353e-11}
+  m_LocalScale: {x: 1.0969597, y: 0.9353985, z: 1.0180529}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2506937646433594292}
+  m_Father: {fileID: 4205895865008436734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1493104155389452896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7935939750176780403, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1728755821924654848}
+  m_Layer: 0
+  m_Name: Bravard_Toe1_1.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1728755821924654848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3483124447386249747, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493104155389452896}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5453699, y: 0.08794296, z: -0.14328879, w: 0.8211614}
+  m_LocalPosition: {x: 9.3132255e-12, y: 0.00036289252, z: 3.7147402e-10}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3596794287896049019}
+  m_Father: {fileID: 3982659841581549972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1564598736431768461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8563956605108054142, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2452638111308818737}
+  m_Layer: 0
+  m_Name: Bravard_Peak_Side.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2452638111308818737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3315787651934382993, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564598736431768461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7555168, y: -0.00000023429283, z: -0.0000002701943, w: 0.65512925}
+  m_LocalPosition: {x: -0.00053065905, y: 0.0008179065, z: 0.00045414656}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7775301877779736642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1670914443266623472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 469127333492116097, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4355083709261901492}
+  m_Layer: 0
+  m_Name: Bravard_AuxiliarBone+.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4355083709261901492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3564607497706204971, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670914443266623472}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.1927548, y: 0.15444714, z: 0.60156566, w: 0.7596778}
+  m_LocalPosition: {x: 1.19230325e-26, y: 0.0017148326, z: 1.862645e-10}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1714627261407297167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1102003528363344755, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3893590662466032047}
+  m_Layer: 0
+  m_Name: Bravard_LowerBeak_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3893590662466032047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5596590393325562766, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714627261407297167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.51345086, y: 0.00000030688716, z: 0.0000001836243, w: 0.858119}
+  m_LocalPosition: {x: 2.2755858e-19, y: -0.00051134615, z: 0.00016977757}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4843508647021356307}
+  m_Father: {fileID: 7775301877779736642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1826775910489066432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8140778926861549117, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8280161555063880624}
+  m_Layer: 0
+  m_Name: Bravard_Neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8280161555063880624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6871285297625239510, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826775910489066432}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.013004806, y: -3.0308237e-18, z: 2.4502888e-17, w: 0.9999155}
+  m_LocalPosition: {x: -4.2393006e-26, y: 0.0015617901, z: 3.7252902e-11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2001394770424363267}
+  m_Father: {fileID: 1672061866039295502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1997958710056278471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7393514787142314726, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3982659841581549972}
+  m_Layer: 0
+  m_Name: Bravard_Foot.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3982659841581549972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8193461824663342468, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997958710056278471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.052100886, y: -0.034897417, z: -0.23114814, w: 0.9708956}
+  m_LocalPosition: {x: -3.6379786e-13, y: 0.00077017356, z: 5.151378e-11}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1728755821924654848}
+  - {fileID: 8934035347353433382}
+  - {fileID: 722174983748157333}
+  m_Father: {fileID: 4336962610955810103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2154421897837182466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4953826742208886, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4336962610955810103}
+  m_Layer: 0
+  m_Name: Bravard_Leg.001.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4336962610955810103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5284535851213572377, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154421897837182466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.05006553, y: -0.0045019775, z: 0.6124681, w: 0.7888954}
+  m_LocalPosition: {x: -3.0267983e-10, y: 0.00136305, z: 3.0035152e-10}
+  m_LocalScale: {x: 0.9741506, y: 1.0134422, z: 1.0049361}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3982659841581549972}
+  m_Father: {fileID: 4077174157875327030}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2206085267269262488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2148773122552452978, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6784930136154264714}
+  m_Layer: 0
+  m_Name: Bravard_WingPole.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6784930136154264714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5737546454506933273, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206085267269262488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.50354564, y: -0.50313836, z: -0.496429, w: 0.49684185}
+  m_LocalPosition: {x: -0.00013298694, y: -0.00006605637, z: 0.0023520552}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8850674986369105392}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2288751568166429157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1640706855602745950, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9067561385054254620}
+  m_Layer: 0
+  m_Name: Bravard_UpperBeak_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9067561385054254620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3101531022353231847, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288751568166429157}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5584441, y: -2.0859157e-13, z: 0.00000053257406, w: 0.82954216}
+  m_LocalPosition: {x: 2.7982546e-16, y: 0.00039209455, z: -5.9604643e-10}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5952944597517960012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2334152747885626140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7784888810152989703, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7804668853009901157}
+  m_Layer: 0
+  m_Name: Bravard_WingPole.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7804668853009901157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7332904251154450244, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334152747885626140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.50354564, y: 0.50313836, z: 0.496429, w: 0.49684185}
+  m_LocalPosition: {x: 0.000017810245, y: -0.000065963715, z: 0.0022049486}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3656484341352661044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2354468371500498610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9022375109190740241, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012287682695068207}
+  m_Layer: 0
+  m_Name: Bravard_Toe1_3.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1012287682695068207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6794462168923177081, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354468371500498610}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.04854385, y: 0.047424085, z: -0.053036533, w: 0.9962839}
+  m_LocalPosition: {x: 5.122274e-11, y: 0.00037908248, z: -2.7939677e-11}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5901745048035263538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2395663575163854447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7310261529005009928, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7951922517661121042}
+  m_Layer: 0
+  m_Name: Bravard_Shoulder.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7951922517661121042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4106801458572032525, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395663575163854447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.09964688, y: 0.078053765, z: -0.78147125, w: 0.6109671}
+  m_LocalPosition: {x: -4.2393006e-26, y: 0.0015617901, z: 3.7252902e-11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 180883721927890145}
+  m_Father: {fileID: 1672061866039295502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2506532129429570180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3706652403209224469, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5098275637836901820}
+  m_Layer: 0
+  m_Name: Bravard_EyesController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5098275637836901820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6161660685561189527, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506532129429570180}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.1489376, y: 0.00000011787972, z: -0.000000017754742, w: 0.9888466}
+  m_LocalPosition: {x: 4.0827358e-19, y: 0.000059400496, z: 0.005467339}
+  m_LocalScale: {x: 1, y: 1.1999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6946574435324659481}
+  - {fileID: 8175917833832566283}
+  m_Father: {fileID: 2001394770424363267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2547331959028750232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2563464273412860182, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722174983748157333}
+  m_Layer: 0
+  m_Name: Bravard_Toe3_1.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722174983748157333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2504294698783845412, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2547331959028750232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5340378, y: -0.09460227, z: -0.1354438, w: 0.82916164}
+  m_LocalPosition: {x: 9.3132255e-12, y: 0.00036289252, z: 3.7147402e-10}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6527775637422250571}
+  m_Father: {fileID: 3982659841581549972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2611676266490486602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7161041422967392174, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1934685743814508366}
+  m_Layer: 0
+  m_Name: Bravard_AuxiliarBone+.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934685743814508366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1876315809885856781, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611676266490486602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.1927548, y: -0.15444714, z: -0.60156566, w: 0.7596778}
+  m_LocalPosition: {x: 1.19230325e-26, y: 0.0017148326, z: 1.862645e-10}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2676149638626351038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7406638726197765499, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27196900327071722}
+  m_Layer: 0
+  m_Name: Bravard_Toe3_3.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &27196900327071722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6033768501781570578, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676149638626351038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.033426836, y: 0.13317168, z: 0.18109651, w: 0.9738337}
+  m_LocalPosition: {x: 2.2118911e-11, y: 0.00042006606, z: 1.8626451e-11}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6527775637422250571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2695104371926847298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6188879045454389660, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001394770424363267}
+  m_Layer: 0
+  m_Name: Bravard_Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2001394770424363267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1067077747003914895, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695104371926847298}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.18779218, y: -1.9730175e-18, z: 2.3167776e-17, w: 0.9822088}
+  m_LocalPosition: {x: 4.119747e-28, y: 0.0003832054, z: 5.5879353e-11}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7775301877779736642}
+  - {fileID: 5098275637836901820}
+  - {fileID: 5137366266589935314}
+  m_Father: {fileID: 8280161555063880624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2797970539514963975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5533717557990551699, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2459798250638280644}
+  m_Layer: 0
+  m_Name: Bravard_Toe2_3.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2459798250638280644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2714424134407524586, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2797970539514963975}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.035048414, y: 0.0037443526, z: -0.07905624, w: 0.9962468}
+  m_LocalPosition: {x: -9.313225e-11, y: 0.00047340273, z: 2.7706845e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6060348258049119895}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2830794570886219663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 541696029866886143, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6527775637422250571}
+  m_Layer: 0
+  m_Name: Bravard_Toe3_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6527775637422250571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7163683892027448462, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830794570886219663}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.3353351, y: -0.19849987, z: -0.15126228, w: 0.9084426}
+  m_LocalPosition: {x: -2.1536835e-11, y: 0.00023208166, z: 5.8207657e-12}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 27196900327071722}
+  m_Father: {fileID: 722174983748157333}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2935564726379279510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 157399977660447007, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8145004530111073264}
+  m_Layer: 0
+  m_Name: Bravard_Foot.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8145004530111073264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3749731635570141762, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2935564726379279510}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.07512132, y: 0.05221454, z: 0.5217594, w: 0.8481731}
+  m_LocalPosition: {x: 2.3283064e-10, y: 0.0007701735, z: 4.307367e-11}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 422046981926574718}
+  - {fileID: 1884689358621116437}
+  - {fileID: 492173672985061472}
+  m_Father: {fileID: 196205095188495036}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3081348768453623678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1632551430771095721, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7099803281801303376}
+  m_Layer: 0
+  m_Name: Bravard_Feather3_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7099803281801303376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 791976816743144995, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081348768453623678}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5802401, y: -0.0310952, z: 0.05133111, w: 0.8122313}
+  m_LocalPosition: {x: -4.842877e-10, y: 0.0009604855, z: 3.1664968e-10}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 921413884222902295}
+  m_Father: {fileID: 8322834970137781451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3281915153633875878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5475701351415799977, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6946574435324659481}
+  m_Layer: 0
+  m_Name: Bravard_Eye.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6946574435324659481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3867315062153651629, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3281915153633875878}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.009517644, y: -0.03000846, z: -0.10078078, w: 0.99441046}
+  m_LocalPosition: {x: -0.0017923197, y: 0.0005984744, z: -0.0024224652}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5098275637836901820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3424773382171697774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8882554044274133596, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6060348258049119895}
+  m_Layer: 0
+  m_Name: Bravard_Toe2_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6060348258049119895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8394836788129404577, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424773382171697774}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.059425067, y: 0.007421468, z: -0.07433765, w: 0.99543333}
+  m_LocalPosition: {x: -1.3038516e-10, y: 0.0002006945, z: -3.213063e-10}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2459798250638280644}
+  m_Father: {fileID: 1884689358621116437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3471828086806801602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6576395524740512390, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8779105948888030580}
+  m_Layer: 0
+  m_Name: Bravard_Toe1_3.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8779105948888030580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6610000710525173988, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471828086806801602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.045898873, y: -0.049016293, z: 0.14643021, w: 0.9869392}
+  m_LocalPosition: {x: 5.820766e-11, y: 0.00037908263, z: -9.313225e-11}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3596794287896049019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3516657672644557957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9056238614166556092, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8869023285389488973}
+  m_Layer: 0
+  m_Name: Bravard_Feather2_1.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8869023285389488973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5025919516528843932, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516657672644557957}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.056879684, y: -0.002961914, z: 0.07614703, w: 0.9954685}
+  m_LocalPosition: {x: 5.2154064e-10, y: 0.0008798101, z: 1.11758706e-10}
+  m_LocalScale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8437925838630209965}
+  m_Father: {fileID: 4993071009422637428}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3633791362175674093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1666631068139224781, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4418269703087764374}
+  m_Layer: 0
+  m_Name: Bravard_Leg.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4418269703087764374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8525017942818428916, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633791362175674093}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.73066115, y: -0.13965438, z: -0.0672763, w: 0.66490966}
+  m_LocalPosition: {x: 1.04786915e-10, y: 0.0021413404, z: 3.5390257e-10}
+  m_LocalScale: {x: 0.98222876, y: 1.040283, z: 0.999615}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 196205095188495036}
+  m_Father: {fileID: 8885765139880639867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3953852156327725969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2780948955819020925}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2780948955819020925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953852156327725969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6711022089097325578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4134543585906890186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5522862591372021790, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4993071009422637428}
+  m_Layer: 0
+  m_Name: Bravard_Wing_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4993071009422637428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3380338812700548422, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134543585906890186}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0043957233, y: 0.054784264, z: 0.0026074373, w: 0.99848515}
+  m_LocalPosition: {x: 6.61239e-10, y: 0.001030065, z: -7.858034e-12}
+  m_LocalScale: {x: 1.0220859, y: 0.9953916, z: 0.98612374}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6762000349657171434}
+  - {fileID: 8869023285389488973}
+  - {fileID: 4668551827709056819}
+  m_Father: {fileID: 180883721927890145}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4188361490576184919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5033612868336851074, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6554240403995820197}
+  m_Layer: 0
+  m_Name: Bravard_Peak_Side.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6554240403995820197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4765169430486397754, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188361490576184919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7555168, y: 0.00000023429283, z: 0.0000002701943, w: 0.65512925}
+  m_LocalPosition: {x: 0.0005345681, y: 0.0008044812, z: 0.000474039}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7775301877779736642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4740890194662021058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2963184895521954328, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5137366266589935314}
+  m_Layer: 0
+  m_Name: Bravard_Hat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5137366266589935314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6180635703784370265, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740890194662021058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.029994965, y: -0.000000119155715, z: -0.0000000035756786, w: 0.9995501}
+  m_LocalPosition: {x: 1.6918236e-11, y: 0.0024677052, z: 0.00012471106}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2001394770424363267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4878195010443595043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3663391512891009849, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8437925838630209965}
+  m_Layer: 0
+  m_Name: Bravard_Feather2_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8437925838630209965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4601073548701240808, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878195010443595043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.095531106, y: -0.033209145, z: 0.06484888, w: 0.9927566}
+  m_LocalPosition: {x: 2.7939676e-10, y: 0.0007974065, z: 3.7252902e-11}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8869023285389488973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5031336246498887164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3419005689694791978, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8461148420887866324}
+  m_Layer: 0
+  m_Name: Bravard_Feather1_3.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8461148420887866324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5453530755740067308, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031336246498887164}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.15605061, y: -0.014370601, z: 0.12657891, w: 0.97949964}
+  m_LocalPosition: {x: 6.1467287e-10, y: 0.0005223881, z: -1.11758706e-10}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9058938694792566710}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5090271115119232058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3563220360414088798, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9058938694792566710}
+  m_Layer: 0
+  m_Name: Bravard_Feather1_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9058938694792566710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4897991352510235679, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090271115119232058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.59838575, y: -0.04509547, z: 0.15074001, w: 0.78560704}
+  m_LocalPosition: {x: -5.5879353e-11, y: 0.0009812411, z: 2.5145708e-10}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8461148420887866324}
+  m_Father: {fileID: 6762000349657171434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5201995603289645796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4427581554707843616, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432951922544301510}
+  m_Layer: 0
+  m_Name: Bravard_Tail_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432951922544301510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7053128128662376773, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201995603289645796}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.36650512, y: -3.5073437e-17, z: -3.136911e-17, w: 0.93041605}
+  m_LocalPosition: {x: -5.376674e-26, y: 0.0038470428, z: -2.4214386e-10}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5343729741012888581}
+  m_Father: {fileID: 4104162495065031125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5289240583400595347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2537766681414803405, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4668551827709056819}
+  m_Layer: 0
+  m_Name: Bravard_Feather3_1.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4668551827709056819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8163548839719502254, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289240583400595347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7034011, y: -0.0038568615, z: 0.05230473, w: 0.7088556}
+  m_LocalPosition: {x: 5.2154064e-10, y: 0.0008798101, z: 1.11758706e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 245056289874830069}
+  m_Father: {fileID: 4993071009422637428}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5450101766322000147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8244975671580429909, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180883721927890145}
+  m_Layer: 0
+  m_Name: Bravard_Wing.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &180883721927890145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 24936650813217975, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450101766322000147}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.07612051, y: -0.08379634, z: -0.1540467, w: 0.98155665}
+  m_LocalPosition: {x: -0.0000000013597309, y: 0.003811203, z: 1.8626451e-11}
+  m_LocalScale: {x: 1.0449003, y: 0.98488975, z: 1.0162576}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4993071009422637428}
+  m_Father: {fileID: 7951922517661121042}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5550720393715478959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9032928898257859426, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949199965952414181}
+  - component: {fileID: 2575976215499692393}
+  m_Layer: 0
+  m_Name: Bravard_3DModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1949199965952414181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 966471676850867469, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550720393715478959}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1955160784285630694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &2575976215499692393
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7318754480129083989, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550720393715478959}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 58c19dde61ac11a4ba3d478a18ff2b9e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -7120334757666940692, guid: 7d36910ab5d581046b9376a498ff9fd1, type: 3}
+  m_Bones:
+  - {fileID: 6447023194960542149}
+  - {fileID: 3277584955089939327}
+  - {fileID: 8609386274097440176}
+  - {fileID: 4808945785311779509}
+  - {fileID: 2605144630742186110}
+  - {fileID: 5211938374796850377}
+  - {fileID: 8930330044573099140}
+  - {fileID: 1672061866039295502}
+  - {fileID: 8280161555063880624}
+  - {fileID: 2001394770424363267}
+  - {fileID: 7775301877779736642}
+  - {fileID: 5952944597517960012}
+  - {fileID: 9067561385054254620}
+  - {fileID: 3893590662466032047}
+  - {fileID: 4843508647021356307}
+  - {fileID: 2452638111308818737}
+  - {fileID: 6554240403995820197}
+  - {fileID: 5137366266589935314}
+  - {fileID: 5098275637836901820}
+  - {fileID: 6946574435324659481}
+  - {fileID: 8175917833832566283}
+  - {fileID: 4205895865008436734}
+  - {fileID: 6135625564185490158}
+  - {fileID: 2506937646433594292}
+  - {fileID: 2668094295522922879}
+  - {fileID: 528525143044322157}
+  - {fileID: 6611429507738278805}
+  - {fileID: 736726323020810318}
+  - {fileID: 7818214865003758214}
+  - {fileID: 8322834970137781451}
+  - {fileID: 7099803281801303376}
+  - {fileID: 921413884222902295}
+  - {fileID: 99703375166154333}
+  - {fileID: 513180739877792985}
+  - {fileID: 7951922517661121042}
+  - {fileID: 180883721927890145}
+  - {fileID: 4993071009422637428}
+  - {fileID: 6762000349657171434}
+  - {fileID: 9058938694792566710}
+  - {fileID: 8461148420887866324}
+  - {fileID: 8869023285389488973}
+  - {fileID: 8437925838630209965}
+  - {fileID: 4668551827709056819}
+  - {fileID: 245056289874830069}
+  - {fileID: 6333343193932836695}
+  - {fileID: 4104162495065031125}
+  - {fileID: 432951922544301510}
+  - {fileID: 5343729741012888581}
+  - {fileID: 4355083709261901492}
+  - {fileID: 1934685743814508366}
+  - {fileID: 8885765139880639867}
+  - {fileID: 4418269703087764374}
+  - {fileID: 196205095188495036}
+  - {fileID: 8145004530111073264}
+  - {fileID: 1884689358621116437}
+  - {fileID: 6060348258049119895}
+  - {fileID: 2459798250638280644}
+  - {fileID: 492173672985061472}
+  - {fileID: 497606368278311695}
+  - {fileID: 4904644706293736665}
+  - {fileID: 422046981926574718}
+  - {fileID: 5901745048035263538}
+  - {fileID: 1012287682695068207}
+  - {fileID: 2776328092967621141}
+  - {fileID: 4077174157875327030}
+  - {fileID: 4336962610955810103}
+  - {fileID: 3982659841581549972}
+  - {fileID: 8934035347353433382}
+  - {fileID: 5250234035583789553}
+  - {fileID: 1144885467263545320}
+  - {fileID: 722174983748157333}
+  - {fileID: 6527775637422250571}
+  - {fileID: 27196900327071722}
+  - {fileID: 1728755821924654848}
+  - {fileID: 3596794287896049019}
+  - {fileID: 8779105948888030580}
+  - {fileID: 3656484341352661044}
+  - {fileID: 7804668853009901157}
+  - {fileID: 8850674986369105392}
+  - {fileID: 6784930136154264714}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 6447023194960542149}
+  m_AABB:
+    m_Center: {x: 0.00022962526, y: 0.007991497, z: -0.00064053736}
+    m_Extent: {x: 0.007015623, y: 0.008751561, z: 0.0067107445}
+  m_DirtyAABB: 0
+--- !u!1 &5644535341454119416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5177519427670450530, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7818214865003758214}
+  m_Layer: 0
+  m_Name: Bravard_Feather2_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7818214865003758214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1991741951190548089, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644535341454119416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.08348784, y: 0.025630036, z: -0.08632001, w: 0.99243224}
+  m_LocalPosition: {x: 1.3504177e-10, y: 0.0007974064, z: 3.9115547e-10}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 736726323020810318}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5778212534881046892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1803480762639575915, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8885765139880639867}
+  m_Layer: 0
+  m_Name: Bravard_Hips.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8885765139880639867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7651199624432041372, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778212534881046892}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.6057314, y: 0.60602915, z: 0.36431956, w: 0.3648142}
+  m_LocalPosition: {x: 3.2311743e-27, y: 1.862645e-10, z: 1.11758706e-10}
+  m_LocalScale: {x: 0.9999998, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4418269703087764374}
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5907446095693369052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3129593204408529943, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6762000349657171434}
+  m_Layer: 0
+  m_Name: Bravard_Feather1_1.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6762000349657171434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2090570093640519285, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907446095693369052}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.48938185, y: 0.011900062, z: -0.06846255, w: 0.86929667}
+  m_LocalPosition: {x: 5.2154064e-10, y: 0.0008798101, z: 1.11758706e-10}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9058938694792566710}
+  m_Father: {fileID: 4993071009422637428}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5922695745797980658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6014646904595811363, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6447023194960542149}
+  m_Layer: 0
+  m_Name: Bravard_Master
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6447023194960542149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 931378866873451958, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5922695745797980658}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 1.1, z: 0.9}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4808945785311779509}
+  - {fileID: 3277584955089939327}
+  - {fileID: 5211938374796850377}
+  m_Father: {fileID: 1121362025766201109}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6041814709885600970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5107300206701393312, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3656484341352661044}
+  m_Layer: 0
+  m_Name: Bravard_WingIK.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3656484341352661044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2759683701311780749, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041814709885600970}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.24130799, y: -0.006508319, z: 0.001618372, w: 0.9704254}
+  m_LocalPosition: {x: -0.0062469044, y: 0.0022064298, z: -0.0005579654}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7804668853009901157}
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6240445114271610312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3784352122102983726, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497606368278311695}
+  m_Layer: 0
+  m_Name: Bravard_Toe3_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &497606368278311695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4439810609312005537, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240445114271610312}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.38051945, y: 0.13310143, z: 0.09114295, w: 0.9105943}
+  m_LocalPosition: {x: -9.313225e-11, y: 0.00023208155, z: -1.11758706e-10}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4904644706293736665}
+  m_Father: {fileID: 492173672985061472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6256059540860519202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5158970526930683643, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5952944597517960012}
+  m_Layer: 0
+  m_Name: Bravard_UpperBeak_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5952944597517960012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1576820448817485825, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256059540860519202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6309389, y: 0.00000036994615, z: 0.00000030085533, w: 0.77583253}
+  m_LocalPosition: {x: 4.9325747e-19, y: 0.0012983746, z: 0.00048049388}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9067561385054254620}
+  m_Father: {fileID: 7775301877779736642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6404880540130256828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5195574801747753680, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955160784285630694}
+  - component: {fileID: 1663581618708092082}
+  m_Layer: 0
+  m_Name: Bravard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955160784285630694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404880540130256828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1121362025766201109}
+  - {fileID: 1949199965952414181}
+  m_Father: {fileID: 6711022089097325578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1663581618708092082
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2194742278080668362, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404880540130256828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6356f8e755625d045a1832d14fcec39c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6424550082181052950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8531566177663646424, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921413884222902295}
+  m_Layer: 0
+  m_Name: Bravard_Feather3_3.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &921413884222902295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4423697005974778753, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424550082181052950}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.34174135, y: 0.035997316, z: -0.064968936, w: 0.93685436}
+  m_LocalPosition: {x: 7.0780515e-10, y: 0.0006521792, z: -9.778887e-11}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7099803281801303376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6429617546837535455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4910220859593309542, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6333343193932836695}
+  m_Layer: 0
+  m_Name: Bravard_Feather3_3.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6333343193932836695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5659437689164634557, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6429617546837535455}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.3476535, y: -0.06286996, z: 0.06271164, w: 0.9334087}
+  m_LocalPosition: {x: -4.0978193e-10, y: 0.0006521781, z: 2.2351741e-10}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245056289874830069}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6535689741358032750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8288489179715639853, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4843508647021356307}
+  m_Layer: 0
+  m_Name: Bravard_LowerBeak_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4843508647021356307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2466917927775900252, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535689741358032750}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2831377, y: 1.4871534e-13, z: -0.00000020251589, w: 0.95907927}
+  m_LocalPosition: {x: -4.2538828e-16, y: 0.00060039834, z: 4.842877e-10}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3893590662466032047}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6599776449202472935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6545555537231920440, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144885467263545320}
+  m_Layer: 0
+  m_Name: Bravard_Toe2_3.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1144885467263545320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5933719641328969753, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599776449202472935}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0034046932, y: 0.025617896, z: 0.20494433, w: 0.9784324}
+  m_LocalPosition: {x: 3.6670826e-11, y: 0.00047340273, z: -2.0489097e-10}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5250234035583789553}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6619672665029069477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3289018250859081304, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8322834970137781451}
+  m_Layer: 0
+  m_Name: Bravard_Feather3_1.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8322834970137781451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 390510614097192024, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619672665029069477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.70340115, y: 0.0038568515, z: -0.05230468, w: 0.7088555}
+  m_LocalPosition: {x: 5.867332e-10, y: 0.00087980897, z: -1.11758706e-10}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7099803281801303376}
+  m_Father: {fileID: 2506937646433594292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6633223589233307929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1999305591218284021, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2506937646433594292}
+  m_Layer: 0
+  m_Name: Bravard_Wing_2.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2506937646433594292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3549142101271862720, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633223589233307929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.004043405, y: -0.05437336, z: -0.002879065, w: 0.9985084}
+  m_LocalPosition: {x: -4.9825755e-10, y: 0.0010300643, z: 5.122274e-11}
+  m_LocalScale: {x: 1.0220801, y: 0.98615897, z: 0.99507576}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2668094295522922879}
+  - {fileID: 736726323020810318}
+  - {fileID: 8322834970137781451}
+  m_Father: {fileID: 6135625564185490158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6813532885523585363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7697325893386103289, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4104162495065031125}
+  m_Layer: 0
+  m_Name: Bravard_Tail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4104162495065031125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1573302566725452814, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6813532885523585363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.8776004, y: -8.498455e-17, z: -5.1136395e-17, w: -0.47939298}
+  m_LocalPosition: {x: 1.19230325e-26, y: 0.0017148326, z: 1.862645e-10}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999976}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 432951922544301510}
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7100391483643603934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5492789535047844711, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2668094295522922879}
+  m_Layer: 0
+  m_Name: Bravard_Feather1_1.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2668094295522922879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5290366758615631219, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100391483643603934}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.48938182, y: -0.011900065, z: 0.06846253, w: 0.86929667}
+  m_LocalPosition: {x: 5.867332e-10, y: 0.00087980897, z: -1.11758706e-10}
+  m_LocalScale: {x: 0.9999998, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 528525143044322157}
+  m_Father: {fileID: 2506937646433594292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7123499049345968323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6711022089097325578}
+  - component: {fileID: 2886808187275455089}
+  - component: {fileID: 1651603118229340386}
+  - component: {fileID: 4270208892925316326}
+  - component: {fileID: 6360599156692304641}
+  - component: {fileID: 1841446488200723}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6711022089097325578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -6.06, y: 2.27, z: 3.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1955160784285630694}
+  - {fileID: 2780948955819020925}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &2886808187275455089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cee9b3c546d84478faf1f7f8454a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  InputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  moveSpeed: 5
+  jumpForce: 7
+  rotationSpeed: 10
+  fallForce: 0
+  numberOfJumpsRemaining: 2
+  timeToTopSpeed: 0.15
+  timeToStop: 0.12
+  groundJumpAnticipation: 0.12
+  airJumpAnticipation: 0.12
+  landingAnticipation: 0.08
+  isAboutToLand: 0
+  isGrounded: 1
+  wasGrounded: 0
+  isTouchingObstacle: 0
+  groundCheckSize: {x: 0.8, y: 0.1, z: 0.8}
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheck: {fileID: 2780948955819020925}
+  playerCollisions: {fileID: 1651603118229340386}
+  canPlayerMove: 1
+  isInWinTrigger: 0
+--- !u!114 &1651603118229340386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b59eea09419554ca9412488df09ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisions
+--- !u!114 &4270208892925316326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8ba71f390afd84795891ee07d33acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationBridge
+  animator: {fileID: 1663581618708092082}
+  horizontalSpeedDamping: 0.05
+  fallSpeedForNormalPlayback: 4
+  fallSpeedForMaxPlayback: 12
+  maxFallPlaybackSpeed: 2
+--- !u!54 &6360599156692304641
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 88
+  m_CollisionDetection: 0
+--- !u!136 &1841446488200723
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.8348902
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87698644, z: 0}
+--- !u!1 &7270696737485645771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2085616607547138479, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3277584955089939327}
+  m_Layer: 0
+  m_Name: Bravard_LegIK.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3277584955089939327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3574565796615019545, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7270696737485645771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.46782383, y: -0.5302272, z: 0.5302272, w: -0.46782383}
+  m_LocalPosition: {x: 0.002093207, y: 0.0009143502, z: 0.00013506785}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8609386274097440176}
+  m_Father: {fileID: 6447023194960542149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7327548815384268237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8935800238157077290, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513180739877792985}
+  m_Layer: 0
+  m_Name: Bravard_ChestFeather_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &513180739877792985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7377696573500939342, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7327548815384268237}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.390377, y: -1.1965046e-14, z: -0.00000018614615, w: 0.9206551}
+  m_LocalPosition: {x: -5.3180114e-19, y: 0.0007226409, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99703375166154333}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7516370034653433806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5573926122477665118, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672061866039295502}
+  m_Layer: 0
+  m_Name: Bravard_Spine_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672061866039295502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 135064654998938633, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516370034653433806}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.084727876, y: 1.3813767e-18, z: -1.5779678e-17, w: 0.9964042}
+  m_LocalPosition: {x: 1.6026624e-26, y: 0.0015184969, z: 0}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 99703375166154333}
+  - {fileID: 8280161555063880624}
+  - {fileID: 4205895865008436734}
+  - {fileID: 7951922517661121042}
+  m_Father: {fileID: 8930330044573099140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7555429953787406188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6806386636773240174, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8609386274097440176}
+  m_Layer: 0
+  m_Name: Bravard_LegPole.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8609386274097440176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2423934214598005817, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555429953787406188}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.10100222, y: -6.184602e-18, z: 0.9948862, w: -6.091921e-17}
+  m_LocalPosition: {x: -0.00079619593, y: -0.0009875927, z: -0.00009995527}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3277584955089939327}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7778175096643437893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6750604233987747031, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99703375166154333}
+  m_Layer: 0
+  m_Name: Bravard_ChestFeather_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &99703375166154333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4470497990997526131, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7778175096643437893}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.95097655, y: -0.00000007373394, z: -0.00000022673053, w: 0.30926293}
+  m_LocalPosition: {x: -6.392088e-19, y: 0.0004409966, z: 0.0033652612}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999946}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 513180739877792985}
+  m_Father: {fileID: 1672061866039295502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7876576865066709446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6428921972734000067, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3596794287896049019}
+  m_Layer: 0
+  m_Name: Bravard_Toe1_2.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3596794287896049019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6621437024741754779, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876576865066709446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.34107247, y: 0.16419199, z: -0.20122723, w: 0.903448}
+  m_LocalPosition: {x: 6.6938807e-12, y: 0.00023500239, z: -2.561137e-11}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8779105948888030580}
+  m_Father: {fileID: 1728755821924654848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8001690613378893384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 2555299894453320756, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736726323020810318}
+  m_Layer: 0
+  m_Name: Bravard_Feather2_1.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &736726323020810318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 48157647221708317, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001690613378893384}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.041518223, y: 0.011854552, z: -0.026343776, w: 0.99872005}
+  m_LocalPosition: {x: 5.867332e-10, y: 0.00087980897, z: -1.11758706e-10}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999998}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7818214865003758214}
+  m_Father: {fileID: 2506937646433594292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8153412273871269744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 83387445140821615, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492173672985061472}
+  m_Layer: 0
+  m_Name: Bravard_Toe3_1.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492173672985061472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 33435109498691811, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153412273871269744}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5340378, y: 0.094602264, z: 0.13544382, w: 0.82916164}
+  m_LocalPosition: {x: -2.840534e-10, y: 0.00036289266, z: 1.3038516e-10}
+  m_LocalScale: {x: 1, y: 0.9999998, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 497606368278311695}
+  m_Father: {fileID: 8145004530111073264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8203099637272998636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3017275572919343266, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2605144630742186110}
+  m_Layer: 0
+  m_Name: Bravard_LegPole.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2605144630742186110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7649586802172071786, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203099637272998636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.10100222, y: 6.184602e-18, z: 0.9948862, w: -6.091921e-17}
+  m_LocalPosition: {x: 0.00016432961, y: -0.0016897343, z: -0.000020630108}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4808945785311779509}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8600148062883644586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9179597054207695104, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8930330044573099140}
+  m_Layer: 0
+  m_Name: Bravard_Spine_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8930330044573099140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 285838446691850210, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8600148062883644586}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17989807, y: -1.826869e-18, z: -6.1472167e-18, w: 0.98368526}
+  m_LocalPosition: {x: 1.19230325e-26, y: 0.0017148326, z: 1.862645e-10}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1672061866039295502}
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8619272276182246749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5691389289099732913, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2776328092967621141}
+  m_Layer: 0
+  m_Name: Bravard_Hips.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2776328092967621141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 278449488246608486, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619272276182246749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6057314, y: 0.60602915, z: 0.36431956, w: -0.3648142}
+  m_LocalPosition: {x: 3.2311743e-27, y: 1.862645e-10, z: 1.11758706e-10}
+  m_LocalScale: {x: 0.9999998, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4077174157875327030}
+  m_Father: {fileID: 5211938374796850377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8697108648888015290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1684441022883125003, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4077174157875327030}
+  m_Layer: 0
+  m_Name: Bravard_Leg.R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4077174157875327030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1301009020993178542, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697108648888015290}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.6875134, y: -0.3116327, z: -0.28946185, w: 0.58857644}
+  m_LocalPosition: {x: -1.04786915e-10, y: 0.0021413404, z: 3.5390257e-10}
+  m_LocalScale: {x: 0.9524186, y: 1.0746181, z: 0.99974835}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4336962610955810103}
+  m_Father: {fileID: 2776328092967621141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9051737710598109997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8038169537647140185, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4808945785311779509}
+  m_Layer: 0
+  m_Name: Bravard_LegIK.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4808945785311779509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5813053718552196396, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051737710598109997}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.46782383, y: -0.5302272, z: 0.5302272, w: 0.46782383}
+  m_LocalPosition: {x: -0.0020697694, y: 0.0010453474, z: -0.0019896831}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2605144630742186110}
+  m_Father: {fileID: 6447023194960542149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9179626098277039228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1116147196820863873, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884689358621116437}
+  m_Layer: 0
+  m_Name: Bravard_Toe2_1.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1884689358621116437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5698877273424451885, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+  m_PrefabInstance: {fileID: 1996692221014745882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179626098277039228}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.017245388, y: 0.025722532, z: 0.46435782, w: 0.8851061}
+  m_LocalPosition: {x: -2.840534e-10, y: 0.00036289266, z: 1.3038516e-10}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6060348258049119895}
+  m_Father: {fileID: 8145004530111073264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1996692221014745882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6711022089097325578}
+    m_Modifications:
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850855557148794986, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195574801747753680, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: m_Name
+      value: Bravard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318754480129083989, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 58c19dde61ac11a4ba3d478a18ff2b9e, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 281d32575cba5a342a622f9c7e6a9131, type: 3}
