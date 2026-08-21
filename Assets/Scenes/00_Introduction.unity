@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &269062273
 AudioSource:
   m_ObjectHideFlags: 0
@@ -558,6 +558,59 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &927852904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927852906}
+  - component: {fileID: 927852905}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &927852905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927852904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac05efb0809b64f498fd78e463c2dbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicScenes:
+  - {fileID: 8300000, guid: c397a77e8d4bf634b8c6d61990dc1ce8, type: 3}
+  - {fileID: 8300000, guid: 95c018464fe76b44184cb8f0e32cd659, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 309c6d1f1fe7f534686a6412c9aa6dfc, type: 3}
+  - {fileID: 0}
+  sfxButtonEffect: {fileID: 8300000, guid: fb4dc6045169a6442bd07746e05654a1, type: 3}
+  musicVolume: 0
+  sfxVolume: 0
+--- !u!4 &927852906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927852904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034130475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,3 +1071,4 @@ SceneRoots:
   - {fileID: 1304372082}
   - {fileID: 269062274}
   - {fileID: 1034130477}
+  - {fileID: 927852906}

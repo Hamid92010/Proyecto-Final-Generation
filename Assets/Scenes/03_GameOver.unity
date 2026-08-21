@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 2146123498}
   - component: {fileID: 2146123497}
   - component: {fileID: 2146123496}
+  - component: {fileID: 2146123500}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -608,6 +609,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2146123500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146123495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21fc25d0c6417f44b0f15990efb9d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSettingsUI
+  musicVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
+  buttonsOnScreen:
+  - {fileID: 1584108265892658562}
+  - {fileID: 1307086287975748944}
 --- !u!1 &80580172509908314
 GameObject:
   m_ObjectHideFlags: 0

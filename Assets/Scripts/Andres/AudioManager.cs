@@ -5,9 +5,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    [Header("Musica de Escenas:\n0. MainMenu\n1. Gameplay\n2. GameOver\n3. Victory")]
+    [Header("Musica de Escenas:\n0. Logo\n1. MainMenu\n2. Gameplay\n3. GameOver\n4. Victory")]
     [SerializeField] private AudioClip[] musicScenes;
-
+    [SerializeField] private AudioClip sfxButtonEffect;
     private AudioSource musicSource;
     private AudioSource sfxSource;
 
@@ -39,7 +39,6 @@ public class AudioManager : MonoBehaviour
         if (musicSource == null)
         {
             musicSource = gameObject.AddComponent<AudioSource>();
-            musicSource.loop = true;
         }
         //Canal para efectos de sonido
         if (sfxSource == null)
@@ -48,7 +47,7 @@ public class AudioManager : MonoBehaviour
         }
 
         musicVolume = musicSource.volume;
-        sfxSource.volume = musicVolume;
+        sfxVolume = sfxSource.volume;
     }
     public void SetMusicVolume(float volume)
     {
@@ -72,15 +71,28 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(effectClip);
     }
 
+    public void PlayButtonEffect()
+    {
+        PlayEffect(sfxButtonEffect);
+    }
+
     public void StopMusic()
     {
         musicSource.Stop();
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (musicScenes[scene.buildIndex - 1] != null)
+        if (musicScenes[scene.buildIndex] != null)
         {
-            PlayMusic(musicScenes[scene.buildIndex - 1]);
+            if(scene.buildIndex == 0)
+            {
+                musicSource.loop = false;
+            }
+            else
+            {
+                musicSource.loop = true;
+            }
+            PlayMusic(musicScenes[scene.buildIndex]);
         }
         else
         {
