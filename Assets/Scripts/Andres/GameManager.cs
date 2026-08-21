@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [field: SerializeField]
     public float yPosToFinishGame { get; private set; }
 
-    [SerializeField] private Transform platformToWin;
+    [SerializeField] private GameObject platformToWin;
     public bool isGameStarted = false;
     public bool gameOver = false;
     public bool gameFinished = false;
@@ -23,13 +23,21 @@ public class GameManager : MonoBehaviour
     public event Action OnGamePaused;
     public event Action OnGameResumed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    public static GameManager Instance { get; private set; }
     private void Awake()
     {
-        if (platformToWin != null)
+        // Si ya existe una instancia y no somos nosotros, destruir este duplicado
+        if (Instance != null && Instance != this)
         {
-            yPosToFinishGame = platformToWin.position.y;
+            Destroy(gameObject);
+            return;
         }
+
+        // Esta es la instancia única
+        Instance = this;
+
+        // Evita que se destruya al cambiar de escena
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -37,6 +45,14 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void SearchPlatformToWin()
+    {
+        platformToWin = GameObject.FindGameObjectWithTag("WinTrigger");
+        if (platformToWin != null)
+        {
+            yPosToFinishGame = platformToWin.transform.position.y;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -63,6 +79,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        gameFinished = false;
+        gameOver = false;
         isGameStarted = true;
         OnGameStarted?.Invoke();
     }
@@ -70,12 +88,14 @@ public class GameManager : MonoBehaviour
     public void TriggerGameOver()
     {
         gameOver = true;
+        isGameStarted = false;
         OnGameOver?.Invoke();
     }
 
     public void FinishGame()
     {
         gameFinished = true;
+        isGameStarted = false;
         OnGameFinished?.Invoke();
     }
 
