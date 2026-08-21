@@ -7,7 +7,13 @@ public class AudioManager : MonoBehaviour
 
     [Header("Musica de Escenas:\n0. Logo\n1. MainMenu\n2. Gameplay\n3. GameOver\n4. Victory")]
     [SerializeField] private AudioClip[] musicScenes;
+
+    [Header("Lista de efectos de sonido")]
     [SerializeField] private AudioClip sfxButtonEffect;
+    [SerializeField] private AudioClip sfxPlayerJump;
+    [SerializeField] private AudioClip sfxPlayerActivateWinTrigger;
+    [SerializeField] private AudioClip sfxImpactBall;
+
     private AudioSource musicSource;
     private AudioSource sfxSource;
 
@@ -73,7 +79,34 @@ public class AudioManager : MonoBehaviour
 
     public void PlayButtonEffect()
     {
-        PlayEffect(sfxButtonEffect);
+        if (sfxButtonEffect != null)
+        {
+            PlayEffect(sfxButtonEffect);
+        }       
+    }
+
+    public void PlayJumpEffect()
+    {
+        if (sfxPlayerJump != null)
+        {
+            PlayEffect(sfxPlayerJump);
+        }
+    }
+
+    public void PlayWinTriggerEffect()
+    {
+        if (sfxPlayerActivateWinTrigger != null)
+        {
+            PlayEffect(sfxPlayerActivateWinTrigger);
+        }
+    }
+
+    public void PlayImpactBallEffect()
+    {
+        if (sfxImpactBall != null)
+        {
+            PlayEffect(sfxImpactBall);
+        }
     }
 
     public void StopMusic()

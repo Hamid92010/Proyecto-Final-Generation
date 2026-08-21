@@ -193,6 +193,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (i_interactAction.WasPressedThisFrame())
                 {
+                    AudioManager.Instance.PlayWinTriggerEffect();
                     gameManager.FinishGame();
                 }
             }
@@ -208,6 +209,7 @@ public class PlayerMovement : MonoBehaviour
         // No aceptamos otro salto mientras haya uno esperando su impulso
         if (m_jumpAction.WasPressedThisFrame() && !isAnticipatingJump && (isGrounded || numberOfJumpsRemaining > 0))
         {
+            AudioManager.Instance.PlayJumpEffect();
             RequestJump();
         }
 

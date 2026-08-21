@@ -590,10 +590,13 @@ MonoBehaviour:
   musicScenes:
   - {fileID: 8300000, guid: c397a77e8d4bf634b8c6d61990dc1ce8, type: 3}
   - {fileID: 8300000, guid: 95c018464fe76b44184cb8f0e32cd659, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: a43c336e06a13d44fb260cdcf6b50621, type: 3}
   - {fileID: 8300000, guid: 309c6d1f1fe7f534686a6412c9aa6dfc, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: c49f190bab9591742ab8b49b8a3aaa39, type: 3}
   sfxButtonEffect: {fileID: 8300000, guid: fb4dc6045169a6442bd07746e05654a1, type: 3}
+  sfxPlayerJump: {fileID: 8300000, guid: 15890374c527b174b8d9fbdc88fcb36b, type: 3}
+  sfxPlayerActivateWinTrigger: {fileID: 8300000, guid: 6953e3cc26ae0894ab86cf4fd4b6e43e, type: 3}
+  sfxImpactBall: {fileID: 8300000, guid: 33492cc27cdd61046acddf36122a4b7b, type: 3}
   musicVolume: 0
   sfxVolume: 0
 --- !u!4 &927852906
