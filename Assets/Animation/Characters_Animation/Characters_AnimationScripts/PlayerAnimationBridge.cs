@@ -40,6 +40,26 @@ public class PlayerAnimationBridge : MonoBehaviour
     [Tooltip("Multiplicador máximo de la animación de caída. 1 = sin cambio.")]
     [SerializeField] private float maxFallPlaybackSpeed = 2f;
 
+    [Header("Silenciado de la locomoción")]
+    // Hay poses que necesitan el cuerpo entero para leerse: el encogimiento del salto y
+    // la recomposición del aterrizaje. Mientras se reproducen, la locomoción deja de
+    // reportar velocidad al Animator para no competir por la pose. El personaje NO se
+    // detiene: sigue desplazándose con toda su inercia. Solo se calla la animación.
+    [Tooltip("Segundos en que la locomoción se calla al abrirse una ventana. Debe quedarse POR DEBAJO de la duración de la transición de entrada a la anticipación (0.075 s): si tarda más, el Blend Tree todavía va camino de Idle cuando la mezcla ya terminó. 0 = corte seco, se vería el salto de pose.")]
+    [SerializeField] private float locomotionMuteAttack = 0.05f;
+
+    [Tooltip("Segundos en que la locomoción recupera la voz al cerrarse la ventana. Conviene parecido a la duración de la transición de salida hacia Locomotion (0.2 s), para que el Blend Tree llegue ya en carrera al final de la mezcla en lugar de aterrizar en Idle y acelerar después.")]
+    [SerializeField] private float locomotionMuteRelease = 0.18f;
+
+    // Tag con el que se marcan en el Animator los estados que piden el cuerpo entero.
+    // Se pone a mano en el campo Tag del Inspector del estado. Hoy solo lo lleva
+    // Jump_End (el de JumpSystem), que es donde silenciar surte efecto: su salida
+    // temprana depende de HorizontalSpeed.
+    private const string bodyOwningStateTag = "Landing";
+
+    // 1 = locomoción a pleno rendimiento, 0 = callada. Multiplica a HorizontalSpeed.
+    private float locomotionWeight = 1f;
+
     // Fuente de verdad de la física: velocidad, suelo y saltos
     private PlayerMovement playerMovement;
 
@@ -92,9 +112,20 @@ public class PlayerAnimationBridge : MonoBehaviour
 
     private void Update()
     {
+        // Peso de la locomoción antes de escribir nada: decide si el Blend Tree tiene voz
+        UpdateLocomotionWeight();
+
         // Rapidez horizontal: alimenta el Blend Tree de Idle / Caminata / Carrera.
-        // El suavizado reparte el cambio en el tiempo para que recorra los umbrales.
-        animator.SetFloat(hashHorizontalSpeed, playerMovement.HorizontalSpeed, horizontalSpeedDamping, Time.deltaTime);
+        // Multiplicada por el peso, así que durante las ventanas protegidas cae hacia 0 y
+        // el Blend Tree se va a Idle aunque Bravard siga desplazándose a toda velocidad.
+        float reportedHorizontalSpeed = playerMovement.HorizontalSpeed * locomotionWeight;
+
+        // Con el peso a medio camino el escalón ya lo está suavizando la rampa del peso.
+        // Sumar aquí el suavizado de régimen sería el doble suavizado que advierte la
+        // documentación: la animación se quedaría por detrás del personaje.
+        float damping = locomotionWeight < 1f ? 0f : horizontalSpeedDamping;
+
+        animator.SetFloat(hashHorizontalSpeed, reportedHorizontalSpeed, damping, Time.deltaTime);
 
         // Velocidad vertical SIN suavizar: las condiciones del Animator comparan
         // contra valores exactos (0.2, -0.1) y un valor suavizado las falsearía
@@ -115,6 +146,48 @@ public class PlayerAnimationBridge : MonoBehaviour
         // nunca baja de 1 (la animación no se ralentiza) ni pasa del máximo configurado
         float fallProgress = Mathf.InverseLerp(fallSpeedForNormalPlayback, fallSpeedForMaxPlayback, fallSpeed);
         animator.SetFloat(hashFallPlaybackSpeed, Mathf.Lerp(1f, maxFallPlaybackSpeed, fallProgress));
+    }
+
+    // Persigue el peso de la locomoción hacia 0 o 1 según haya o no una ventana abierta
+    private void UpdateLocomotionWeight()
+    {
+        bool muteLocomotion = ShouldMuteLocomotion();
+
+        float targetWeight = muteLocomotion ? 0f : 1f;
+        float rampTime = muteLocomotion ? locomotionMuteAttack : locomotionMuteRelease;
+
+        // Con el tiempo en cero el cambio es inmediato, sin rampa
+        locomotionWeight = rampTime > 0f
+            ? Mathf.MoveTowards(locomotionWeight, targetWeight, Time.deltaTime / rampTime)
+            : targetWeight;
+    }
+
+    // Si hay una pose que debe verse sin que la locomoción compita por el cuerpo.
+    // Son dos ventanas y se detectan de forma DISTINTA a propósito: cada una necesita
+    // empezar en un momento que la otra vía no sabría ver.
+    private bool ShouldMuteLocomotion()
+    {
+        // 1) La anticipación del salto. Hay que empezar a callar en el mismo frame de la
+        //    pulsación, cuando el Animator está todavía EN la transición de entrada y su
+        //    estado actual sigue siendo Locomotion. Por eso no sirve el Tag y se lee la
+        //    ventana de la física, que es quien la abre y la cierra.
+        if (playerMovement.IsAnticipatingJump)
+        {
+            return true;
+        }
+
+        // 2) Estar en transición devuelve la voz a la locomoción. Es lo que hace que al
+        //    arrancar la salida del aterrizaje hacia Locomotion el Blend Tree ya venga
+        //    subiendo hacia la carrera, en lugar de llegar a Idle y acelerar después.
+        if (animator.IsInTransition(0))
+        {
+            return false;
+        }
+
+        // 3) El aterrizaje. Aquí el Tag sí vale: el estado ya está a peso completo y lo
+        //    único que hace falta es que su salida temprana por HorizontalSpeed no salte,
+        //    para que la recomposición se reproduzca entera.
+        return animator.GetCurrentAnimatorStateInfo(0).IsTag(bodyOwningStateTag);
     }
 
     // Dispara la animación de salto desde el suelo
