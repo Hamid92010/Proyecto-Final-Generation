@@ -23,21 +23,11 @@ public class GameManager : MonoBehaviour
     public event Action OnGamePaused;
     public event Action OnGameResumed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public static GameManager Instance { get; private set; }
+
     private void Awake()
     {
         // Si ya existe una instancia y no somos nosotros, destruir este duplicado
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        // Esta es la instancia única
-        Instance = this;
-
-        // Evita que se destruya al cambiar de escena
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
