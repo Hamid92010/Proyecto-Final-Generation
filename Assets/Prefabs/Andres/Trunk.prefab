@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 3612924160386618704}
   - component: {fileID: 547090435360466594}
   m_Layer: 0
-  m_Name: Tronco
+  m_Name: Trunk
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
