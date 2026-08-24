@@ -46,7 +46,7 @@ public class RockSpawner : MonoBehaviour
         if (player == null || rockPrefab == null) return;
 
         if(!canSpawnRocks || !gameManager.isGameStarted)
-            return;
+           return;
 
         spawnTimer += Time.deltaTime;
         if (spawnTimer >= spawnInterval)
