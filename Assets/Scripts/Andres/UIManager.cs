@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -17,11 +18,16 @@ public class UIManager : MonoBehaviour
     public GameObject pressEPanel;
 
     [Header("Referencia de las escenas con su nombre")]
-    [SerializeField] private string gameOverSceneName = "01_MainMenu";
-    [SerializeField] private string victorySceneName = "01_MainMenu";
+    [SerializeField] private string gameOverSceneName = "03_GameOver";
+    [SerializeField] private string victorySceneName = "04_Victory";
+
+    [Header("Tiempos de espera para transicion de escenas")]
+    [SerializeField] private float gameOverLapTime = 5f;
+    [SerializeField] private float victoryLapTime = 5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    
+
 
     private void OnEnable()
     {
@@ -107,14 +113,28 @@ public class UIManager : MonoBehaviour
 
     public void LoadGameOverScene()
     {
+        StartCoroutine(LoadGameOverSceneCoroutine());
+    }
+
+    public void LoadVictoryScene()
+    {
+        StartCoroutine (LoadVictorySceneCoroutine());
+    }
+
+    private IEnumerator LoadGameOverSceneCoroutine()
+    {
+        yield return new WaitForSeconds(gameOverLapTime);
+
         if (!string.IsNullOrEmpty(gameOverSceneName))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(gameOverSceneName);
         }
     }
 
-    public void LoadVictoryScene()
+    private IEnumerator LoadVictorySceneCoroutine()
     {
+        yield return new WaitForSeconds(victoryLapTime);
+
         if (!string.IsNullOrEmpty(victorySceneName))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(victorySceneName);
