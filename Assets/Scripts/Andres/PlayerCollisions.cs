@@ -54,6 +54,11 @@ public class PlayerCollisions : MonoBehaviour
                 gameManager.TriggerGameOver();
             }
         }
+
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            AudioManager.Instance.PlayImpactBallEffect();
+        }
     }
 
     private void OnTriggerExit(Collider other)

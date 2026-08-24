@@ -111,6 +111,13 @@ public class PlayerMovement : MonoBehaviour
     // que IsGrounded lo haga, para que la animación de aterrizaje llegue a tiempo.
     public bool IsAboutToLand => isAboutToLand;
 
+    // Ventana de anticipación abierta: hay un salto aceptado esperando su impulso.
+    // La capa de animación la usa para callar la locomoción durante esos milisegundos y
+    // dejar que la pose de encogimiento se vea sola. No se puede deducir del Animator
+    // porque hay que empezar a callar en el MISMO frame de la pulsación, cuando la
+    // transición de entrada todavía no ha terminado.
+    public bool IsAnticipatingJump => isAnticipatingJump;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -193,6 +200,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (i_interactAction.WasPressedThisFrame())
                 {
+                    AudioManager.Instance.PlayWinTriggerEffect();
                     gameManager.FinishGame();
                 }
             }
@@ -208,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
         // No aceptamos otro salto mientras haya uno esperando su impulso
         if (m_jumpAction.WasPressedThisFrame() && !isAnticipatingJump && (isGrounded || numberOfJumpsRemaining > 0))
         {
+            AudioManager.Instance.PlayJumpEffect();
             RequestJump();
         }
 

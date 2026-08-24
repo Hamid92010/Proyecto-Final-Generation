@@ -48,7 +48,7 @@ proyecto.** Hay que medirla.
  │  Única fuente de verdad: física, suelo, saltos               │
  │  · mide la velocidad horizontal REAL por desplazamiento      │
  │  · expone HorizontalSpeed, VerticalVelocity, IsGrounded,     │
- │    IsAboutToLand                                             │
+ │    IsAboutToLand, IsAnticipatingJump                         │
  │  · publica OnGroundJump / OnAirJump                          │
  └───────────────────────────┬──────────────────────────────────┘
                              │
@@ -68,7 +68,7 @@ proyecto.** Hay que medirla.
 | Archivo | Rol |
 |---|---|
 | `Characters_AnimationScripts/PlayerAnimationBridge.cs` | Único archivo de la capa de animación. |
-| `Scripts/Andres/PlayerMovement.cs` | Cambios **aditivos**: medición de velocidad real, 4 propiedades, 2 eventos, ventana de anticipación, aceleración horizontal y aviso adelantado de aterrizaje. |
+| `Scripts/Andres/PlayerMovement.cs` | Cambios **aditivos**: medición de velocidad real, 5 propiedades, 2 eventos, ventana de anticipación, aceleración horizontal y aviso adelantado de aterrizaje. |
 
 ### Aceleración horizontal
 
@@ -119,7 +119,7 @@ integra la gravedad, así que ahí el Rigidbody sí es fuente válida.
 
 | Parámetro | Origen | Notas |
 |---|---|---|
-| `HorizontalSpeed` (float) | `PlayerMovement.HorizontalSpeed` | Con suavizado (ver abajo) |
+| `HorizontalSpeed` (float) | `PlayerMovement.HorizontalSpeed` | Con suavizado, y **multiplicado por el peso de locomoción** (ver abajo) |
 | `VerticalVelocity` (float) | `rb.linearVelocity.y` | **Sin** suavizar: las condiciones comparan contra 0.2 y -0.1 |
 | `IsGrounded` (bool) | `PlayerMovement.IsGrounded` | Único chequeo de suelo del proyecto |
 | `IsAboutToLand` (bool) | `PlayerMovement.IsAboutToLand` | Aviso adelantado del aterrizaje (sección 6) |
@@ -153,6 +153,95 @@ Subirlo produce **doble suavizado** y la animación se queda por detrás del per
 estar en 0.5 s en la escena: con 0.15 s de rampa física encima, la carrera tardaba casi 0.7 s en
 aparecer mientras Bravard ya corría a tope desde el 0.15. Si la mezcla `Idle → Caminata →
 Carrera` se ve mal, el mando correcto es `timeToTopSpeed` en `PlayerMovement`, no este.
+
+### El silenciado de la locomoción
+
+Síntoma reportado: al saltar **en movimiento**, la pose de anticipación se veía como una
+combinación entre el desplazamiento horizontal y el encogimiento vertical, y el encogimiento
+quedaba desdibujado. Saltando quieto se veía bien.
+
+La sospecha inicial fue el retraso del impulso (`groundJumpAnticipation`). **No era eso.** El
+retraso es lo que hace visible la pose. Medido: la transición de entrada dura 0.075 s con
+`Fixed Duration`, contra una ventana de 0.12 s, así que el **62 % de la ventana era un crossfade**
+entre la carrera y la anticipación. Y el compañero de mezcla era el peor posible: con
+`moveSpeed = 5` el Blend Tree está exactamente en el umbral de `Run`, que además corre a
+TimeScale 1.5.
+
+Hay dos formas de hacer esa mezcla invisible:
+
+| Vía | Qué hace | Coste |
+|---|---|---|
+| Acortar el crossfade | Menos tiempo mezclando | Paga con la entrada suave afinada a mano, y arriesga un salto de pose visible: el estilo **no es cartoon** |
+| **Silenciar la locomoción** | Cambia *qué hay al otro lado* de la mezcla: Run pasa a ser Idle | Bravard se desliza con la animación detenida |
+
+Se eligió la segunda. El problema nunca fue "el crossfade es largo", fue **"el compañero del
+crossfade es una pose de carrera"**. Con la locomoción en Idle, la mezcla es Idle + encogimiento,
+y la pose de Idle es casi el frame 0 de la anticipación: la mezcla se vuelve visualmente un
+no-op. **No se tocó ningún valor del Animator**, así que el riesgo de pop es cero por
+construcción.
+
+> **Excepción explícita al principio de §1.** El bridge reporta aquí un `HorizontalSpeed` que
+> **no** es el medido. Es deliberado y está acotado a dos ventanas conocidas. No duplica la
+> máquina de estados —el Animator sigue decidiendo cada transición—, solo modela una entrada de
+> presentación. Si alguien lo "arregla" para que vuelva a reportar el valor crudo, reaparece la
+> mezcla.
+
+```csharp
+float reportedHorizontalSpeed = playerMovement.HorizontalSpeed * locomotionWeight;
+```
+
+`locomotionWeight` va de 1 (locomoción a pleno) a 0 (callada) con rampas configurables. **El
+personaje no se detiene:** sigue desplazándose con toda su inercia. Solo se calla la animación.
+
+`HorizontalSpeed` se lee en exactamente **dos** sitios del Animator, así que silenciarlo tiene
+exactamente dos efectos, y los dos son los buscados:
+
+| Dónde se lee | Efecto de silenciarlo |
+|---|---|
+| Blend Tree de `Locomotion` (umbrales 0 / 2 / 5) | Cae a Idle → escenario limpio para la anticipación |
+| Condición `Jump_End → Locomotion` (`HorizontalSpeed > 0.1`, exit 0.4) | No puede disparar → el aterrizaje se reproduce entero por la salida incondicional de exit 0.9 |
+
+### Las dos ventanas se detectan de forma distinta
+
+No es una inconsistencia: cada una necesita empezar en un momento que la otra vía no sabría ver.
+
+| Ventana | Cómo se detecta | Por qué no la otra vía |
+|---|---|---|
+| Anticipación del salto | `PlayerMovement.IsAnticipatingJump` | Hay que empezar a callar en el **mismo frame** de la pulsación, cuando el Animator está todavía *en* la transición de entrada y su estado actual sigue siendo `Locomotion`. Un Tag no lo vería |
+| Aterrizaje | Tag `Landing` en el estado `Jump_End` | El estado ya está a peso completo; no hace falta adivinar duraciones y no hay un segundo mando que afinar |
+
+**Estar en transición devuelve la voz a la locomoción** (`animator.IsInTransition(0)`), salvo
+durante la anticipación. Es lo que hace que al arrancar la salida del aterrizaje hacia
+`Locomotion` el Blend Tree ya venga subiendo hacia la carrera, en lugar de llegar a Idle y
+acelerar después — que se vería como un doble parpadeo Idle → Run.
+
+| Campo (en el bridge) | Valor | Regla de ajuste |
+|---|---|---|
+| `locomotionMuteAttack` | 0.05 s | **Por debajo** de la transición de entrada a la anticipación (0.075 s). Si tarda más, el Blend Tree aún va camino de Idle cuando la mezcla ya terminó. A 0 se vería el salto de pose |
+| `locomotionMuteRelease` | 0.18 s | Parecido a la transición de salida hacia `Locomotion` (0.2 s), para que el Blend Tree llegue ya en carrera al final de la mezcla |
+
+El Tag se pone a mano en el campo **Tag** del Inspector del estado. Hoy solo lo lleva `Jump_End`
+**el de `JumpSystem`**, que es donde silenciar surte efecto: su salida temprana es la que depende
+de `HorizontalSpeed`.
+
+### El canje aceptado: el patinaje
+
+Bravard se desliza mientras su animación de locomoción está detenida. A `moveSpeed = 5`:
+
+| Ventana | Desplazamiento con la animación detenida |
+|---|---|
+| Anticipación (0.12 s) | ~0.6 unidades — apenas se nota |
+| Aterrizaje (exit 0.9 = 0.48 s, antes 0.21 s) | ~2.4 unidades en pose de recomposición |
+
+Es una decisión tomada a conciencia: se prefiere la animación completa al deslizamiento. Si el
+patinaje del aterrizaje molesta, el mando **no** es la máscara: es quitarle el Tag a `Jump_End`,
+con lo que vuelve la salida temprana de exit 0.4 y el aterrizaje se acorta a 0.21 s.
+
+> **Límite conocido.** Esto no se aplica al caer de una plataforma **sin saltar**. Ese camino usa
+> la copia de `Jump_End` del `Base Layer` (ver §10), que no tiene ninguna condición sobre
+> `HorizontalSpeed` —solo una salida incondicional a exit 0.531—, así que silenciar no alargaría
+> nada. Y esa copia arrastra `Transition Offset 0.369`: arranca en el frame 5.9 de 16 y se salta
+> el impacto del aterrizaje. Se dejó así a propósito en esta pasada.
 
 ---
 
@@ -379,6 +468,15 @@ evaluado, que fue justo el bug que cortaba la anticipación.
    - Quieto → `HorizontalSpeed` en 0, Blend Tree en Idle.
    - Caminar → sube suavemente y cruza el umbral 2 antes del 5.
    - Saltar → despega en el mismo frame de la pulsación, sin retardo.
+   - **Saltar corriendo, sin soltar la dirección** → el encogimiento se lee **vertical y limpio**,
+     no como una diagonal mezclada con la zancada. Mirando `HorizontalSpeed` en la ventana del
+     Animator debe **caer hacia 0** al pulsar y volver a subir al despegar, mientras Bravard
+     **sigue desplazándose** en la escena. Si todavía se mezcla, bajar `locomotionMuteAttack`.
+   - **Aterrizar corriendo** → la recomposición se reproduce entera (~0.48 s) en lugar de
+     cortarse a ~0.21 s, y al salir hacia `Locomotion` Bravard llega **ya en carrera**: si se ve
+     pasar por Idle y acelerar después, subir `locomotionMuteRelease`.
+   - **Poner `locomotionMuteAttack` y `locomotionMuteRelease` a 0** → vuelve el comportamiento
+     anterior salvo el corte de pose. Quitarle el Tag a `Jump_End` devuelve el aterrizaje corto.
    - Doble salto en el aire → entra `DoubleJump_Anticipation`.
    - Aterrizar → `Jump_End` entra sin retardo y se ve **desde su primer frame**, sin instante
      congelado previo.
@@ -406,9 +504,15 @@ evaluado, que fue justo el bug que cortaba la anticipación.
   forzado, la alternativa limpia es reanimar el clip a 3-4 frames en lugar de 16, para que quepa
   en el tiempo real que Bravard pasa en el suelo (~0.02 s) y quitar entonces el exit time.
 - **Estados duplicados.** `Jump_GoingDown` y `Jump_End` existen dos veces (una copia en
-  `Base Layer` para la caída desde borde, otra en `JumpSystem`). Hoy tienen ajustes idénticos,
-  pero son dos sitios que mantener a mano. Consolidar en la ventana del Animator: apuntar la
-  transición de `Locomotion` a la copia de `JumpSystem` y borrar las del `Base Layer`.
+  `Base Layer` para la caída desde borde, otra en `JumpSystem`). **Han derivado**, y la
+  diferencia es un bug medido: la corrección de §6 (offset a 0 en `Jump_GoingDown → Jump_End`)
+  se aplicó solo a la copia de `JumpSystem`. La del `Base Layer` sigue con **offset 0.369**, así
+  que arranca en el frame 5.9 de 16 y **el aterrizaje tardío sigue ocurriendo al caerse de una
+  plataforma sin saltar**. Por lo mismo, el silenciado de la locomoción (§5) no tiene efecto en
+  ese camino: esa copia no condiciona sobre `HorizontalSpeed`.
+  Arreglo mínimo: poner ese offset a 0, un solo campo. Arreglo completo: apuntar la transición
+  de `Locomotion` a la copia de `JumpSystem`, tagear su `Jump_End` y borrar las del `Base Layer`.
+  Se dejó pendiente a propósito.
 - **Saltos gastados en el suelo.** `PlayerMovement.Update` permite gastar los dos saltos
   estando en el suelo: `isGrounded` sigue en `true` uno o dos frames tras saltar.
 - **Pausa duplicada.** `GameManager` y `PauseManager` la implementan por separado, ambos con la

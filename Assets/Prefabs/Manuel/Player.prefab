@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 1841446488200723}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2454,14 +2454,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   InputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 10
   rotationSpeed: 10
   fallForce: 0
   numberOfJumpsRemaining: 2
   timeToTopSpeed: 0.15
   timeToStop: 0.12
-  groundJumpAnticipation: 0.12
-  airJumpAnticipation: 0.12
+  groundJumpAnticipation: 0.2
+  airJumpAnticipation: 0.2
   landingAnticipation: 0.08
   isAboutToLand: 0
   isGrounded: 1
@@ -2505,6 +2505,8 @@ MonoBehaviour:
   fallSpeedForNormalPlayback: 4
   fallSpeedForMaxPlayback: 12
   maxFallPlaybackSpeed: 2
+  locomotionMuteAttack: 0.05
+  locomotionMuteRelease: 0.18
 --- !u!54 &6360599156692304641
 Rigidbody:
   m_ObjectHideFlags: 0
