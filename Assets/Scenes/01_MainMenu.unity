@@ -467,10 +467,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
-    - target: {fileID: 14781552457451186, guid: 8806f8fcacd598c4aab3dc8c9d22ad8a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2478707965357607056, guid: 8806f8fcacd598c4aab3dc8c9d22ad8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.87714
@@ -1451,7 +1447,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6115913510569849210}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &853207472
@@ -4233,8 +4230,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654250686315839713}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 2.06, z: -8.08}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06, y: 1.06, z: 1.9200001}
   m_LocalScale: {x: 4.8534, y: 0.25385, z: 0.20506}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4246,7 +4243,7 @@ Transform:
   - {fileID: 3958103261894801079}
   - {fileID: 1041102830}
   - {fileID: 1277853779717463653}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 853207471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &6118865387672937281
 SkinnedMeshRenderer:
@@ -5313,6 +5310,5 @@ SceneRoots:
   - {fileID: 1431245014}
   - {fileID: 1194339370}
   - {fileID: 1426012792}
-  - {fileID: 6115913510569849210}
   - {fileID: 38863167}
   - {fileID: 98206461}
