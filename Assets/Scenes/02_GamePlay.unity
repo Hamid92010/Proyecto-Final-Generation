@@ -5024,6 +5024,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6543465356604132429, guid: fe5175c1cdc8c0243af6e0d05505f95b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.2762496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543465356604132429, guid: fe5175c1cdc8c0243af6e0d05505f95b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.2762496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543465356604132429, guid: fe5175c1cdc8c0243af6e0d05505f95b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.2762496
+      objectReference: {fileID: 0}
     - target: {fileID: 7519359797782197141, guid: fe5175c1cdc8c0243af6e0d05505f95b, type: 3}
       propertyPath: viewCamera
       value: 

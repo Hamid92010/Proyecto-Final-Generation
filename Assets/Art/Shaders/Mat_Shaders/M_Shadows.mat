@@ -29,9 +29,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Light_Falloff: 2
+    - _Light_Intensity: 0
     - _Mask_Radius: 3
-    - _Mask_Softness: 5
+    - _Mask_Softness: 7.5
     m_Colors:
+    - _Light_Inner_Color: {r: 1, g: 0.9, b: 0.65, a: 1}
+    - _Light_Outer_Color: {r: 0.35, g: 0.25, b: 0.7, a: 1}
     - _Overlay_Color: {r: 0, g: 0, b: 0, a: 0.8}
     - _Player_Position: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -5174,6 +5174,9 @@ MonoBehaviour:
   flyingVFX: {fileID: 0}
   stepsVFX: {fileID: 0}
   waterVFX: {fileID: 0}
+  continuousEffectGrace: 0.2
+  effectsExemptFromCutoff:
+  - {fileID: 6956014533198493228}
   leverVFX: {fileID: 6956014533198493228}
 --- !u!4 &719920453517681047 stripped
 Transform:

@@ -39,6 +39,21 @@ public class AnimationVFXEvents : MonoBehaviour
     [Tooltip("VFX_WaterDefeat. Se repite mientras dura la animacion de ahogarse, que es en bucle.")]
     [SerializeField] private ParticleSystem waterVFX;
 
+    [Header("Corte al cambiar de animacion")]
+    // Ninguno de estos efectos esta en bucle, asi que todos se agotan solos... pero
+    // algunos tardan MAS de lo que dura su animacion. VFX_Flying emite durante 2.5 s:
+    // si Bravard aterriza al segundo, sigue soltando estelas segundo y medio con los
+    // pies en el suelo, y el siguiente salto se le suma encima. De ahi la acumulacion.
+    //
+    // La regla es que un efecto continuo pertenece a la animacion que lo disparo:
+    // mientras esa animacion siga viva vuelve a dispararlo, y en cuanto deja de
+    // hacerlo se corta la emision.
+    [Tooltip("Segundos que un efecto continuo aguanta sin que su evento se repita antes de dejar de emitir. Subelo si ves cortes; bajalo si todavia se acumulan.")]
+    [SerializeField, Min(0f)] private float continuousEffectGrace = 0.2f;
+
+    [Tooltip("Efectos continuos que se disparan UNA sola vez y deben durar lo que dure su ParticleSystem. El de la palanca es justo ese caso: su evento no se repite nunca, asi que sin poner aqui su ParticleSystem se cortaria a los pocos milisegundos.")]
+    [SerializeField] private ParticleSystem[] effectsExemptFromCutoff;
+
     [Header("Palanca")]
     [Tooltip("VFX_LeverActivated. Es el unico que necesita la palanca; los de arriba se dejan vacios en ella.")]
     [SerializeField] private ParticleSystem leverVFX;
@@ -48,6 +63,15 @@ public class AnimationVFXEvents : MonoBehaviour
     // inservible y taparia cualquier otro error de la partida.
     private readonly HashSet<string> warnedEvents = new HashSet<string>();
 
+    // Efectos continuos en marcha, con el instante en que su evento los refresco por
+    // ultima vez. Los de rafaga no entran aqui: sueltan su carga de golpe y no pueden
+    // seguir acumulando por mucho que se les deje.
+    private readonly Dictionary<ParticleSystem, float> effectsAwaitingCutoff = new Dictionary<ParticleSystem, float>();
+
+    // Se reutiliza en cada frame para no reservar memoria en el bucle de juego, y
+    // porque un diccionario no se puede modificar mientras se recorre
+    private readonly List<ParticleSystem> cutoffBuffer = new List<ParticleSystem>();
+
     private void Awake()
     {
         // El fallo mas facil de cometer con esto es colgarlo del objeto padre. Los
@@ -56,6 +80,38 @@ public class AnimationVFXEvents : MonoBehaviour
         if (GetComponent<Animator>() == null)
         {
             Debug.LogError($"{nameof(AnimationVFXEvents)} esta en '{name}', que no tiene Animator. Los Animation Events solo llegan al GameObject del Animator, asi que ningun VFX se reproducira. Muevelo al hijo que lo tenga.", this);
+        }
+    }
+
+    // Corta los efectos cuya animacion ya no los reclama
+    private void Update()
+    {
+        if (effectsAwaitingCutoff.Count == 0)
+        {
+            return;
+        }
+
+        cutoffBuffer.Clear();
+
+        foreach (KeyValuePair<ParticleSystem, float> entry in effectsAwaitingCutoff)
+        {
+            if (Time.time - entry.Value >= continuousEffectGrace)
+            {
+                cutoffBuffer.Add(entry.Key);
+            }
+        }
+
+        foreach (ParticleSystem effect in cutoffBuffer)
+        {
+            effectsAwaitingCutoff.Remove(effect);
+
+            if (effect != null && effect.isPlaying)
+            {
+                // StopEmitting otra vez: se corta el chorro pero lo ya emitido termina
+                // su vida y se desvanece. Con StopAndClear el efecto desapareceria de
+                // golpe en mitad de la pantalla, que se nota mucho mas que la sobra.
+                effect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
         }
     }
 
@@ -117,6 +173,32 @@ public class AnimationVFXEvents : MonoBehaviour
         // anterior en lugar de acumularse con ella.
         effect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         effect.Play(true);
+
+        // Mientras el evento se siga repitiendo, esto renueva el plazo y el efecto no
+        // se corta. Cuando la animacion cambia, el evento deja de llegar, el plazo
+        // vence y la emision para sola.
+        if (NeedsCutoff(effect))
+        {
+            effectsAwaitingCutoff[effect] = Time.time;
+        }
+    }
+
+    // Si un efecto puede acumularse por seguir emitiendo de mas
+    private bool NeedsCutoff(ParticleSystem effect)
+    {
+        // Los de rafaga (rateOverTime a cero) sueltan sus particulas de una vez y ya
+        // esta: cortarles la emision no cambiaria nada, solo daria trabajo
+        if (effect.emission.rateOverTime.constantMax <= 0f)
+        {
+            return false;
+        }
+
+        if (effectsExemptFromCutoff == null)
+        {
+            return true;
+        }
+
+        return System.Array.IndexOf(effectsExemptFromCutoff, effect) < 0;
     }
 
     // Avisa una sola vez por evento
