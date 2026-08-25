@@ -29,6 +29,8 @@ public class TimeManager : MonoBehaviour
             gameManager.OnGameFinished += StopTimer;
             gameManager.OnGamePaused += StopTimer;
             gameManager.OnGameResumed += StartTimer;
+            gameManager.OnCutsceneStarted += StopTimer;
+            gameManager.OnCutsceneEnded += StartTimer;
         }
     }
 
@@ -92,6 +94,8 @@ public class TimeManager : MonoBehaviour
             gameManager.OnGameFinished -= StopTimer;
             gameManager.OnGamePaused -= StopTimer;
             gameManager.OnGameResumed -= StartTimer;
+            gameManager.OnCutsceneStarted -= StopTimer;
+            gameManager.OnCutsceneEnded -= StartTimer;
         }
     }
 

@@ -4271,7 +4271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1487219490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4505,6 +4505,7 @@ MonoBehaviour:
   gameOver: 0
   gameFinished: 0
   isGamePaused: 0
+  isCutscenePlaying: 0
 --- !u!1 &1528109194
 GameObject:
   m_ObjectHideFlags: 0
@@ -5525,7 +5526,7 @@ GameObject:
   - component: {fileID: 1945934133}
   m_Layer: 3
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -147,6 +147,8 @@ public class PlayerMovement : MonoBehaviour
             gameManager.OnGameFinished += StopMovement;
             gameManager.OnGamePaused += PausePlayer;
             gameManager.OnGameResumed += ResumePlayer;
+            gameManager.OnCutsceneStarted += StopMovement;
+            gameManager.OnCutsceneEnded += ResumeMovement;
         }
 
         if(playerCollisions != null)
@@ -170,6 +172,8 @@ public class PlayerMovement : MonoBehaviour
             gameManager.OnGameFinished -= StopMovement;
             gameManager.OnGamePaused -= PausePlayer;
             gameManager.OnGameResumed -= ResumePlayer;
+            gameManager.OnCutsceneStarted -= StopMovement;
+            gameManager.OnCutsceneEnded -= ResumeMovement;
         }
 
         if (playerCollisions != null)
@@ -440,6 +444,8 @@ public class PlayerMovement : MonoBehaviour
         isTouchingObstacle = false;
     }
 
+    // Durante una escena guionizada tambien se congela, avisado por el GameManager:
+    // con la camara en otro sitio, caminar seria hacerlo a ciegas.
     private void StopMovement()
     {
         canPlayerMove = false;

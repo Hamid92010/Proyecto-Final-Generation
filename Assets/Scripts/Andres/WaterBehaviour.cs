@@ -30,6 +30,12 @@ public class WaterBehaviour : MonoBehaviour
             gameManager.OnGameFinished += StopWater;
             gameManager.OnGamePaused += StopWater;
             gameManager.OnGameResumed += StartWater;
+
+            // El agua depende del tiempo transcurrido, asi que parar el temporizador ya
+            // la detendria de rebote. Se suscribe igual para no depender de eso: si
+            // manana el agua deja de leer el reloj, aqui no habria que acordarse.
+            gameManager.OnCutsceneStarted += StopWater;
+            gameManager.OnCutsceneEnded += StartWater;
         }
 
         if (timeManager != null)
@@ -76,6 +82,8 @@ public class WaterBehaviour : MonoBehaviour
             gameManager.OnGameFinished -= StopWater;
             gameManager.OnGamePaused -= StopWater;
             gameManager.OnGameResumed -= StartWater;
+            gameManager.OnCutsceneStarted -= StopWater;
+            gameManager.OnCutsceneEnded -= StartWater;
         }
 
         if (timeManager != null)

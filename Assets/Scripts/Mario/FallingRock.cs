@@ -52,6 +52,11 @@ public class FallingRock : MonoBehaviour
         rb.mass = mass;
         rb.linearVelocity = Vector3.down * fallSpeed;
 
+        // Una roca que nazca ya congelada (por una pausa o una escena en curso)
+        // nunca llega a pasar por DisableFall, asi que sin esto se reanudaria
+        // desde cero en vez de con la velocidad de caida que le tocaba.
+        velocityBeforePause = rb.linearVelocity;
+
         // Evita que la roca atraviese colliders delgados (como un suelo plano)
         // al caer rápido, comprobando colisiones de forma continua.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -72,9 +77,14 @@ public class FallingRock : MonoBehaviour
             gameManager.OnGameFinished += DisableFall;
             gameManager.OnGameResumed += EnableFall;
             gameManager.OnGameOver += DestroyRock;
+
+            // No basta con dejar de generar rocas: las que ya estan en el aire llegarian
+            // igual, y con el mismo resultado injusto
+            gameManager.OnCutsceneStarted += DisableFall;
+            gameManager.OnCutsceneEnded += EnableFall;
         }
 
-        canFall = !(gameManager.isGamePaused || gameManager.gameFinished || gameManager.gameOver);
+        canFall = !(gameManager.isGamePaused || gameManager.gameFinished || gameManager.gameOver || gameManager.isCutscenePlaying);
 
     }
 
@@ -123,6 +133,8 @@ public class FallingRock : MonoBehaviour
             gameManager.OnGameFinished -= DisableFall;
             gameManager.OnGameResumed -= EnableFall;
             gameManager.OnGameOver -= DestroyRock;
+            gameManager.OnCutsceneStarted -= DisableFall;
+            gameManager.OnCutsceneEnded -= EnableFall;
         }
     }
     private void OnCollisionEnter(Collision collision)

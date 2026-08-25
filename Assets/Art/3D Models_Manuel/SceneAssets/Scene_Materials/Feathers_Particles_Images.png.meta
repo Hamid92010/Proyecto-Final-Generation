@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 767af13895be3444ba788325cf8056b0
+guid: 49b0d058aba4502439d7ffd8b89b5fee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,67 +136,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dust_Particles_Images_0
+      name: Feathers_Particles_Images_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 18
-        width: 489
-        height: 476
+        x: 24
+        y: 22
+        width: 453
+        height: 471
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c6e7bb3736e3a46933891c205e11fc
-      internalID: 672300588
+      spriteID: b508242c306149c458070d701692b2e1
+      internalID: -2115587532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dust_Particles_Images_1
+      name: Feathers_Particles_Images_1
       rect:
         serializedVersion: 2
-        x: 539
-        y: 5
-        width: 471
-        height: 466
+        x: 576
+        y: 27
+        width: 353
+        height: 454
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec55047d1a3da7f42818f53972add2f9
-      internalID: -1597947790
+      spriteID: be0992ef72d88fa469f1a7a855caf5da
+      internalID: -1490412685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dust_Particles_Images_2
+      name: Feathers_Particles_Images_2
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 11
-        width: 495
-        height: 470
+        x: 1076
+        y: 7
+        width: 406
+        height: 498
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2b088317e898e6438cf40b35ed25841
-      internalID: -2050350802
+      spriteID: c2975e7826e7f2f4ea910f3e75e08ee1
+      internalID: -2095739873
       vertices: []
       indices: 
       edges: []
@@ -205,7 +205,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a484944ef5f15d44790698dc4aeb0bb6
+    spriteID: 064d18c5cd3767642b68d1c659e14b2b
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +213,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Dust_Particles_Images_0: 672300588
-      Dust_Particles_Images_1: -1597947790
-      Dust_Particles_Images_2: -2050350802
+      Feathers_Particles_Images_0: -2115587532
+      Feathers_Particles_Images_1: -1490412685
+      Feathers_Particles_Images_2: -2095739873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

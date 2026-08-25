@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     public bool gameFinished = false;
     public bool isGamePaused = false;
 
+    // Hay una escena guionizada en marcha (hoy, la camara ensenando la jaula al
+    // abrirse). El jugador no controla nada durante esos segundos, asi que el mundo
+    // tampoco debe seguir corriendo en su contra.
+    public bool isCutscenePlaying = false;
+
 
     public event Action OnGameStarted;
     public event Action OnGameOver;
@@ -33,6 +38,12 @@ public class GameManager : MonoBehaviour
     public event Action OnGameFinished;
     public event Action OnGamePaused;
     public event Action OnGameResumed;
+
+    // Congelan el mundo SIN abrir el menu de pausa. Es la diferencia con OnGamePaused:
+    // aquella es cosa del jugador y muestra el panel; esta la pide el propio juego y
+    // debe pasar desapercibida, porque la escena es lo que se esta mirando.
+    public event Action OnCutsceneStarted;
+    public event Action OnCutsceneEnded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
@@ -113,6 +124,39 @@ public class GameManager : MonoBehaviour
     {
         gameFinished = true;
         OnGameFinished?.Invoke();
+    }
+
+    public void StartCutscene()
+    {
+        // Dos escenas encadenadas no deben avisar dos veces: los suscriptores se
+        // congelarian una vez pero se reanudarian a la primera que terminase
+        if (isCutscenePlaying)
+        {
+            return;
+        }
+
+        isCutscenePlaying = true;
+        OnCutsceneStarted?.Invoke();
+    }
+
+    public void EndCutscene()
+    {
+        if (!isCutscenePlaying)
+        {
+            return;
+        }
+
+        isCutscenePlaying = false;
+
+        // Si la partida se decidio o se pauso mientras corria la escena, el mundo tiene
+        // que quedarse parado: reanudar aqui volveria a poner en marcha el tiempo y el
+        // agua por encima de un game over. Cuando se despause, OnGameResumed lo hara.
+        if (gameOver || gameFinished || isGamePaused)
+        {
+            return;
+        }
+
+        OnCutsceneEnded?.Invoke();
     }
 
     public void PauseGame()

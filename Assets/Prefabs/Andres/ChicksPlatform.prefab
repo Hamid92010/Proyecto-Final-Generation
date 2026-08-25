@@ -346,10 +346,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.018253498, y: 0.021590775, z: 0.019974122}
-  m_Center: {x: -1.8697123e-12, y: -0.0016686438, z: 0.0016970672}
+  m_Size: {x: 0.018253498, y: 0.018383725, z: 0.019974122}
+  m_Center: {x: 9.338858e-11, y: -0.00006512194, z: 0.0016970673}
 --- !u!4 &8416945321954458434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4a26167119a14d84190c64786a15b922, type: 3}
@@ -401,8 +401,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9485999, y: 2.3521113, z: 2.7864323}
-  m_Center: {x: 0.028922766, y: 1.1503634, z: 0.26113474}
+  m_Size: {x: 1.9485997, y: 1.539914, z: 2.3349128}
+  m_Center: {x: 0.02892273, y: 0.7442648, z: 0.12961021}
 --- !u!114 &8018598616366483074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,3 +416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JailDoor
   victoryTrigger: {fileID: 7578365567092934830}
+  cameraFocusOffset: {x: 0, y: 1.5, z: 0}
+  cameraTravelDuration: 0.6
+  holdBeforeOpening: 0.9
+  holdAfterOpening: 0.8
+  cameraReturnDuration: 0.6

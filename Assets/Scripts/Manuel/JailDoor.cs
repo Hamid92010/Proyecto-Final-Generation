@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // ---------------------------------------------------------------------------
@@ -20,6 +21,25 @@ public class JailDoor : MonoBehaviour
     [Header("Referencias")]
     [Tooltip("Collider marcado como trigger que declara la victoria. Si se deja vacio se busca el unico trigger que haya en este objeto o sus hijos.")]
     [SerializeField] private Collider victoryTrigger;
+
+    [Header("Enfoque de camara al abrirse")]
+    // La puerta ya no se abre en el mismo instante en que la palanca termina. Entre
+    // medias la camara sube a ensenar la jaula: es lo que le dice al jugador "ahora
+    // ven hacia aca" sin ningun texto. Los tiempos de abajo son esa escena.
+    [Tooltip("Desvio del punto al que viaja la camara, relativo al origen de la jaula. Subelo si la jaula queda baja en el encuadre. La Z NO se usa: la camara mantiene su distancia de reposo para no hacer zoom.")]
+    [SerializeField] private Vector3 cameraFocusOffset = new Vector3(0f, 1.5f, 0f);
+
+    [Tooltip("Segundos que tarda la camara en viajar hasta la jaula.")]
+    [SerializeField, Min(0f)] private float cameraTravelDuration = 0.6f;
+
+    [Tooltip("Segundos que la camara espera sobre la jaula ANTES de que se abra. Sumado al viaje es el retraso total entre accionar la palanca y ver abrirse la puerta.")]
+    [SerializeField, Min(0f)] private float holdBeforeOpening = 0.9f;
+
+    [Tooltip("Segundos que la camara sigue sobre la jaula DESPUES de abrirse, para que se vea la animacion.")]
+    [SerializeField, Min(0f)] private float holdAfterOpening = 0.8f;
+
+    [Tooltip("Segundos que tarda la camara en volver al jugador.")]
+    [SerializeField, Min(0f)] private float cameraReturnDuration = 0.6f;
 
     // Animator de la jaula (AnimatorControlles_Jail)
     private Animator jailAnimator;
@@ -89,14 +109,55 @@ public class JailDoor : MonoBehaviour
         }
     }
 
-    // Abre la puerta y deja lista la segunda condicion de victoria
+    // Abre la puerta y deja lista la segunda condicion de victoria, pero no de golpe:
+    // antes se lleva la camara a ensenar la jaula.
     private void OpenDoor()
     {
+        StartCoroutine(OpenDoorSequence());
+    }
+
+    private IEnumerator OpenDoorSequence()
+    {
+        CameraFollow cameraFollow = FindAnyObjectByType<CameraFollow>();
+
+        // Congela el mundo entero mientras dura la escena: el jugador, el temporizador,
+        // el agua y las rocas. Con la camara en otro sitio no puede defenderse de nada
+        // de eso, asi que nada de eso debe seguir avanzando.
+        if (gameManager != null)
+        {
+            gameManager.StartCutscene();
+        }
+
+        if (cameraFollow != null)
+        {
+            cameraFollow.StartFocus(transform, cameraFocusOffset, cameraTravelDuration);
+
+            // El viaje mas la espera son el retraso que se ve antes de que la puerta
+            // se mueva: la camara ya esta encima cuando ocurre lo importante
+            yield return new WaitForSeconds(cameraTravelDuration + holdBeforeOpening);
+        }
+
         jailAnimator.SetTrigger(hashIsLeverActivated);
 
         if (victoryTrigger != null)
         {
             victoryTrigger.enabled = true;
+        }
+
+        if (cameraFollow != null)
+        {
+            yield return new WaitForSeconds(holdAfterOpening);
+
+            cameraFollow.EndFocus(cameraReturnDuration);
+
+            yield return new WaitForSeconds(cameraReturnDuration);
+        }
+
+        // EndCutscene se guarda a si mismo: si la partida se decidio durante la escena,
+        // no reanuda nada aunque se le pida
+        if (gameManager != null)
+        {
+            gameManager.EndCutscene();
         }
     }
 
