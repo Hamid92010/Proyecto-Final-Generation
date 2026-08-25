@@ -68,7 +68,7 @@ public class TutorialGuideAI : MonoBehaviour
         Vector3 startPos = agent.transform.position;
         Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
 
-        float duration = 0.6f; 
+        float duration = 0.25f; 
         float timer = 0f;
 
         while (timer < duration)
