@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 // ---------------------------------------------------------------------------
 // Puente entre la física del jugador y el Animator_Bravard.
@@ -63,6 +63,13 @@ public class PlayerAnimationBridge : MonoBehaviour
     // Fuente de verdad de la física: velocidad, suelo y saltos
     private PlayerMovement playerMovement;
 
+    // Quien detecta los golpes. Vive en este mismo objeto, igual que el movimiento.
+    private PlayerCollisions playerCollisions;
+
+    // Quien decide el desenlace de la partida. El puente traduce fisica a parametros,
+    // pero ganar y perder no son fisica: son estados de juego, y su unica fuente es esta.
+    private GameManager gameManager;
+
     // Hashes precalculados de los parámetros del Animator_Bravard
     private readonly int hashHorizontalSpeed = Animator.StringToHash("HorizontalSpeed");
     private readonly int hashVerticalVelocity = Animator.StringToHash("VerticalVelocity");
@@ -72,10 +79,22 @@ public class PlayerAnimationBridge : MonoBehaviour
     private readonly int hashJumpTrigger = Animator.StringToHash("JumpTrigger");
     private readonly int hashDoubleJumpTrigger = Animator.StringToHash("DoubleJumpTrigger");
 
+    // Desenlaces de la partida. Pese al prefijo "Is", los cuatro de abajo son TRIGGERS
+    // en el Animator; el unico bool de verdad del grupo es IsDead.
+    private readonly int hashIsHit = Animator.StringToHash("IsHit");
+    private readonly int hashIsDefeatedByWater = Animator.StringToHash("IsDefeatedByWater");
+    private readonly int hashIsDefeatedByTime = Animator.StringToHash("IsDefeatedByTime");
+    private readonly int hashIsWinning = Animator.StringToHash("IsWinning");
+    private readonly int hashIsDead = Animator.StringToHash("IsDead");
+
     private void Awake()
     {
         // El sistema de movimiento vive en el mismo objeto (lo garantiza RequireComponent)
         playerMovement = GetComponent<PlayerMovement>();
+
+        // Las colisiones tambien viven aqui. No lo garantiza ningun RequireComponent,
+        // asi que puede faltar y quien se suscribe lo comprueba antes.
+        playerCollisions = GetComponent<PlayerCollisions>();
 
         // Red de seguridad: si se olvidó arrastrar el Animator lo buscamos en los hijos
         if (animator == null)
@@ -101,6 +120,23 @@ public class PlayerAnimationBridge : MonoBehaviour
         // lo único que llega por suscripción y no por lectura directa de la física
         playerMovement.OnGroundJump += TriggerJump;
         playerMovement.OnAirJump += TriggerDoubleJump;
+
+        // El golpe es igual de instantaneo, pero quien lo ve es el detector de
+        // colisiones, no el movimiento
+        if (playerCollisions != null)
+        {
+            playerCollisions.HitByBall += TriggerHit;
+        }
+
+        // El GameManager se busca aqui y no en Awake por el mismo motivo que en
+        // PlayerMovement y TimeManager: es el patron que sigue todo el proyecto
+        gameManager = FindAnyObjectByType<GameManager>();
+
+        if (gameManager != null)
+        {
+            gameManager.OnGameOverCaused += TriggerDefeat;
+            gameManager.OnGameFinished += TriggerVictory;
+        }
     }
 
     private void OnDisable()
@@ -108,6 +144,17 @@ public class PlayerAnimationBridge : MonoBehaviour
         // Cancelamos las suscripciones para no dejar referencias colgando
         playerMovement.OnGroundJump -= TriggerJump;
         playerMovement.OnAirJump -= TriggerDoubleJump;
+
+        if (playerCollisions != null)
+        {
+            playerCollisions.HitByBall -= TriggerHit;
+        }
+
+        if (gameManager != null)
+        {
+            gameManager.OnGameOverCaused -= TriggerDefeat;
+            gameManager.OnGameFinished -= TriggerVictory;
+        }
     }
 
     private void Update()
@@ -204,5 +251,63 @@ public class PlayerAnimationBridge : MonoBehaviour
         // Limpiamos el trigger contrario para que no quede encolado y salte solo después
         animator.ResetTrigger(hashJumpTrigger);
         animator.SetTrigger(hashDoubleJumpTrigger);
+    }
+
+    // Reacción al golpe de una pelota. Es la única de las cuatro que no termina la
+    // partida: el Animator vuelve solo a Locomotion al acabar el clip, así que aquí
+    // no hay que deshacer nada ni tocar IsDead.
+    private void TriggerHit()
+    {
+        // La reaccion al golpe sale de AnyState, asi que tambien interrumpiria la pose
+        // final: una pelota que llegue mientras Bravard se ahoga o celebra lo sacaria
+        // de ahi para hacerle el gesto de dolor. Con la partida decidida, se ignora.
+        if (gameManager != null && (gameManager.gameOver || gameManager.gameFinished))
+        {
+            return;
+        }
+
+        animator.SetTrigger(hashIsHit);
+    }
+
+    // Derrota, con la animación que corresponda al motivo.
+    //
+    // El orden importa: la transición del Animator exige IsDead ADEMÁS del trigger, y
+    // los triggers se consumen en cuanto se evalúan. Si el bool llegase después, la
+    // condición se comprobaría con IsDead todavía en false, el trigger se gastaría sin
+    // provocar el cambio de estado y Bravard se quedaría corriendo mientras se ahoga.
+    private void TriggerDefeat(GameOverCause cause)
+    {
+        ClearPendingJumpTriggers();
+
+        animator.SetBool(hashIsDead, true);
+
+        if (cause == GameOverCause.Water)
+        {
+            animator.SetTrigger(hashIsDefeatedByWater);
+        }
+        else
+        {
+            animator.SetTrigger(hashIsDefeatedByTime);
+        }
+    }
+
+    // Victoria. La transición pide justo lo contrario que la derrota: IsDead en false.
+    // Ya es su valor por defecto, pero se escribe explícitamente para que ganar no
+    // dependa de que nadie lo haya puesto a true antes.
+    private void TriggerVictory()
+    {
+        ClearPendingJumpTriggers();
+
+        animator.SetBool(hashIsDead, false);
+        animator.SetTrigger(hashIsWinning);
+    }
+
+    // Victoria y derrota son estados terminales, pero AnyState sigue vigilando los
+    // triggers de salto: uno encolado justo antes del desenlace sacaría a Bravard de
+    // la pose final para hacerle saltar, y de ahí ya no habría vuelta.
+    private void ClearPendingJumpTriggers()
+    {
+        animator.ResetTrigger(hashJumpTrigger);
+        animator.ResetTrigger(hashDoubleJumpTrigger);
     }
 }
