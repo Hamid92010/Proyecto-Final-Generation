@@ -61,15 +61,26 @@ public class SDKAnalytics : MonoBehaviour
             return;
         }
 
-        var customEvent = new CustomEvent(eventName);
-        if (parameters != null)
+        try
         {
-            foreach (var kvp in parameters)
+            var customEvent = new CustomEvent(eventName);
+            if (parameters != null)
             {
-                customEvent[kvp.Key] = kvp.Value;
+                foreach (var kvp in parameters)
+                {
+                    customEvent[kvp.Key] = kvp.Value;
+                }
             }
-        }
 
-        AnalyticsService.Instance.RecordEvent(customEvent);
+            AnalyticsService.Instance.RecordEvent(customEvent);
+        }
+        catch (System.Exception e)
+        {
+            // Puede pasar al cerrar la app / detener el modo Play: Unity ya
+            // apagó los servicios aunque IsReady siga en true desde que se
+            // inicializaron, así que el acceso a AnalyticsService.Instance
+            // lanza en vez de simplemente no estar listo.
+            Debug.LogWarning($"[Analytics] No se pudo mandar el evento '{eventName}': {e.Message}");
+        }
     }
 }

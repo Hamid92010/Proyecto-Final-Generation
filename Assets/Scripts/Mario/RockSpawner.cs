@@ -112,6 +112,8 @@ public class RockSpawner : MonoBehaviour
 
     public void SpawnRock()
     {
+        if (player == null || rockPrefab == null) return;
+
         //apareciendo arriba de la cámara para que se vea venir antes de llegar.
         Vector3 targetPosition = GetGroundPosition(player.position);
         Vector3 spawnPosition = targetPosition;
