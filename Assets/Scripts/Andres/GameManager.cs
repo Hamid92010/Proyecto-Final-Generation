@@ -1,6 +1,14 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+// Motivo por el que se perdio la partida. Bravard no se hunde igual que se queda
+// sin tiempo, asi que la animacion de derrota depende de cual de los dos fue.
+public enum GameOverCause
+{
+    Water,
+    Time
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     public event Action OnGameStarted;
     public event Action OnGameOver;
+    // Mismo aviso que OnGameOver pero indicando la causa. Va aparte para no romper
+    // a los cuatro suscriptores que ya existen y a los que la causa les da igual.
+    public event Action<GameOverCause> OnGameOverCaused;
     public event Action OnGameFinished;
     public event Action OnGamePaused;
     public event Action OnGameResumed;
@@ -75,10 +86,27 @@ public class GameManager : MonoBehaviour
         OnGameStarted?.Invoke();
     }
 
+    public void TriggerGameOver(GameOverCause cause)
+    {
+        // Una partida solo se pierde una vez: sin esto el agua podria reavisar cada
+        // frame de contacto y relanzar la animacion de derrota ya empezada
+        if (gameOver)
+        {
+            return;
+        }
+
+        gameOver = true;
+
+        // El motivo se avisa primero para que la animacion arranque en el mismo frame
+        OnGameOverCaused?.Invoke(cause);
+        OnGameOver?.Invoke();
+    }
+
+    // Version historica sin motivo. El unico game over que existia era el del agua,
+    // asi que es el que se asume para no cambiar el comportamiento de quien ya llamaba.
     public void TriggerGameOver()
     {
-        gameOver = true;
-        OnGameOver?.Invoke();
+        TriggerGameOver(GameOverCause.Water);
     }
 
     public void FinishGame()

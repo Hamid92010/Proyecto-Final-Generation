@@ -2416,6 +2416,7 @@ GameObject:
   - component: {fileID: 4270208892925316326}
   - component: {fileID: 6360599156692304641}
   - component: {fileID: 1841446488200723}
+  - component: {fileID: 6657293084701897943}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2557,6 +2558,26 @@ CapsuleCollider:
   m_Height: 1.8348902
   m_Direction: 1
   m_Center: {x: 0, y: 0.87698644, z: 0}
+--- !u!114 &6657293084701897943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123499049345968323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e84d8a5f8e49f4db616939f11a6024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWaterDeath
+  floatHeight: 1.5
+  riseDuration: 0.5
+  bobDuration: 3
+  bobCycles: 2
+  bobAmplitude: 0.35
+  sinkDuration: 2
+  sinkDepth: 3
+  turnToCameraDuration: 0.6
 --- !u!1 &7270696737485645771
 GameObject:
   m_ObjectHideFlags: 0

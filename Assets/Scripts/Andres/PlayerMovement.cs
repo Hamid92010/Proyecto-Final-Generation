@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -77,6 +77,12 @@ public class PlayerMovement : MonoBehaviour
     public event Action OnGroundJump;
     // Se dispara cuando se ejecuta un salto aéreo (doble salto)
     public event Action OnAirJump;
+
+    // Se dispara al pulsar la tecla de interactuar dentro del trigger de la palanca
+    // y con los pies en el suelo. Este componente tiene el Input y el chequeo de
+    // suelo, asi que es quien puede decidirlo; QUE provoca la pulsacion ya no es
+    // asunto suyo: de eso se encarga quien se suscriba.
+    public event Action OnInteract;
 
     // Velocidad horizontal con signo que se aplica realmente, entre -moveSpeed y
     // +moveSpeed. Persigue de forma gradual a la que pide el input en lugar de saltar
@@ -195,13 +201,32 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded) 
         {
-            //Si el jugador esta en el trigger de victoria, y se encuentra en el suelo y presiona la tecla de interactuar, se termina el juego
+            //Si el jugador esta en el trigger de la palanca, se encuentra en el suelo y
+            //presiona la tecla de interactuar, se acciona la palanca
             if (isInWinTrigger)
             {
                 if (i_interactAction.WasPressedThisFrame())
                 {
-                    AudioManager.Instance.PlayWinTriggerEffect();
-                    gameManager.FinishGame();
+                    // Mismo caso que en el salto: sin AudioManager en la escena
+                    // la interaccion debe funcionar igual
+                    if (AudioManager.Instance != null)
+                    {
+                        AudioManager.Instance.PlayWinTriggerEffect();
+                    }
+
+                    // Antes se ganaba aqui mismo. Ahora la partida tiene dos pasos:
+                    // esta pulsacion solo acciona la palanca, y la victoria la declara
+                    // el trigger de la jaula una vez que esta se ha abierto.
+
+                    // Sin nadie suscrito la tecla no hace nada Y ADEMAS no se queja, que
+                    // es el peor de los fallos posibles: parece que el Input no responde
+                    // cuando en realidad lo que falta es la palanca en la escena
+                    if (OnInteract == null)
+                    {
+                        Debug.LogWarning("Se pulso la tecla de interactuar, pero nadie la escucha: falta el componente LeverInteraction en la escena.", this);
+                    }
+
+                    OnInteract?.Invoke();
                 }
             }
         }
@@ -213,10 +238,20 @@ public class PlayerMovement : MonoBehaviour
         // Descontamos la ventana en curso antes de aceptar un salto nuevo
         UpdateJumpAnticipation();
 
-        // No aceptamos otro salto mientras haya uno esperando su impulso
-        if (m_jumpAction.WasPressedThisFrame() && !isAnticipatingJump && (isGrounded || numberOfJumpsRemaining > 0) && !gameManager.gameOver)
+        // No aceptamos otro salto mientras haya uno esperando su impulso.
+        // gameFinished va aparte de gameOver: al ganar la partida NO se pone gameOver,
+        // asi que sin esta condicion se podria seguir saltando durante la animacion de
+        // victoria y sacar a Bravard de la pose final.
+        if (m_jumpAction.WasPressedThisFrame() && !isAnticipatingJump && (isGrounded || numberOfJumpsRemaining > 0) && !gameManager.gameOver && !gameManager.gameFinished)
         {
-            AudioManager.Instance.PlayJumpEffect();
+            // El AudioManager nace en 00_Introduction y viaja entre escenas con
+            // DontDestroyOnLoad. Al entrar a Play directamente en otra escena no
+            // existe, así que el efecto se omite en vez de tumbar el salto.
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayJumpEffect();
+            }
+
             RequestJump();
         }
 
