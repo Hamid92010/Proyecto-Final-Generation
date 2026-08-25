@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49b0d058aba4502439d7ffd8b89b5fee
+guid: 9bfdaf5059269434d96bfcb6e67f1662
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,56 +136,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Feathers_Particles_Images_0
+      name: LeverActivated_Particles_Images_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 22
-        width: 453
-        height: 471
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b508242c306149c458070d701692b2e1
-      internalID: -2115587532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Feathers_Particles_Images_1
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 27
-        width: 353
-        height: 454
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be0992ef72d88fa469f1a7a855caf5da
-      internalID: -1490412685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Feathers_Particles_Images_2
-      rect:
-        serializedVersion: 2
-        x: 1076
+        x: 122
         y: 7
-        width: 406
+        width: 268
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a897ef3f8b6c45242b29e07595be97b6
+      internalID: 433435545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeverActivated_Particles_Images_1
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 7
+        width: 426
         height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -195,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2975e7826e7f2f4ea910f3e75e08ee1
-      internalID: -2095739873
+      spriteID: eccd362e570eadd40a63dc939c1bd931
+      internalID: 1232034322
       vertices: []
       indices: 
       edges: []
@@ -205,7 +183,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 064d18c5cd3767642b68d1c659e14b2b
+    spriteID: f580c1b10ca42af43974b88f8376afaf
     internalID: 0
     vertices: []
     indices: 
@@ -217,9 +195,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Feathers_Particles_Images_0: -2115587532
-      Feathers_Particles_Images_1: -1490412685
-      Feathers_Particles_Images_2: -2095739873
+      LeverActivated_Particles_Images_0: 433435545
+      LeverActivated_Particles_Images_1: 1232034322
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

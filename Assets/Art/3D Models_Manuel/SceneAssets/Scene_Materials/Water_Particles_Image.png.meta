@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49b0d058aba4502439d7ffd8b89b5fee
+guid: c8e1b8ea494e1cb4babbffbe6de2b332
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,57 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Feathers_Particles_Images_0
+      name: Water_Particles_Image_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 22
-        width: 453
-        height: 471
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b508242c306149c458070d701692b2e1
-      internalID: -2115587532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Feathers_Particles_Images_1
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 27
-        width: 353
-        height: 454
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be0992ef72d88fa469f1a7a855caf5da
-      internalID: -1490412685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Feathers_Particles_Images_2
-      rect:
-        serializedVersion: 2
-        x: 1076
+        x: 84
         y: 7
-        width: 406
-        height: 498
+        width: 360
+        height: 497
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +151,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2975e7826e7f2f4ea910f3e75e08ee1
-      internalID: -2095739873
+      spriteID: 0e05b7fce01ff604ebf565335a7cce2c
+      internalID: -1098235219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Particles_Image_1
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 26
+        width: 389
+        height: 459
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d5288c02592d44b955b8fff9d3cef5
+      internalID: 1554403551
       vertices: []
       indices: 
       edges: []
@@ -205,7 +183,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 064d18c5cd3767642b68d1c659e14b2b
+    spriteID: decfb129d4fa20a4795f401384bcbf3f
     internalID: 0
     vertices: []
     indices: 
@@ -217,9 +195,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Feathers_Particles_Images_0: -2115587532
-      Feathers_Particles_Images_1: -1490412685
-      Feathers_Particles_Images_2: -2095739873
+      Water_Particles_Image_0: -1098235219
+      Water_Particles_Image_1: 1554403551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
