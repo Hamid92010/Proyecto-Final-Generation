@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
-
+//Hola Mundo
 /// <summary>
 /// Inicializa Unity Gaming Services y arranca la recolección de Analytics.
 /// Colócalo en un GameObject que exista desde el arranque del juego

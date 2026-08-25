@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Hola Mundo
 /// <summary>
 /// Centraliza los trackers de gameplay. Colócalo en el mismo GameObject
 /// persistente que SDKAnalytics (o en cualquier objeto que exista mientras
