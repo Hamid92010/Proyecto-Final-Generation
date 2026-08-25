@@ -39,6 +39,11 @@ public class RockSpawner : MonoBehaviour
             gameManager.OnGameFinished += SpawnRocksDisabled;
             gameManager.OnGameOver += SpawnRocksDisabled;
             gameManager.OnGameResumed += SpawnRocksEnabled;
+
+            // Una roca lanzada contra un jugador congelado y fuera de plano seria
+            // exactamente igual de injusta que ahogarlo sin dejarle moverse
+            gameManager.OnCutsceneStarted += SpawnRocksDisabled;
+            gameManager.OnCutsceneEnded += SpawnRocksEnabled;
         }
     }
     private void Update()
@@ -64,6 +69,8 @@ public class RockSpawner : MonoBehaviour
             gameManager.OnGameFinished -= SpawnRocksDisabled;
             gameManager.OnGameOver -= SpawnRocksDisabled;
             gameManager.OnGameResumed -= SpawnRocksEnabled;
+            gameManager.OnCutsceneStarted -= SpawnRocksDisabled;
+            gameManager.OnCutsceneEnded -= SpawnRocksEnabled;
         }
     }
 

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System;
 using TMPro;
@@ -29,6 +29,8 @@ public class TimeManager : MonoBehaviour
             gameManager.OnGameFinished += StopTimer;
             gameManager.OnGamePaused += StopTimer;
             gameManager.OnGameResumed += StartTimer;
+            gameManager.OnCutsceneStarted += StopTimer;
+            gameManager.OnCutsceneEnded += StartTimer;
         }
     }
 
@@ -49,10 +51,25 @@ public class TimeManager : MonoBehaviour
 
 
         timeToFinishGame -= Time.deltaTime;
-        if(timeToFinishGame < 0)
+
+        // Se agoto el tiempo. Hasta ahora el contador se quedaba clavado en cero sin
+        // avisar a nadie, asi que perder por tiempo simplemente no ocurria.
+        if (timeToFinishGame <= 0f)
         {
-            timeToFinishGame = 0;
+            timeToFinishGame = 0f;
+
+            // Dejamos el marcador en cero antes de avisar, para que la UI no se quede
+            // con el ultimo valor fraccionario mientras corre la animacion de derrota
+            NotifyTimeChanged();
+
+            if (gameManager != null)
+            {
+                gameManager.TriggerGameOver(GameOverCause.Time);
+            }
+
+            return;
         }
+
         currentTimeOfGame += Time.deltaTime;
         NotifyTimeChanged();
         NotifyGameTimeChanged();
@@ -77,6 +94,8 @@ public class TimeManager : MonoBehaviour
             gameManager.OnGameFinished -= StopTimer;
             gameManager.OnGamePaused -= StopTimer;
             gameManager.OnGameResumed -= StartTimer;
+            gameManager.OnCutsceneStarted -= StopTimer;
+            gameManager.OnCutsceneEnded -= StartTimer;
         }
     }
 

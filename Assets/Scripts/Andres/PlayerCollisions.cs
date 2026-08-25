@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class PlayerCollisions : MonoBehaviour
@@ -7,6 +7,9 @@ public class PlayerCollisions : MonoBehaviour
     public event Action TouchObstacle;
     public event Action UnTouchObstacle;
     public event Action<bool> StateTriggerWin;
+    // Golpe recibido de una pelota. Lo consume la capa de animacion para reaccionar;
+    // el empujon fisico lo sigue aplicando ObstacleKnockback por su cuenta.
+    public event Action HitByBall;
     private GameManager gameManager;
 
     private void OnEnable()
@@ -51,13 +54,19 @@ public class PlayerCollisions : MonoBehaviour
         {
             if (gameManager != null)
             {
-                gameManager.TriggerGameOver();
+                gameManager.TriggerGameOver(GameOverCause.Water);
             }
         }
 
         if (collision.gameObject.CompareTag("Ball"))
         {
-            AudioManager.Instance.PlayImpactBallEffect();
+            // Sin AudioManager en la escena el golpe no suena, pero no rompe la colisión
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayImpactBallEffect();
+            }
+
+            HitByBall?.Invoke();
         }
     }
 

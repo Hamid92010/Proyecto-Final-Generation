@@ -25,6 +25,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float gameOverLapTime = 5f;
     [SerializeField] private float victoryLapTime = 5f;
 
+    // Solo lectura. La secuencia de ahogamiento lo consulta para comprobar que le
+    // da tiempo a terminar antes de que este corte lleve a la pantalla de derrota.
+    public float GameOverLapTime => gameOverLapTime;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
 

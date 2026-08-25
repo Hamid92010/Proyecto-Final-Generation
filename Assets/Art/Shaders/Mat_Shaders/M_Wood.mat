@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Image_Texture:
-        m_Texture: {fileID: 2800000, guid: 67cd2fccc0a6ecc46a1d3497ca115d56, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d29eb4acdda98a4fac78bdd40fe130e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -53,7 +53,7 @@ Material:
     - _Transparency: 1
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Noise_Color: {r: 0.24528301, g: 0.18172866, b: 0.0127269495, a: 1}
+    - _Noise_Color: {r: 0.01347164, g: 0, b: 0.0754717, a: 1}
     - _Player_Position: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

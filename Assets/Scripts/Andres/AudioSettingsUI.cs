@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 public class AudioSettingsUI : MonoBehaviour
 {
@@ -8,6 +8,14 @@ public class AudioSettingsUI : MonoBehaviour
     [SerializeField] private Button[] buttonsOnScreen;
     void Start()
     {
+        // Toda esta pantalla lee y suscribe al singleton de audio. Si no existe
+        // (se entró a Play en esta escena sin pasar por 00_Introduction) no hay
+        // nada que configurar y seguir adelante solo provocaría un NullReference.
+        if (AudioManager.Instance == null)
+        {
+            return;
+        }
+
         if (musicVolumeSlider != null) 
         {
             musicVolumeSlider.value = AudioManager.Instance.musicVolume;
