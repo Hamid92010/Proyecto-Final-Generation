@@ -78,14 +78,12 @@ public class GameManager : MonoBehaviour
     public void TriggerGameOver()
     {
         gameOver = true;
-        isGameStarted = false;
         OnGameOver?.Invoke();
     }
 
     public void FinishGame()
     {
         gameFinished = true;
-        isGameStarted = false;
         OnGameFinished?.Invoke();
     }
 

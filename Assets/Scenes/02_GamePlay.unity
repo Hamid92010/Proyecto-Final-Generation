@@ -4691,7 +4691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683b2a442ac00734ebb1c450abfffa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  <timeToFinishGame>k__BackingField: 120
+  <timeToFinishGame>k__BackingField: 90
   <yPosToFinishGame>k__BackingField: 0
   platformToWin: {fileID: 227593504}
   isGameStarted: 0
