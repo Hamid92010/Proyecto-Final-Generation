@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = m_moveAction.ReadValue<Vector2>();
 
         // Iniciar el juego al detectar movimiento
-        if (moveInput.x != 0 && !gameManager.isGameStarted)
+        if (moveInput.x != 0 && !gameManager.isGameStarted && !gameManager.gameOver)
         {
             gameManager.StartGame();
 
@@ -214,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
         UpdateJumpAnticipation();
 
         // No aceptamos otro salto mientras haya uno esperando su impulso
-        if (m_jumpAction.WasPressedThisFrame() && !isAnticipatingJump && (isGrounded || numberOfJumpsRemaining > 0))
+        if (m_jumpAction.WasPressedThisFrame() && !isAnticipatingJump && (isGrounded || numberOfJumpsRemaining > 0) && !gameManager.gameOver)
         {
             AudioManager.Instance.PlayJumpEffect();
             RequestJump();

@@ -54,6 +54,7 @@ public class FallingRock : MonoBehaviour
             gameManager.OnGamePaused += DisableFall;
             gameManager.OnGameFinished += DisableFall;
             gameManager.OnGameResumed += EnableFall;
+            gameManager.OnGameOver += DestroyRock;
         }
 
         canFall = !(gameManager.isGamePaused || gameManager.gameFinished || gameManager.gameOver);
@@ -100,6 +101,7 @@ public class FallingRock : MonoBehaviour
             gameManager.OnGamePaused -= DisableFall;
             gameManager.OnGameFinished -= DisableFall;
             gameManager.OnGameResumed -= EnableFall;
+            gameManager.OnGameOver -= DestroyRock;
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -154,6 +156,11 @@ public class FallingRock : MonoBehaviour
         velocityBeforePause = rb.linearVelocity;
 
         rb.linearVelocity = Vector3.zero;
+    }
+
+    public void DestroyRock()
+    {
+        Destroy(gameObject);
     }
 }
 

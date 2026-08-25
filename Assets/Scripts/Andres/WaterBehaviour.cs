@@ -5,8 +5,8 @@ public class WaterBehaviour : MonoBehaviour
 {
     private GameManager gameManager;
     private TimeManager timeManager;
-    [SerializeField] private float waterBaseSpeed = 0.5f;
-    [SerializeField] private float speedIncreaseRate = 5f;
+    [SerializeField] private float waterBaseSpeed = 0.1f;
+    [SerializeField] private float speedIncreaseRate = 2f;
     [SerializeField] private float speedIncreaseAmount = 0.05f;
     [SerializeField] private float initialYPos = -4f;
     [SerializeField] private float currentWaterSpeed;
