@@ -625,7 +625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &299248532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2523,6 +2523,8 @@ GameObject:
   - component: {fileID: 1426012792}
   - component: {fileID: 1426012791}
   - component: {fileID: 1426012793}
+  - component: {fileID: 1426012794}
+  - component: {fileID: 1426012795}
   m_Layer: 0
   m_Name: _SceneController
   m_TagString: Untagged
@@ -2571,6 +2573,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PressAnyKeyToStart
   gameTitleView: {fileID: 1680459852}
   historyView: {fileID: 2003021483}
+--- !u!114 &1426012794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426012790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7042eb8f57862294f93757d1cd80b1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDKAnalytics
+--- !u!114 &1426012795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426012790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1693482643004744b9f293f9feec4752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayAnalytics
 --- !u!1 &1431245010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,7 +3051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1680459853
 RectTransform:
   m_ObjectHideFlags: 0

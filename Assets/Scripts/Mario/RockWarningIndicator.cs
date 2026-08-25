@@ -118,6 +118,13 @@ public class RockWarningIndicator : MonoBehaviour
 
     private void OnDestroy()
     {
+        // Este indicador también se destruye al descargar la escena (game over,
+        // victoria, cambio de nivel), no solo cuando expira su temporizador.
+        // En ese caso el player y el propio rockSpawner ya pueden estar
+        // destruidos, así que no debe intentar generar una roca.
+        if (gameManager != null && (gameManager.gameOver || gameManager.gameFinished))
+            return;
+
         if (rockSpawner != null)
         {
             rockSpawner.SpawnRock();
