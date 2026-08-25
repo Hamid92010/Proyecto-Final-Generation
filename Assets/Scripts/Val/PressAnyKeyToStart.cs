@@ -3,26 +3,44 @@ using UnityEngine.InputSystem;
 
 public class PressAnyKeyToStart : MonoBehaviour
 {
-    [Header("Referencias de Paneles")]
+    [Header("Referencias de paneles")]
     [SerializeField] private GameObject gameTitleView;
-    [SerializeField] private GameObject startView;
+    [SerializeField] private GameObject historyView;
 
-    private bool hasPressedKey = false;
+    private bool hasPressedKey;
 
     private void Update()
     {
-        
-        if (!hasPressedKey && Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame || 
-            !hasPressedKey && Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        if (hasPressedKey)
+        {
+            return;
+        }
+
+        bool keyboardPressed =
+            Keyboard.current != null &&
+            Keyboard.current.anyKey.wasPressedThisFrame;
+
+        bool mousePressed =
+            Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame;
+
+        if (keyboardPressed || mousePressed)
         {
             hasPressedKey = true;
-            ShowMainMenuButtons();
+            ShowHistory();
         }
     }
 
-    private void ShowMainMenuButtons()
+    private void ShowHistory()
     {
-        if (gameTitleView != null) gameTitleView.SetActive(false);
-        if (startView != null) startView.SetActive(true);
+        if (gameTitleView != null)
+        {
+            gameTitleView.SetActive(false);
+        }
+
+        if (historyView != null)
+        {
+            historyView.SetActive(true);
+        }
     }
 }
