@@ -20,6 +20,8 @@ public class WaterProximityUI : MonoBehaviour
     [SerializeField] private float levelMaxY;
 
     private RectTransform handleRect;
+    private GameManager gameManager;
+
 
     private void Start()
     {
@@ -31,8 +33,12 @@ public class WaterProximityUI : MonoBehaviour
         //Se toma el valor inicial del jugador como el mínimo del nivel para que la barra de peligro se llene correctamente
         levelMinYPlayer = playerTransform.position.y;
 
-        GameManager.Instance.SearchPlatformToWin();
-        levelMaxY = GameManager.Instance.yPosToFinishGame;
+        gameManager =FindAnyObjectByType<GameManager>();
+        if (gameManager != null)
+        {
+            gameManager.SearchPlatformToWin();
+            levelMaxY = gameManager.yPosToFinishGame;
+        }
     }
 
     private void Update()

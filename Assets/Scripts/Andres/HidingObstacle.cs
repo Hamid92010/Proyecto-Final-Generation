@@ -10,14 +10,15 @@ public class HidingObstacle : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float obstacleSpeedMovement = 2f;
     [SerializeField] private float hiddenZPosition;
-
+    [SerializeField] private float defaultZPosition = 3f;
     [SerializeField] private TimeManager timeManager;
     private float initialZPosition;
     private float previousTime;
 
     private void Awake()
     {
-        initialZPosition = transform.position.z;
+       initialZPosition = defaultZPosition;
+
     }
 
     private void OnEnable()
