@@ -931,11 +931,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 08682392-91e7-4f70-896d-158fbbfa339b
+  cloudProjectId: eb6c6705-f91a-4ecf-94d2-2f01cf28492d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Proyecto Final Generation
-  organizationId: hamidriba9
+  projectName: Proyecto-Final-Generation
+  organizationId: marioruizhtn
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

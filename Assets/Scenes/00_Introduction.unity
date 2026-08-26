@@ -623,7 +623,7 @@ MonoBehaviour:
   musicScenes:
   - {fileID: 8300000, guid: c397a77e8d4bf634b8c6d61990dc1ce8, type: 3}
   - {fileID: 8300000, guid: 95c018464fe76b44184cb8f0e32cd659, type: 3}
-  - {fileID: 8300000, guid: a43c336e06a13d44fb260cdcf6b50621, type: 3}
+  - {fileID: 8300000, guid: 16f5de6ab77904d4494140c44bff4f3d, type: 3}
   - {fileID: 8300000, guid: 309c6d1f1fe7f534686a6412c9aa6dfc, type: 3}
   - {fileID: 8300000, guid: c49f190bab9591742ab8b49b8a3aaa39, type: 3}
   sfxButtonEffect: {fileID: 8300000, guid: fb4dc6045169a6442bd07746e05654a1, type: 3}
@@ -683,6 +683,7 @@ MonoBehaviour:
   gameOver: 0
   gameFinished: 0
   isGamePaused: 0
+  isCutscenePlaying: 0
 --- !u!4 &1034130477
 Transform:
   m_ObjectHideFlags: 0
