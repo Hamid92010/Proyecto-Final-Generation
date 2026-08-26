@@ -35,7 +35,6 @@ Transform:
   m_LocalScale: {x: 1.3350153, y: 1.3507055, z: 1.2959188}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6170512359428553060}
   - {fileID: 5669921469798401262}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,6 +161,7 @@ MonoBehaviour:
   minSpinSpeed: 90
   maxSpinSpeed: 260
   randomizeInitialRotation: 1
+  fallVFX: []
   playerTag: Player
   groundLayer:
     serializedVersion: 2
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 7503696021911600865}
   - component: {fileID: 6154235738465255772}
   m_Layer: 0
-  m_Name: VFX_LeverActivated
+  m_Name: VFX_RockFalling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,12 +210,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8127087373661548524}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7716533, y: 0.7490551, z: 0.7403538}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.00000005960465, y: -0.00000005960465, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.0009657948, y: 0, z: 0.0003420523}
+  m_LocalScale: {x: 0.74, y: 0.7183288, z: 0.70998454}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1905211352644183653}
+  m_Father: {fileID: 5669921469798401262}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &7503696021911600865
 ParticleSystem:
@@ -234,7 +234,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -471,7 +471,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1054,7 +1054,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1738,16 +1738,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 672300588, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: -1597947790, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: -2050350802, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: -1366837048, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: 2061163920, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: 1401241639, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: -1068034852, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: 231941148, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: 450877014, guid: 767af13895be3444ba788325cf8056b0, type: 3}
-    - sprite: {fileID: -718590351, guid: 767af13895be3444ba788325cf8056b0, type: 3}
+    - sprite: {fileID: 433435545, guid: 9bfdaf5059269434d96bfcb6e67f1662, type: 3}
+    - sprite: {fileID: 1232034322, guid: 9bfdaf5059269434d96bfcb6e67f1662, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5170,7 +5162,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57acfe1cc4aedee419df2d96dcf523f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6170512359428553060}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57acfe1cc4aedee419df2d96dcf523f8, type: 3}
 --- !u!4 &5669921469798401262 stripped
