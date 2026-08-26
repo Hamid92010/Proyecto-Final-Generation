@@ -435,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &299248532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &385383043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3139,7 +3139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1680459853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3411,14 +3411,14 @@ RectTransform:
   m_GameObject: {fileID: 1808136283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8369, y: 1.8369, z: 1.8369}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1680459853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 91.668976}
+  m_AnchoredPosition: {x: 12, y: 91.668976}
   m_SizeDelta: {x: 459.765, y: 526.126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808136285
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a605bf76bf387ce449486caae97b000a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8cda664b7909fc4880c859460a56a87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33183,6 +33183,8 @@ MonoBehaviour:
   flyingVFX: {fileID: 5563919003402497057}
   stepsVFX: {fileID: 1952340957540292718}
   waterVFX: {fileID: 5229394486046755180}
+  continuousEffectGrace: 0.2
+  effectsExemptFromCutoff: []
   leverVFX: {fileID: 0}
 --- !u!23 &5711358817546749464
 MeshRenderer:
