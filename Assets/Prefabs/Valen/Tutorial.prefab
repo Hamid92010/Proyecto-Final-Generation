@@ -825,7 +825,6 @@ GameObject:
   - component: {fileID: 5432128217896287946}
   - component: {fileID: 403485289416621205}
   - component: {fileID: 9089591552481588603}
-  - component: {fileID: 8747372074819486307}
   m_Layer: 3
   m_Name: Hiding
   m_TagString: Wall
@@ -926,24 +925,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8747372074819486307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2574046669487110657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96726178ebfe29c4199d4b00297fbdc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HidingObstacle
-  visibleTime: 2
-  hiddenTime: 1
-  obstacleSpeedMovement: 2
-  hiddenZPosition: 6
-  defaultZPosition: 3
-  timeManager: {fileID: 0}
 --- !u!1 &2659888552519678038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,8 +2008,6 @@ GameObject:
   - component: {fileID: 1415718949313732806}
   - component: {fileID: 8094212617156948628}
   - component: {fileID: 4081338790640564099}
-  - component: {fileID: 5475155010482960576}
-  - component: {fileID: 1489742994160879461}
   m_Layer: 3
   m_Name: UpDown
   m_TagString: Wall
@@ -2129,38 +2108,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5475155010482960576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4823227646616431025}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 201e5a42f0892b743860832e11e34f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UpDownObstacle
-  stayTime: 1
-  obstacleSpeedMovement: 3
-  yLimit: 3
-  timeManager: {fileID: 0}
---- !u!114 &1489742994160879461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4823227646616431025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef87f2601a75abc4aa67503752b44ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotatingObstacle
-  canObstacleMove: 1
-  gameManager: {fileID: 0}
-  obstacleSpeedRotation: 30
-  rotationAxis: 2
 --- !u!1 &5072047748201279818
 GameObject:
   m_ObjectHideFlags: 0

@@ -4410,9 +4410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d8aee8d09ba974bb142c4a8d7bae12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterBehaviour
-  waterBaseSpeed: 0.05
+  waterBaseSpeed: 0.04
   speedIncreaseRate: 5
-  speedIncreaseAmount: 0.07
+  speedIncreaseAmount: 0.055
   initialYPos: -4
   currentWaterSpeed: 0
   canMoveWater: 0
