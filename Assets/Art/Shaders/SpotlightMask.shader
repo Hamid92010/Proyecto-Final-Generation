@@ -24,6 +24,17 @@ Shader "Scene/SpotlightMask"
         _Player_Position("Centro del foco (lo escribe MathematicalMask)", Vector) = (0, 0, 0, 0)
         _Mask_Radius("Radio de la zona limpia", Float) = 1
         _Mask_Softness("Anchura del difuminado", Float) = 1.5
+
+        [Header(Luz del foco)]
+        // La luz SUMA color dentro del mismo circulo que el velo deja limpio, en vez de
+        // pintar encima: por eso son HDR y por eso pueden pasar de 1.
+        [HDR] _Light_Inner_Color("Color en el centro", Color) = (1, 0.9, 0.65, 1)
+        [HDR] _Light_Outer_Color("Color en el borde", Color) = (0.35, 0.25, 0.7, 1)
+
+        // Arranca en cero para no encender de golpe los materiales que ya usan este
+        // shader y no piden luz ninguna (M_Shadows). Subelo en M_Spotlight.
+        _Light_Intensity("Intensidad (0 = sin luz)", Float) = 0
+        _Light_Falloff("Concentracion (alto = luz apretada en el centro)", Float) = 2
     }
 
     SubShader
@@ -41,8 +52,12 @@ Shader "Scene/SpotlightMask"
             Name "SpotlightOverlay"
             Tags { "LightMode" = "UniversalForward" }
 
-            // Mezcla alfa clasica. Sin escribir en el z-buffer: es un velo, no geometria.
-            Blend SrcAlpha OneMinusSrcAlpha
+            // Alfa PREMULTIPLICADO. Es lo que permite oscurecer y sumar luz en el MISMO
+            // pase: con el color ya multiplicado por su alfa, un fragmento opaco tapa el
+            // fondo igual que con la mezcla clasica, y uno de alfa cero se suma sin mas.
+            // Para el velo el resultado es identico al de antes; la luz es lo que gana.
+            // Sin escribir en el z-buffer: es un velo, no geometria.
+            Blend One OneMinusSrcAlpha
             ZWrite Off
             ZTest LEqual
             Cull Off
@@ -64,6 +79,10 @@ Shader "Scene/SpotlightMask"
                 float4 _Player_Position;
                 float  _Mask_Radius;
                 float  _Mask_Softness;
+                half4  _Light_Inner_Color;
+                half4  _Light_Outer_Color;
+                float  _Light_Intensity;
+                float  _Light_Falloff;
             CBUFFER_END
 
             struct Attributes
@@ -124,6 +143,31 @@ Shader "Scene/SpotlightMask"
                 float veilAmount = smoothstep(fadeStart, fadeEnd, distanceToPlayer);
 
                 veil.a *= veilAmount;
+
+                // El color pasa a venir premultiplicado por su alfa, como pide la mezcla
+                // de arriba. Hasta aqui el velo se ve exactamente igual que antes.
+                veil.rgb *= veil.a;
+
+                // --- Luz del foco ---------------------------------------------------
+                // 0 en el centro y 1 en el borde exterior del difuminado: la luz ocupa
+                // justo el circulo que el velo deja limpio, ni mas ni menos.
+                float lightBlend = saturate(distanceToPlayer / fadeEnd);
+
+                // El degradado, de dentro hacia fuera
+                half3 lightColor = lerp(_Light_Inner_Color.rgb, _Light_Outer_Color.rgb, lightBlend);
+
+                // pow en vez de una rampa recta para poder apretar la luz en el centro
+                // (exponente alto) o repartirla hasta el borde (cercano a 1)
+                float lightFalloff = pow(1.0 - lightBlend, max(_Light_Falloff, 1e-4));
+
+                // input.color.a la ata al tinte del SpriteRenderer: si el velo se
+                // desvanece, la luz se desvanece con el en vez de quedarse flotando.
+                half3 light = lightColor * (_Light_Intensity * lightFalloff * input.color.a);
+
+                // Se suma SIN tocar el alfa. Con premultiplicado, aportar color con alfa
+                // cero es exactamente una suma: la luz aclara lo que haya detras (el
+                // personaje, el fondo) en lugar de pintarle un disco de color encima.
+                veil.rgb += light;
 
                 return veil;
             }

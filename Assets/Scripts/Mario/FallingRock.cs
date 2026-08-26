@@ -22,6 +22,10 @@ public class FallingRock : MonoBehaviour
     [Tooltip("Sortea también la orientación de partida. Sin esto todas las rocas aparecen en la misma pose y se nota que son la misma pieza repetida.")]
     [SerializeField] private bool randomizeInitialRotation = true;
 
+    [Header("VFX")]
+    [Tooltip("Efectos que acompanan a la roca mientras cae. Si se deja vacio se cogen todos los ParticleSystem que cuelguen de la roca.")]
+    [SerializeField] private ParticleSystem[] fallVFX;
+
     [Header("Impacto")]
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private LayerMask groundLayer; // Layer "Ground"
@@ -63,6 +67,13 @@ public class FallingRock : MonoBehaviour
 
         StartSpinning();
 
+        // Sin nada asignado se cogen los hijos: la roca es un prefab cerrado y sus
+        // efectos son suyos, asi que no hay nada que elegir a mano.
+        if (fallVFX == null || fallVFX.Length == 0)
+        {
+            fallVFX = GetComponentsInChildren<ParticleSystem>(true);
+        }
+
         if (gameManager == null)
         {
             gameManager = FindAnyObjectByType<GameManager>();
@@ -85,6 +96,10 @@ public class FallingRock : MonoBehaviour
         }
 
         canFall = !(gameManager.isGamePaused || gameManager.gameFinished || gameManager.gameOver || gameManager.isCutscenePlaying);
+
+        // Los efectos arrancan a la vez que la caida, y con el mismo criterio: una roca
+        // que nace congelada (pausa o escena en curso) no debe estar echando humo.
+        SetFallVFXPlaying(canFall);
 
     }
 
@@ -156,6 +171,11 @@ public class FallingRock : MonoBehaviour
     {
         isDisappearing = true;
 
+        // La roca ya toco algo: deja de generar estela mientras parpadea y se va. Sin
+        // esto seguiria emitiendo, porque su ParticleSystem esta en bucle y solo se
+        // callaria al destruirse el objeto.
+        StopFallVFXEmission();
+
         rb.linearVelocity = Vector3.zero;
         rb.isKinematic = true;
         rockCollider.enabled = false;
@@ -201,10 +221,48 @@ public class FallingRock : MonoBehaviour
         rb.angularVelocity = Random.onUnitSphere * (spinSpeed * Mathf.Deg2Rad);
     }
 
+    // Arranca o congela los efectos junto con la roca
+    private void SetFallVFXPlaying(bool isPlaying)
+    {
+        foreach (ParticleSystem effect in fallVFX)
+        {
+            if (effect == null)
+            {
+                continue;
+            }
+
+            // Pause y no Stop: congela tambien las particulas ya emitidas. Con la roca
+            // clavada en el aire, dejar su estela moviendose delataria que el mundo
+            // esta parado a medias.
+            if (isPlaying)
+            {
+                effect.Play(true);
+            }
+            else
+            {
+                effect.Pause(true);
+            }
+        }
+    }
+
+    // Corta la emision sin borrar lo que ya hay en pantalla
+    private void StopFallVFXEmission()
+    {
+        foreach (ParticleSystem effect in fallVFX)
+        {
+            if (effect != null)
+            {
+                effect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
+        }
+    }
+
     public void EnableFall()
     {
         canFall = true;
         rb.linearVelocity = velocityBeforePause;
+
+        SetFallVFXPlaying(true);
 
         // El giro también se congela al pausar, así que hay que devolvérselo: si no,
         // la roca se reanudaría cayendo pero quieta, como un bloque rígido.
@@ -216,6 +274,8 @@ public class FallingRock : MonoBehaviour
         canFall = false;
         velocityBeforePause = rb.linearVelocity;
         angularVelocityBeforePause = rb.angularVelocity;
+
+        SetFallVFXPlaying(false);
 
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
