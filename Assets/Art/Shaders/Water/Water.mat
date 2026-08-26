@@ -47,12 +47,12 @@ Material:
     - _Opacity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 1
-    - _Waves: 0
+    - _Size: 1.88
+    - _Waves: 0.05
     m_Colors:
-    - _Color_Base: {r: 0, g: 0.83301854, b: 1, a: 1}
-    - _Color_Main_Foam: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_Second_Foam: {r: 0, g: 0.115142345, b: 1, a: 1}
+    - _Color_Base: {r: 0.1251335, g: 0.4130114, b: 0.7169812, a: 1}
+    - _Color_Main_Foam: {r: 0.15511765, g: 0.50671774, b: 0.879, a: 1}
+    - _Color_Second_Foam: {r: 0.056694984, g: 0.35189706, b: 0.667, a: 1}
     - _Direction: {r: 0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
