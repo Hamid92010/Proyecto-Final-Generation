@@ -48,7 +48,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Size: 1
-    - _Waves: 0
+    - _Waves: 0.012
     m_Colors:
     - _Color_Base: {r: 0, g: 0.83301854, b: 1, a: 1}
     - _Color_Main_Foam: {r: 1, g: 1, b: 1, a: 1}

@@ -683,6 +683,7 @@ MonoBehaviour:
   gameOver: 0
   gameFinished: 0
   isGamePaused: 0
+  isCutscenePlaying: 0
 --- !u!4 &1034130477
 Transform:
   m_ObjectHideFlags: 0
